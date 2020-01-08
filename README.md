@@ -43,30 +43,30 @@ Things you may want to cover:
 
 - has_many :products
 - has_one :evaluation
-- has_one  :Streetaddress
+- has_one :street_address
 
 
 ## products
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|string|foreign_key: true|
-|buyer_id|string|foreign_key: true|
-|product_name|string|null: false|
-|product_discription|text|null: false|
-|product_category|string|null: false|
-|product_brand|string||
-|product_state|string|null: false|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|foreign_key: true|
+|name|string|null: false|
+|discription|text|null: false|
+|category|string|null: false|
+|brand|string||
+|state|string|null: false|
 |delivery_fee|string|null: false|
 |sending_area|string|null: false|
 |sending_day|string|null: false|
-|product_price|integer|null: false|
+|price|integer|null: false|
 
 
 ### Association
 
 - belongs_to :user
 - has_many :images
-- has_many :categories
+- belongs_to :category
 
 
 
@@ -105,7 +105,7 @@ Things you may want to cover:
 ## images
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|foreign_key: true|
+|id|integer|null: false, foreign_key: true|
 |url|text|null: false|
 ### Association
 
@@ -122,5 +122,5 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :product
+- has_many  :products
 
