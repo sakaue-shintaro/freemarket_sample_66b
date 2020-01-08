@@ -51,3 +51,26 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#デプロイ
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#全体
+gem 'haml-rails' #haml用
+
+#ユーザーサイド
+gem 'devise' #ユーザ登録
+gem 'payjp' #クレジット
+
+#商品サイド
+gem 'carrierwave' #画像アップロード
+gem 'fog-aws' #AWSに画像をあげるよう
+gem 'jquery-rails' #スライドショー
+gem "font-awesome-rails" #アイコン
+gem 'mini_magick' #画像リサイズ
+gem 'pry-rails' #binding.pry
