@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+@import "./reset";
+@import "header";
+@import "footer";
+@import "exhibition-btn";
