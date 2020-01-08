@@ -46,24 +46,25 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
-- has_many :evaluations
+- has_one :evaluation
 - has_one  :Streetaddress
 
 
 ## products
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|string|null: false,foreign_key: true|
-|buyer_id|string|null: false,foreign_key: true|
+|seller_id|string|foreign_key: true|
+|buyer_id|string|foreign_key: true|
 |product_name|string|nill: false|
 |product_discription|text|nill: false|
-|product_category|nill: false|
+|product_category|string|nill: false|
+|product_brand|string||
 |product_state|string|nill: false|
 |delivery_fee|string|nill: false|
 |sending_area|string|nill: false|
 |sending_day|string|nill: false|
 |product_price|integer|nill: false|
-|
+
 ### Association
 
 - belongs_to :user
@@ -80,8 +81,8 @@ Things you may want to cover:
 |prefectuer|string|null: false|
 |city_ward|string|nill: false|
 |address|string|nill: false|
-|building|string|nill: false|
-|tel|string|
+|building|string||
+|tel|string||
 
 ### Association
 
@@ -93,10 +94,10 @@ Things you may want to cover:
 ## evaluations
 |Column|Type|Options|
 |------|----|-------|
-|good|integer|null: false|
-|normal|integer|null: false|
-|bad|integer|nill: false|
-|user_id|integer|nill: false|
+|good|integer|null: false, default: 0|
+|normal|integer|null: false, default: 0|
+|bad|integer|null: false, default: 0|
+|user_id|integer|nill: false,foreign key|
 
 ### Association
 
@@ -106,7 +107,7 @@ Things you may want to cover:
 ## images
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|integer|foreign key|
 |url|text|null: false|
 ### Association
 
@@ -120,6 +121,7 @@ Things you may want to cover:
 |------|----|-------|
 |pass|text|null: false|
 |item|text|null: false|
+
 ### Association
 
 - belongs_to :product
