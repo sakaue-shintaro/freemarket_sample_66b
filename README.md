@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 # freemarket_sample DB設計
-##  usersテーブル
+##  users
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -44,6 +44,27 @@ Things you may want to cover:
 - has_many :products
 - has_one :evaluation
 - has_one :street_address
+- has_one :pay
+- has_many :buyed_products, foreign_key: "buyer_id", class_name: "product"
+- has_many :saling_products, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "product"
+- has_many :sold_products, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "product"
+
+
+
+
+## pay
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|year|integer|null: false|
+|month|integer|null: false|
+|code|integer|null: false|
+
+
+### Association
+
+belongs_to  :user
+
 
 
 ## products
@@ -67,11 +88,13 @@ Things you may want to cover:
 - belongs_to :user
 - has_many :images
 - belongs_to :category
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 
 
-## Streetaddress
+## address
 |Column|Type|Options|
 |------|----|-------|
 |postar_code|string|null: false|
