@@ -39,7 +39,6 @@ Things you may want to cover:
 |birthday_month|string|null:false|
 |birthday_day|string|null:false|
 
-
 ### Association
 
 - has_many :products
@@ -61,6 +60,7 @@ Things you may want to cover:
 |sending_area|string|null: false|
 |sending_day|string|null: false|
 |product_price|integer|null: false|
+
 
 ### Association
 
@@ -95,6 +95,7 @@ Things you may want to cover:
 |normal|integer|null: false, default: 0|
 |bad|integer|null: false, default: 0|
 |user_id|integer|foreign_key: true|
+
 
 ### Association
 
