@@ -33,8 +33,8 @@ Things you may want to cover:
 |j_family_name|string|null: false|
 |j_first_name|string|null: false|
 |email|string|null: false unique: true|
-|password|string | null: false|
-|phonenumber|string| null: false|
+|password|string| null: false|
+|phonenumber|string| null: false,unique: true|
 |birthday_year|string|null:false|
 |birthday_month|string|null:false|
 |birthday_day|string|null:false|
@@ -71,7 +71,7 @@ belongs_to  :user
 |Column|Type|Options|
 |------|----|-------|
 |seller_id|integer|null: false, foreign_key: true|
-|buyer_id|integer|foreign_key: true|
+|buyer_id|integer|null: false,foreign_key: true|
 |name|string|null: false|
 |discription|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
