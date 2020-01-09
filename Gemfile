@@ -83,4 +83,4 @@ gem 'fog-aws' #AWSに画像をあげるよう
 gem 'jquery-rails' #スライドショー
 gem "font-awesome-rails" #アイコン
 gem 'mini_magick' #画像リサイズ
-gem 'pry-rails' #binding.pry1
+gem 'pry-rails' #binding.pry
