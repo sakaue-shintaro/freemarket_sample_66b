@@ -39,6 +39,7 @@ Things you may want to cover:
 |birthday_month|string|null:false|
 |birthday_day|string|null:false|
 
+
 ### Association
 
 - has_many :products
@@ -53,6 +54,7 @@ Things you may want to cover:
 ## pay
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false,foreign_key: true|
 |number|integer|null: false|
 |year|integer|null: false|
 |month|integer|null: false|
