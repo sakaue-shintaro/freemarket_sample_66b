@@ -84,5 +84,4 @@ gem 'jquery-rails' #スライドショー
 gem "font-awesome-rails" #アイコン
 gem 'mini_magick' #画像リサイズ
 gem 'pry-rails' #binding.pry
-
-# 多く
+#あああ
