@@ -74,7 +74,7 @@ belongs_to  :user
 |buyer_id|integer|foreign_key: true|
 |name|string|null: false|
 |discription|text|null: false|
-|category|string|null: false|
+|category_id|integer|null: false, foreign_key: true|
 |brand|string||
 |state|string|null: false|
 |delivery_fee|string|null: false|
@@ -97,12 +97,13 @@ belongs_to  :user
 ## address
 |Column|Type|Options|
 |------|----|-------|
-|postar_code|string|null: false|
+|postal_code|string|null: false|
 |prefectuer|string|null: false|
 |city_ward|string|null: false|
 |address|string|null: false|
 |building|string||
 |tel|string||
+|user_id|integer|null: false,foreign_key: true|
 
 ### Association
 
@@ -117,7 +118,7 @@ belongs_to  :user
 |good|integer|null: false, default: 0|
 |normal|integer|null: false, default: 0|
 |bad|integer|null: false, default: 0|
-|user_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
@@ -128,7 +129,7 @@ belongs_to  :user
 ## images
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 |url|text|null: false|
 ### Association
 
