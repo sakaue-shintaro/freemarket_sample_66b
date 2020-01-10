@@ -8,9 +8,14 @@
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
+@import "./color";
+
 html{
   color:#000;
   background:#FFF;
+}
+body {
+  background-color: $bg-products;
 }
 /*
   TODO remove settings on BODY since we can't namespace it.
@@ -124,3 +129,4 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
