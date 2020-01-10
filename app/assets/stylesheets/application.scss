@@ -13,12 +13,21 @@
  *= require_tree .
  *= require_self
  */
+@import "./reset";
+@import "products";
+@import "signup";
+@import "mypages";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
+@import "./color";
 
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: $bg-products;
 }
 
 .wrap {
@@ -27,9 +36,3 @@ html, body {
 }
 
 
-@import "./reset";
-@import "products";
-@import "signup";
-@import "mypages";
-@import "font-awesome-sprockets";
-@import "./font-awesome";
