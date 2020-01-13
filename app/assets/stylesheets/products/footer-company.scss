@@ -36,19 +36,15 @@
   .mercari {
     width: 120px;
     height: 30px;
-    text-align: center;
-    // align-items: left;
   }
   a.mercari:hover { 
     opacity: 0.6;   /*疑似クラスhoverマウスカーソル表示を設定できます*/
   } 
   &__top-contents {
-    // background-color: gray;
     width: 1020px;
     height: 313px;
     margin: 0 auto;
     &__about {
-      // background-color: navy;
       display:  inline-block;   /*インラインブロック要素にする */
       vertical-align:  top;       /* 要素を上揃えにする */
       width: auto;
@@ -75,16 +71,12 @@
       }
     }
     &__help {
-      // background-color: navy;
       display:  inline-block;
       vertical-align:  top;
-      // width: auto;
-      // height: ;
       margin-top: 18px;
       padding: 0px 40px 0px 0px;
     }
     &__privacy {
-      // background-color: navy;
       display:  inline-block;
       vertical-align:  top; 
       width: auto;
@@ -107,7 +99,6 @@
       }
     }
     &__country {
-      // background-color: navy;
       display:  inline-block;
       vertical-align:  top;
       width: auto;
