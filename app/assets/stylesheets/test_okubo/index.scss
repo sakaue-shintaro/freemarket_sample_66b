@@ -11,13 +11,13 @@
   background-color: lightgreen;
 }
 
-//mixin例_引数あり
-.test_okubo2 {
-  @include size(100px,200px);
-  background-color: lightblue;
-}
-
 //mixin例
-.test_okubo3 {
+.test_okubo2 {
   @include bg-test;
 }
+
+//mixin例_引数あり
+.test_okubo3 {
+  @include size(200px,200px,yellow);
+}
+

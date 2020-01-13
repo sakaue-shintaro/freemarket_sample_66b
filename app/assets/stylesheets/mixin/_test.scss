@@ -1,13 +1,17 @@
 // mixinフォルダー内にファイルを設定する
 // ファイル名先頭は、「_(アンダーバー)」
 
-//      ↓変数名 ↓引数   ↓引数
-@mixin size($test-hi,$test-wi) {
-  height: $test-hi;
-  width: $test-wi;
-}
-
 //      ↓変数名
 @mixin bg-test {
-  background:yellow;
+  height: 100px;
+  width: 100px;
+  background: blue;
 }
+
+//      ↓変数名 ↓引数   ↓引数
+@mixin size($test-hi,$test-wi,$test-bg) {
+  height: $test-hi;
+  width: $test-wi;
+  background: $test-bg;
+}
+
