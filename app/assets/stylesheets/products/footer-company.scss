@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer_company {
+  background-color: #222222;
+  width: 100vw;
+  height: 387px;
+  padding: 0px 20px 10px;
+  h2 {
+    color: white;
+    font-weight: 600;
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ', 'ＭＳ Ｐゴシック','MS PGothic'  /*フォントの種類(各OSによって入っているフォントが違うため)*/
+  }
+  ul {
+    color: whitesmoke;
+    font-size: 12px;
+  }
+  li {
+    margin: 16px 0 0 0;
+  }
+  a {     /*aタグ全部に適用*/
+    text-decoration: none;
+  }
+  a.naiyou:hover {       /*内容にカーソルを合わせた時*/
+    text-decoration: underline;
+    color: #ffffff;
+  }
+  .naiyou {      /*内容欄のみため*/
+    color: #ffffff;
+    font-size: 12px;
+  }
+  .icon {
+    color: white;
+  }
+  .mercari {
+    width: 120px;
+    height: 30px;
+  }
+  a.mercari:hover { 
+    opacity: 0.6;   /*疑似クラスhoverマウスカーソル表示を設定できます*/
+  } 
+  &__top-contents {
+    width: 1020px;
+    height: 313px;
+    margin: 0 auto;
+    &__about {
+      display:  inline-block;   /*インラインブロック要素にする */
+      vertical-align:  top;       /* 要素を上揃えにする */
+      width: auto;
+      height: 260px;
+      margin-top: 18px;
+      padding: 0px 40px 0px 0px;
+      &__overview__icon {
+        display: flex;
+        height: 30px;
+        width: 80px;   
+        margin-top: 30px;   
+        &__twitter {
+          color: white;
+          height: 30px;
+          width: 30px;
+          font-size: 30px;
+          margin-right: 20px;
+        }
+        &__facebook {
+          height: 30px;
+          width: 30px;
+          font-size: 30px;
+        }
+      }
+    }
+    &__help {
+      display:  inline-block;
+      vertical-align:  top;
+      margin-top: 18px;
+      padding: 0px 40px 0px 0px;
+    }
+    &__privacy {
+      display:  inline-block;
+      vertical-align:  top; 
+      width: auto;
+      height: 170px;
+      margin-top: 18px;
+      padding: 0px 40px 0px 0px;
+      &__left-overview {
+        display:  inline-block;
+        vertical-align:  top;
+        width: 190px;
+        height: 128px;
+        padding-right: 10px;
+      }
+      &__right-overview {
+        display:  inline-block;
+        vertical-align:  top;
+        width: 190px;
+        height: 128px;
+        padding-left: 10px;
+      }
+    }
+    &__country {
+      display:  inline-block;
+      vertical-align:  top;
+      width: auto;
+      height: 120px;
+      margin-top: 18px;
+      padding: 0px 40px 0px 0px;
+    }
+  }
+  &__last-content {
+    width: 1020px;
+    height: 31px;
+    margin: 30px 190px 20px;
+    display: flex;
+    align-items: center;
+    &__lnc {
+      color: #ffffff;
+      font-size:12px;
+      height: 12px;
+      width: 75%;
+      padding-left: 15px;
+      text-align: center;
+      font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ', 'ＭＳ Ｐゴシック','MS PGothic'
+    }
+  }
+}
