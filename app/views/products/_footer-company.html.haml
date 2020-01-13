@@ -1,0 +1,76 @@
+.footer_company
+  .footer_company__top-contents
+    .footer_company__top-contents__about
+      %h2.footer_company__top-contents__about__title
+        メルカリについて
+      %ul.footer_company__top-contents__about__overview
+        %li.overview
+          = link_to '会社概要（運営会社）', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '採用情報', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'プレスリリース', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '公式ブログ', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'メルカリロゴ利用ガイドライン', 'http://google.co.jp',class: "naiyou"
+        .footer_company__top-contents__about__overview__icon
+          .footer_company__top-contents__about__overview__icon__twitter
+            = link_to 'https://twitter.com/mercari_jp',target:"_blank",class: "icon" do
+              = icon('fab','twitter', class: 'twitter')
+          .footer_company__top-contents__about__overview__icon__facebook
+            = link_to 'https://www.facebook.com/mercarijp',class: "icon" do
+              = icon('fab','facebook-square',target:"_blank", class: 'facebook') #targe:"_blankで別タブに表示"
+    .footer_company__top-contents__help
+      %h2.footer_company__top-contents__help__title
+        ヘルプ＆ガイド
+      %ul.footer_company__top-contents__help__overview
+        %li.overview
+          = link_to 'メルカリガイド', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'らくらくメルカリ便', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'ゆうゆうメルカリ便', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '大型メルカリ便', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '車体取引ガイド', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'メルカリあんしん・あんぜん宣言！', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '偽ブランド品撲滅への取り組み', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'メルカリボックス', 'http://google.co.jp',class: "naiyou"
+    .footer_company__top-contents__privacy
+      %h2.footer_company__top-contents__privacy__title
+        プライバシーと利用規約
+      %ul.footer_company__top-contents__privacy__left-overview
+        %li.overview
+          = link_to 'プライバシーポリシー', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'メルカリ利用規約', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'あんしんスマホサポート制度に関する利用特約', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'コンプライアンスポリシー', 'http://google.co.jp',class: "naiyou"
+      %ul.footer_company__top-contents__privacy__right-overview
+        %li.overview
+          = link_to '個人データの安全管理に係る基本方針', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '特定商取引に関する表記', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '資金決済法に基づく表示', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to '法令遵守と犯罪防止のために', 'http://google.co.jp',class: "naiyou"
+    .footer_company__top-contents__country
+      %h2.footer_company__top-contents__country__title
+        国
+      %ul.footer_company__top-contents__country__overview
+        %li.overview
+          = link_to '日本', 'http://google.co.jp',class: "naiyou"
+        %li.overview
+          = link_to 'United States', 'http://google.co.jp',class: "naiyou"
+  .footer_company__last-content
+    = link_to image_tag("logo_white.svg",width: 30, height: 30),'http://google.co.jp', class:"mercari"
+    .footer_company__last-content__lnc
+      © Mercari, Inc.

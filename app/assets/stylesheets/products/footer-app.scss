@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer_app {
+  background-color: whitesmoke;
+  height: 260px;
+  width: 1440px;
+  position: relative; /*親要素*/
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    // background-color: wheat;
+    margin: 0 345px;
+    width: 750px;
+    height: 260px;
+    position: absolute; /*子要素*/
+    top: 0;
+    &__left-content {
+      background-color: #999999;
+      max-width: 418px;
+      height: 260px;
+      display: flex;
+      flex-direction: column; /*フレックスコンテナに対して積み重なるように配置*/
+      justify-content: center;
+      // -webkit-box-pack: center;
+      &__top {
+        // height: 24px;
+        line-height: 24px;
+        color: #FFFFFF;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      &__center {
+        color: #FFFFFF;
+        margin-bottom: 20px;
+        line-height: 35px;
+        // height: 35px;
+        font-size: 35px;
+        white-space: nowrap; /*改行を禁止するプロパティ*/
+      }
+      &__bottom {
+        background-color: blanchedalmond;
+        height: 68px;
+      }
+    }
+    &__right-content {
+      background-color: yellow;
+      width: 300px;
+      height: 260px;
+    }
+  }
+}
