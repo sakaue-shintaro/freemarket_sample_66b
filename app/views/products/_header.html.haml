@@ -1,0 +1,41 @@
+.header
+  .header__content
+    .hd-top
+      .hd-top__left
+        = image_tag "fmarket_logo_red.svg", class: "img-logo"
+      .hd-top__right
+        .hd-top__right__icon
+          = link_to "/", class: "normal" do
+            = icon('fas', 'search', class: 'search')
+    .hd-bottom
+      .hd-bottom__left
+        .hd-bottom__left__category
+          = link_to "/", class: "bold" do
+            = icon('fas', 'list-ul', class: 'icon')
+            カテゴリーから探す
+        .hd-bottom__left__bland
+          = link_to "/", class: "bold" do
+            = icon('fas', 'tag', class: 'icon')
+            ブランドから探す
+      .hd-bottom__right
+        .hd-bottom__right__new
+          = link_to "/", class: "sign" do
+            新規会員登録
+        .hd-bottom__right__signup
+          = link_to "/", class: "login" do
+            ログイン
+        -# .hd-bottom__right__info
+        -#   = link_to "/", class: "normal" do
+        -#     = icon('far', 'heart', class: 'ificon')
+        -#     いいね！一覧
+        -# .hd-bottom__right__info
+        -#   = link_to "/", class: "normal" do
+        -#     = icon('far', 'bell', class: 'ificon')
+        -#     お知らせ
+        -# .hd-bottom__right__info
+        -#   = link_to "/", class: "normal" do
+        -#     = icon('fas', 'check', class: 'ificongo')
+        -#     やることリスト
+        -# .hd-bottom__right__info
+        -#   = link_to "/", class: "normal" do
+        -#     マイページ
