@@ -3,11 +3,15 @@
 
 //      ↓変数名
 @mixin bg-test {
-  background:red;
+  height: 100px;
+  width: 200px;
+  background: blue;
 }
 
-//           ↓引数
-@mixin size($test-hi,$test-wi) {
+//      ↓変数名 ↓引数   ↓引数    ↓引数
+@mixin size($test-hi,$test-wi,$test-bg) {
   height: $test-hi;
   width: $test-wi;
+  background: $test-bg;
 }
+

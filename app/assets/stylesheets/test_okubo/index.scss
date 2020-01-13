@@ -1,0 +1,33 @@
+// Place all the styles related to the mypages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./color";
+@import "./font";
+@import "./mixin/test"; // 「フォルダー名/ファイル名」の順
+
+.test_okubo {
+  background-color: $bg-products;
+  font-family: $font-arial;
+  background-color: lightgreen;
+}
+
+//mixin例
+.test_okubo2 {
+  @include bg-test;
+}
+
+//mixin例_引数あり
+.test_okubo3 {
+  @include size(200px,300px,yellow);
+}
+
+//mixin例
+.test_okubo4 {
+  @include bg-test;
+}
+
+//mixin例_引数あり
+.test_okubo5 {
+  @include size(600px,600px,red);
+}
+
