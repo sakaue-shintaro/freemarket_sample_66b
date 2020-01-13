@@ -1,0 +1,9 @@
+//下記は、かリュキュラムからコピーした例題
+//https://master.tech-camp.in/curriculums/1090
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
