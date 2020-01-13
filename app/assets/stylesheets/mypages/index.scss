@@ -3,8 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "./color";
 @import "./font";
+@import "./mixin/mypage"; // 「フォルダー名/ファイル名」の順
 
 .my {
   background-color: $bg-products;
   font-family: $font-arial;
+}
+
+//mixin例_引数あり
+.my2 {
+  @include size(400px,200px);
+}
+
+//mixin例
+.my3 {
+  @include bg-test;
 }
