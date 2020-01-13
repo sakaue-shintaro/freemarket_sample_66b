@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer_app {
+  height: 260px;
+  width: 1440px;
+  position: relative; /*親要素*/
+  .flogo {
+    height: 68px;
+    width: 68px;
+    margin-right: 20px;
+  }
+  .app {
+    height: 40px;
+    width: 144px;
+    margin-right: 8px;
+  }
+  .google {
+    height: 40px;
+    width: 144px;
+  }
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 345px;
+    width: 750px;
+    height: 260px;
+    position: absolute; /*子要素*/
+    top: 0;
+    &__left-content {
+      max-width: 418px;
+      height: 260px;
+      display: flex;
+      flex-direction: column; /*フレックスコンテナに対して積み重なるように配置*/
+      justify-content: center;
+      &__top {
+        color: #FFFFFF;
+        line-height: 24px;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      &__center {
+        color: #FFFFFF;
+        margin-bottom: 20px;
+        line-height: 35px;
+        font-size: 35px;
+        white-space: nowrap; /*改行を禁止するプロパティ*/
+      }
+      &__bottom {
+        height: 68px;
+        
+      }
+    }
+    &__right-content {
+      width: 300px;
+      height: 260px;
+    }
+  }
+}
