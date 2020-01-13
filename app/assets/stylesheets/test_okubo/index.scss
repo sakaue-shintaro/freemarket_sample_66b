@@ -3,8 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "./color";
 @import "./font";
+@import "./mixin/test"; // 「フォルダー名/ファイル名」の順
 
-.my {
+.test_okubo {
   background-color: $bg-products;
   font-family: $font-arial;
+  background-color: lightgreen;
+}
+
+//mixin例_引数あり
+.test_okubo2 {
+  @include size(100px,200px);
+  background-color: lightblue;
+}
+
+//mixin例
+.test_okubo3 {
+  @include bg-test;
 }

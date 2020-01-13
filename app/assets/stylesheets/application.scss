@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+//下記関連ファイルは、最後に削除
+@import "test_okubo";
+//------------------------------
 @import "./reset";
 @import "products";
 @import "signup";
