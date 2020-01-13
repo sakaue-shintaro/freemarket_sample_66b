@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin box($height, $width) {  //高さ横幅
+  height: $height;
+  width: $width;
+}
+@mixin list($size) {
+  color: rgb(204, 204, 204);  //アイコン色サイズ
+  font-size: $size;
+  margin-right: 10px;
+}
+@mixin imagefull {  //画像範囲内最大表示
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+@mixin link($height, $color) {  //箱内リンク化下線消し
+  height: $height;
+  display: block;
+  color: $color;
+  text-decoration: none;
+}
+
+.header {
+  height: 100px;
+  min-width: 1020px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0 2px 4px;
+  &__content {
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 8px;
+    .hd-top {
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        position: relative;
+        width: 140px;
+        margin-right: 45px;
+        .img-logo {
+          position: absolute;
+          @include imagefull; //画像範囲内最大表示
+        }
+      }
+      &__right {
+        width: 841px;
+        border: solid 1px;
+        border-color: grey;
+        border-radius: 5px / 5px;
+        padding: 0 50px 0 10px;
+        position: relative;
+        &__icon {
+          position: absolute;
+          right: 0;
+          .search {
+            width: 40px;
+            line-height: 40px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .hd-bottom {
+      height: 44px;
+      line-height: 32px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        display: flex;
+        font-size: 14px;
+        &__category {
+          padding-right: 10px;
+        }
+        &__bland {
+          padding-left: 10px;
+        }
+        .bold {
+          @include link(44px, #333);  //箱内リンク化下線消し
+          font-weight: 600;
+        }
+        .icon {
+          color: red;
+        }
+      }
+      &__right {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 14px;
+        &__info {
+          padding: 0 10px;
+          .ificon {
+            @include list(19px);  //アイコン色サイズ
+          }
+          .ificongo {
+            @include list(20px);  //アイコン色サイズ
+            -webkit-text-stroke:1px #fff;
+          }
+        }
+        &__new {
+          @include box(32px, 106px);  //高さ横幅
+          background-color: #EA352D;
+          text-align: center;
+          border-radius: 5px / 5px;
+          .sign {
+            @include link(44px, white); //箱内リンク化下線消し
+          }
+        }
+        &__signup {
+          @include box(32px, 76px);  //高さ横幅
+          margin-left: 11px;
+          text-align: center;
+          border: solid 1px;
+          border-color: #0095EE;
+          border-radius: 5px / 5px;
+          transition: all  0.3s ease;
+        }
+        &__signup:hover {
+          background-color: #0095EE;
+          .login:hover {
+            color: white;
+          }
+        }
+        .login {
+          @include link(100%,#0095EE);  //箱内リンク化下線消し
+        }
+      }
+    }
+    .normal {
+      @include link(44px, #333);  //箱内リンク化下線消し
+    }
+  }
+}
