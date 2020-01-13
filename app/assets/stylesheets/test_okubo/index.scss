@@ -18,11 +18,16 @@
 
 //mixin例_引数あり
 .test_okubo3 {
-  @include size(200px,200px,yellow);
+  @include size(200px,300px,yellow);
 }
 
 //mixin例
 .test_okubo4 {
   @include bg-test;
+}
+
+//mixin例_引数あり
+.test_okubo5 {
+  @include size(600px,600px,red);
 }
 
