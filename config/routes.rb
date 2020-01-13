@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup/index'  => 'signup#index'
   get 'mypages/index'  => 'mypages#index'
   get 'test_okubo/index'  => 'test_okubo#index'
+  get 'test_okubo/link'  => 'test_okubo#link'
   get 'signup/registration_data1'  => 'signup#ragistration_data1'
   get 'signup/registration_data2'  => 'signup#ragistration_data2'
   get 'signup/registration_data3'  => 'signup#ragistration_data3'

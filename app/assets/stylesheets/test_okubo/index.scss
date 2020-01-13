@@ -21,3 +21,8 @@
   @include size(200px,200px,yellow);
 }
 
+//mixin例
+.test_okubo4 {
+  @include bg-test;
+}
+
