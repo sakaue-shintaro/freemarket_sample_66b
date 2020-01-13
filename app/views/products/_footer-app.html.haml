@@ -7,9 +7,8 @@
       .footer_app__contents__left-content__center 
         今すぐ無料ダウンロード！
       .footer_app__contents__left-content__bottom
-        .footer_app__contents__left-content__bottom__mercari
-        .footer_app__contents__left-content__bottom__appstore
-        .footer_app__contents__left-content__bottom__googleplay
+        = image_tag 'logo_red.svg', alt: 'logo', class: 'flogo'
+        = link_to image_tag("app_store.jpg", class:"app"),'https://apps.apple.com/jp/app/id667861049?l=ja', class:"app"
     .footer_app__contents__right-content
       = image_tag 'cherry-blossom.jpg', class: 'footer_app__contents__right-content'
 
