@@ -18,11 +18,14 @@
       text-align: center;
     }
     &__icon {
-      height: 55px;
+      height: 63px;
       width: 160px;
-      font-size: 55px;
-      color: #ffffff;
       text-align: center;
+      .icon {
+        font-size: 55px;
+        color: #ffffff;
+        padding-top: 8px;  
+      }
     }
   }
 }
