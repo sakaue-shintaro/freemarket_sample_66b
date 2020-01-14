@@ -1,7 +1,25 @@
+@import "./mixin/mypage";
+
 .user-mypage-content__right__body {
   float: right;
   width: 700px;
   margin: 0;
   padding: 0;
   background: #fff;
+  .content {
+    background-color: honeydew;
+    height: 200px;
+    padding: 20px;
+    position: relative;
+    &__user {
+
+    }
+  }
 }
+
+// a {
+//   @include a-element;
+// }
+// a:hover {
+//   @include a-hover-element;
+// }
