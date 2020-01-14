@@ -1,3 +1,25 @@
-exhibition-btn {
-  z-index: 2;
+.exhibition {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 160px;  /*同じ高さと横幅を指定*/
+  width: 160px;
+  border-radius: 80%;  /*高さと横の半分の値を指定すると正円になる*/
+  background-color: red;
+  &__text-icon {
+    width: 160px;
+    height: 160px;
+    padding-top: 30px;
+    &__text {
+      width: 160px;
+      font-size: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+    &__icon {
+      font-size: 60px;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
 }
