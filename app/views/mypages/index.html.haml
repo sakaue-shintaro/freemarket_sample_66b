@@ -1,8 +1,4 @@
--# .okubo-header
--#   ヘッダーの場所だよ（仮置き、あとで消す）
-/-------------------------------
-
-.priducts-toppage-header
+%header.priducts-toppage-header
   = render 'products/header'
 .user-mypage-header
   マイページのヘッダーは、ここを作成する。
@@ -13,12 +9,7 @@
     = render 'right-body'
 .products-toppage-footer-app
   = render 'products/footer-app'
-.products-toppage-footer-company
+%footer.products-toppage-footer-company
   = render 'products/footer-company'
-
-/-------------------------------
--# .okubo-footer-app
--#   フッターappの場所だよ（仮置き、あとで消す）
-
--# .okubo-footer-app
--#   フッター会社の場所だよ（仮置き、あとで消す）
+.exhibition-btn
+  = render 'products/exhibition-btn'
