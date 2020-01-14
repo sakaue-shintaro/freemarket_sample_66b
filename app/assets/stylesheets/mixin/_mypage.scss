@@ -1,3 +1,8 @@
-// @mixin bg-test {
-//   background:red;
-// }
+@mixin a-element {
+  text-decoration: none;
+  transition: background-color .5s;
+}
+
+@mixin a-hover-element {
+  background-color: #eeeeee;
+}
