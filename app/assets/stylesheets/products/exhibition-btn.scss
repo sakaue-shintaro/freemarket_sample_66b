@@ -12,12 +12,15 @@
     padding-top: 30px;
     &__text {
       width: 160px;
+      height: 30px;
       font-size: 24px;
       color: #ffffff;
       text-align: center;
     }
     &__icon {
-      font-size: 60px;
+      height: 55px;
+      width: 160px;
+      font-size: 55px;
       color: #ffffff;
       text-align: center;
     }
