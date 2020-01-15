@@ -7,19 +7,83 @@
   padding: 0;
   background: #fff;
   .content {
-    background-color: honeydew;
+    background: honeydew;
     height: 200px;
-    padding: 20px;
     position: relative;
+    .user-exhibition {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      width: 700px;
+    }
+    a.user-exhibition:hover {
+      opacity: 0.6;
+      color: black;
+      .content__name {
+        text-decoration: underline;
+      }
+    }
     &__user {
-
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      .user {
+        height: 60px;
+        width: 60px;
+      }
+    }
+    &__name {
+      font-size: 14px;
+      margin-top: 8px;
+      width: 700px;
+      color: black;
+      text-align: center;
+    }
+    &__number {
+      width: 700px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: black;
+      text-align: center;
+      div {
+        display: inline-block;
+      }
+      span {
+        margin-left: 8px;
+      }
+      .count {
+        font-weight: 500;
+        padding-bottom:1px;
+        text-decoration: none;
+      }
+      div+div {
+        margin-left: 16px;
+      }
+    }
+  }
+  .mypage {
+    width: 700px;
+    ul.tabs {
+      display: flex;
+      width: 700px;
+      li.tab-notic {
+        width: 350px;
+        .tab-notic {
+          width: 350px;
+        }
+      }
+      li.tab-do {
+        width: 350px;
+      }
     }
   }
 }
+
 
 // a {
 //   @include a-element;
 // }
 // a:hover {
-//   @include a-hover-element;
+// @include a-hover-element;
 // }

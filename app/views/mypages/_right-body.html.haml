@@ -1,4 +1,23 @@
 .user-mypage-content__right__body
-  -# .content
-  -#   .content__user
-  -#     = link_to("https://www.google.com/") class: "" do
+  .content  
+    = image_tag "user-bg.jpg", alt: "img", class: "content"
+    = link_to ('/'), class: "user-exhibition"  do
+      .content__user
+        = image_tag "user.jpg", alt: "user-img", class: "user"
+      .content__name カト
+      .content__number
+        %div
+          評価
+          %span.count 0
+        %div
+          出品数
+          %span.count 0
+  .mypage
+    %ul.tabs
+      %li.tab-notic
+        = link_to ('/'), class: "tab-notic" do
+          お知らせ
+      %li.tab-do
+        = link_to ('/'), class: "tab-do" do
+          やることリスト
+    .mypage__tabs-list
