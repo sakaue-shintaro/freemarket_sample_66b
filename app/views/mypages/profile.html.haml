@@ -1,11 +1,7 @@
 %header.priducts-toppage-header
   = render 'products/header'
-%nav.user-mypage-header
-  %ul
-    %li.user-mypage-header__menu
-      = link_to "/", class: "user-mypage-content__left__menu__list__box__item" do
-        = icon('fas', 'chevron-right', class:'icon')
-        お知らせ
+.user-mypage-header
+  マイページのヘッダーは、ここを作成する。
 .user-mypage-content
   .user-mypage-content__left
     = render 'left-menu'

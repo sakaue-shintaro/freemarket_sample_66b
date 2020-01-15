@@ -3,12 +3,16 @@
 .user-mypage-content__left__menu__list__box {
   height: 48px;
   width: 280px;
-  border-top: 1px solid #eee;
+  margin: 1px;
   a {
     @include a-element;
   }
   a:hover {
     @include a-hover-element;
+    .icon {
+      color: black;
+      transform: translate(50%, 0);
+    }
   }
 
   &__item {
@@ -24,9 +28,12 @@
       top: 50%;
       right: 16px;
       color: #ccc;
-      transform: translate(0, -50%);
       transition: all ease-out .2s;
     }
+    // .icon:hover {
+    //   color: black;
+    //   transform: translate(50%, 0);
+    // }
   }
   &__item.active {
     background: #eee;
@@ -40,3 +47,4 @@
 .user-mypage-content__left__menu__head {
   margin: 40px 0 0;
 }
+
