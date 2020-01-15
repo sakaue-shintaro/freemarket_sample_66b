@@ -85,3 +85,4 @@ gem 'jquery-rails' #スライドショー
 gem 'font-awesome-sass' #アイコン
 gem 'mini_magick' #画像リサイズ
 gem 'pry-rails' #binding.pry
+gem 'ancestry' #階層構造のテーブル作成の便利ツール
