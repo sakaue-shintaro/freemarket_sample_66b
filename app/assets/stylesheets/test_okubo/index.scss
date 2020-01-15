@@ -4,6 +4,11 @@
 @import "./color";
 @import "./font";
 @import "./mixin/test"; // 「フォルダー名/ファイル名」の順
+@import "./mixin/clearfix";
+
+.clearfix {
+  @include clearfix;
+  }
 
 .test_okubo {
   background-color: $bg-products;
@@ -11,7 +16,10 @@
   background-color: lightgreen;
 }
 
-//mixin例
+//引数なしは、元のmixinファイルを変更すると全てに影響が出る。
+//引数ありは、各cssで値を割り当てられる。
+
+//mixin例_引数なし
 .test_okubo2 {
   @include bg-test;
 }
@@ -21,7 +29,7 @@
   @include size(200px,300px,yellow);
 }
 
-//mixin例
+//mixin例_引数なし
 .test_okubo4 {
   @include bg-test;
 }
