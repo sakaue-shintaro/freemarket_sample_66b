@@ -1,0 +1,185 @@
+.new-item {
+  color: rgb(51, 51, 51);
+  &__content {
+    width: 700px;
+    margin: 0 auto;
+    &__top {
+      padding: 32px;
+      font-size: 22px;
+      margin-bottom: 1px;
+      background: white;
+      h2 {
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+    .exhibit {
+      height: 100%;
+      margin-top: 1px;
+      padding: 40px;
+      background: white;
+      label {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .lg {
+        font-size: 16px;
+      }
+      .mg {
+        font-size: 24px;
+      }
+      span {
+        font-size: 12px;
+        margin-left: 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        background: #ea352d;
+        color: #fff;
+        vertical-align: top;
+        font-weight: bold;
+      }
+      &__text {
+        margin: 0 auto;
+        p {
+          font-size: 14px;
+        }
+        &__content {
+          height: 100%;
+          p {
+            font-size: 13px;
+            margin-top: 8px;
+          }
+          .place {
+            text-align: center;
+          }
+          &__box {
+            height: 48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 8px;
+            padding: 10px 16px 8px;
+          }
+        }
+        &__image {
+          margin-top: 16px;
+          height: 162px;
+          width: 620px;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+        }
+        &__form {
+          margin-top: 40px;
+          &__box {
+            margin-top: 8px;
+            padding: 10px;
+            min-height: 104px;
+            border: 1px solid #ccc;
+          }
+        }
+        &__btn {
+          height: 50px;
+          line-height: 50px;
+          margin-top: 40px;
+          background: #ea352d;
+          color: #fff;
+        }
+        h4 {
+          text-align: center;
+        }
+        &__back {
+          height: 50px;
+          line-height: 50px;
+          width: 45%;
+          margin: 24px auto 0;
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+        }
+      }
+      &__detail {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        &__left {
+          height: 100%;
+          display: flex;
+          h3 {
+            color: #888;
+            font-size: 14px;
+            font-weight: bolder;
+            line-height: 14px;
+          }
+          .question {
+            // display: inline-block;
+            height: 14px;
+            width: 14px;
+            color: #fff;
+            background: #0099e8;
+            font-size: 12px;
+            text-align: center;
+            line-height: 14px;
+            border-radius: 50%;
+            font-weight: normal;
+          }
+          .min {
+            font-size: 12px;
+          }
+        }
+        &__right {
+          width: 65%;
+          h5 {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 48px;
+          }
+          &__box {
+            height: 48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            padding: 0 16px;
+          }
+          &__top {
+            margin-top: 40px;
+          }
+          &__body {
+            display: flex;
+            padding-bottom: 24px;
+            &__text {
+              width: 50%;
+            }
+            &__pay {
+              width: 50%;
+              display: flex;
+              &__box {
+                height: 48px;
+                width: 100%;
+                padding: 10px 15px;
+                margin-left: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+              }
+            }
+          }
+          &__commission {
+            height: 72px;
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            h6 {
+              font-size: 2px;
+            }
+          }
+          &__gain {
+            height: 83px;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
