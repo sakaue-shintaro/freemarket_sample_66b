@@ -11,7 +11,10 @@
   background-color: lightgreen;
 }
 
-//mixin例
+//引数なしは、元のmixinファイルを変更すると全てに影響が出る。
+//引数ありは、各cssで値を割り当てられる。
+
+//mixin例_引数なし
 .test_okubo2 {
   @include bg-test;
 }
@@ -21,7 +24,7 @@
   @include size(200px,300px,yellow);
 }
 
-//mixin例
+//mixin例_引数なし
 .test_okubo4 {
   @include bg-test;
 }
