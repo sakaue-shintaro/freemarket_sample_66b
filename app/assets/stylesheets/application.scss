@@ -21,14 +21,22 @@
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./color";
+@import "./mixin/clearfix";
 
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  position: relative;
   box-sizing: border-box;
   background-color: $bg-products;
+  display: block;
+}
+
+body, .wrap {
+  @include clearfix;
 }
 
 .wrap {
