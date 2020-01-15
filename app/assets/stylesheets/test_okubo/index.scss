@@ -4,6 +4,11 @@
 @import "./color";
 @import "./font";
 @import "./mixin/test"; // 「フォルダー名/ファイル名」の順
+@import "./mixin/clearfix";
+
+.clearfix {
+  @include clearfix;
+  }
 
 .test_okubo {
   background-color: $bg-products;
