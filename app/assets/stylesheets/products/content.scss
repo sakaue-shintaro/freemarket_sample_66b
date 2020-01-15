@@ -200,13 +200,16 @@
             margin: 10px;
             border: solid 1px black;
             height: 252px;
-            width:188px;
+            //width:188px;
             margin-bottom: 20px;
             background-color:#ffffff;
-            .image-size{
-              width: 188px;
-              height: 252px;
+            &__size {
+              width:188px;
             }
+            //.image-size{
+              //width: 188px;
+              //height: 252px;
+            //}
         }
         }
         &__imagetest{
