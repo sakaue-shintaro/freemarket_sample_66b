@@ -14,7 +14,6 @@
       transform: translate(50%, 0);
     }
   }
-
   &__item {
     position: relative;
     display: block;
@@ -30,10 +29,6 @@
       color: #ccc;
       transition: all ease-out .2s;
     }
-    // .icon:hover {
-    //   color: black;
-    //   transform: translate(50%, 0);
-    // }
   }
   &__item.active {
     background: #eee;
