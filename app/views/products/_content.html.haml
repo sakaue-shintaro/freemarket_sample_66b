@@ -28,10 +28,28 @@
       .center__space-a__new-item1__link1
         = link_to "もっとみる"
       .center__space-a__new-item1__image-space
-        .center__space-a__new-item1__image-space__image
-          ここは写真です
-        .center__space-a__new-item1__image-space__imagetest
-          testimage
+        %ul.space
+          %li.space__box
+            = image_tag @image.url, class:'image-size'
+          %li.space__box
+            = image_tag @image.url, class:'image-size'
+          %li.space__box
+            = image_tag @image.url, class:'image-size'
+          %li.space__box
+            = image_tag @image.url, class:'image-size'
+          %li.space__box
+            
+          %li.space__box
+            6
+          %li.space__box
+            7
+          %li.space__box
+            8
+          %li.space__box
+            9
+          %li.space__box
+            10
+        
   .center__space-b
     .center__space-b__new-item2
       .center__space-b__new-item2__title2
