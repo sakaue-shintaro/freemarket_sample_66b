@@ -1,1 +1,38 @@
-きたよ
+.contena
+  .user_new_header
+    .logo
+      =link_to root_path do
+        = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+  .user_new_main
+    .contents
+      .registration
+        .new_member
+          .new_member_name 新規会員登録
+        .mail_sns
+          %ul.box
+            .mail_address
+              -# = link_to "test","registration_data1"
+              -# <a href="registration_data1.html">メールアドレスで登録する</a>
+              = link_to "http://localhost:3000/signup/registration_data1", class: "access" do
+                %i.fas.fa-envelope.fa-fw
+                メールアドレスで登録する
+            .blue_sns
+              = link_to "https://www.facebook.com/", class: "access" do
+                %i.fab.fa-facebook-square.fa-fw
+                Facebookで登録する
+            .white_sns
+              = link_to "https://www.google.com/", class: "access_white" do
+                %i.fab.fa-google.fa-fw
+                Google+で登録する
+  .user_new_footer
+    .head 
+    .info_box
+      .privacy　プライバシーポリシー
+      .terns メルカリ利用規約
+      .specific 特定商取引
+      .footer_logo_box
+        .footer_center
+          .gray
+            =link_to root_path do
+              = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+          .inc © Mercari, Inc.

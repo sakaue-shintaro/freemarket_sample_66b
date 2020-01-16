@@ -1,0 +1,91 @@
+.content {
+  .five_stage_header {
+    height: 128px;
+    .logo-box {
+      text-align: center;
+      display: flex;
+      margin: 0 auto;
+      .logo {
+        text-align: center;
+        line-height: 90px;
+        padding-top: 40px;
+        margin-left: 350px;
+      }
+      .first-phase {
+        width: 552px;
+        height: 72px;
+      }
+    }
+  }
+  .regist_main {
+    height: 100vh;
+    .center_box {
+      width: 700px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 0px 100px 40px;
+      .done-title {
+        height: 97px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 32px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f5f5f5;
+      }
+    }
+  .done__message {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    h1 {
+      text-align: center;
+
+    }
+    .u-box.btn-red {
+      width: 343px;
+      height: 50px;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      margin: 10px 0 0;
+      margin-bottom: 50px;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .form-require {
+      background-color: red;
+      color: white;
+      font-size: 12px;
+    }
+    .label {
+    font-weight: bold;
+    }
+  
+  .footer { 
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    .footer_center {
+      height: 220px;
+      width: 456px;
+      background-color: #EEEEEE;
+      color: #333;
+      text-align: center;
+      display: inline-block;
+      margin:0 auto;
+      font-size: 13px;
+      padding-top: 50px;
+        .gray {
+        margin:0 auto;
+        }
+        .inc {
+        font-size: 13px;
+        color: black;
+        }
+      }
+      }
+    }
+  }
+}
