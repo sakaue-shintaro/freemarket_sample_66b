@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get 'signup/registration_data3'  => 'signup#ragistration_data3'
   get 'signup/registration_data4'  => 'signup#ragistration_data4'
   get 'signup/registration_data5'  => 'signup#ragistration_data5'
+  get 'products/show'  => 'products#show'
   # -----------------------------------------------------------------------------
 end
