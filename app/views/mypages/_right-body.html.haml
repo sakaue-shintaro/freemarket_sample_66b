@@ -13,11 +13,19 @@
           出品数
           %span.count 0
   .mypage
-    %ul.tabs
-      %li.tab-notic
-        = link_to ('/'), class: "tab-notic" do
-          お知らせ
-      %li.tab-do
-        = link_to ('/'), class: "tab-do" do
-          やることリスト
+    %ul.tab
+      %li.select お知らせ
+      %li やることリスト
     .mypage__tabs-list
+      %ul.contents
+        %li 
+          = link_to ('/'), class: "list-link"  do
+            .figure
+              = image_tag "logo_red.svg", class: "logo"
+            .list-body
+              .list-body__text
+                おはよう
+              .list-body__time
+                = icon( "far", "clock", class: "clock")
+        %li.hide
+  -# .bottom-contents
