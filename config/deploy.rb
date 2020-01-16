@@ -9,7 +9,7 @@ set :application, 'freemarket_sample_66b'
 set :repo_url,  'git@github.com:sakaue-shintaro/freemarket_sample_66b.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :linked_files, %w{ config/secrets.yml }
 
 set :rbenv_type, :user
