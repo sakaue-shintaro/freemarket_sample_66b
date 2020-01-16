@@ -1,18 +1,34 @@
-.center
-  .center__content
-    .top
-      %h2電話番号の確認
-    .main
-      .main__text
-        .main__text__top
-          %h2携帯電話の番号
-          .main__text__top__box
-        %p本人確認のため、携帯電話のSMS(ショートメッセージービス)を利用して認証を行います。
-        .main__text__btn
-          %h3 SMSを送信する
-        %p※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-        .main__text__bottom
-          = link_to ('http://google.co.jp'), class: "info" do
-            電話番号の確認が必要な理由
-            = icon("fas", "chevron-right",class: "arrow")
-            %span<>  
+.content
+  .second__stage__header
+    .logo-box
+      .logo
+        =link_to root_path do
+          = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+      .first-phase
+        = image_tag "step-2.png", size: "590x130", alt: "第二段階"
+  .center
+    .center__content
+      .top
+        %h2電話番号の確認
+      .main
+        .main__text
+          .main__text__top
+            %h2携帯電話の番号
+            .main__text__top__box
+          %p本人確認のため、携帯電話のSMS(ショートメッセージービス)を利用して認証を行います。
+        = link_to 'http://localhost:3000/signup/registration_data3' do
+          .main__text__btn
+            %h3 SMSを送信する
+          %p※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .main__text__bottom
+            = link_to ('http://localhost:3000/signup/registration_data3'), class: "info" do
+              電話番号の確認が必要な理由
+              = icon("fas", "chevron-right",class: "arrow")
+              %span<>  
+  .footer
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.
