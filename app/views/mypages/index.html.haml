@@ -4,8 +4,10 @@
   %ul
     %li.user-mypage-header__menu
       = link_to "/", class: "user-mypage-header__menu__item" do
-        = icon('fas', 'chevron-right', class:'icon')
-        お知らせ
+        メルカリ
+      = icon('fas', 'chevron-right', class:'icon')
+    %li.user-mypage-header__menu
+      %span{:itemprop => "title"} マイページ
 .user-mypage-content
   .user-mypage-content__left
     = render 'left-menu'
