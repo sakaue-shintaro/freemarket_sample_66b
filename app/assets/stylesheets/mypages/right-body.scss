@@ -1,0 +1,211 @@
+@import "./mixin/mypage";
+
+.user-mypage-content__right__body {
+  float: right;
+  width: 700px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  .content {
+    background: honeydew;
+    height: 200px;
+    position: relative;
+    .user-exhibition {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      width: 700px;
+    }
+    a.user-exhibition:hover {
+      opacity: 0.6;
+      color: black;
+      .content__name {
+        text-decoration: underline;
+      }
+    }
+    &__user {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      .user {
+        height: 60px;
+        width: 60px;
+      }
+    }
+    &__name {
+      font-size: 14px;
+      margin-top: 8px;
+      width: 700px;
+      color: black;
+      text-align: center;
+    }
+    &__number {
+      width: 700px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: black;
+      text-align: center;
+      div {
+        display: inline-block;
+      }
+      span {
+        margin-left: 8px;
+      }
+      .count {
+        font-weight: 500;
+        padding-bottom:1px;
+        text-decoration: none;
+      }
+      div+div {
+        margin-left: 16px;
+      }
+    }
+  }
+  .mypage {      /*タブコンテント*/
+    width: 700px;
+    .tab {
+      display: flex;
+      background: #eee;
+      font-weight: bold;
+      cursor: pointer;
+      li:hover {
+        opacity: 0.8;
+      }
+      li {
+        width: 50%;
+        color: #333;
+        font-size: 18px;
+        line-height: 72px;
+        text-align: center;
+      }
+      .select {
+        background-color: #fff;
+        border-top:2px solid #ea352d;
+      }
+    }
+      &__tabs-list {
+      .contents {
+        text-align: center;
+        li {
+          height: 80px;
+          border-bottom:1px solid #eee;
+          position: relative;
+          .list-link:hover {
+            background-color: #f2f2f2;
+          }
+          .list-link {
+            display: block;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            .figure {
+              float: left;
+              width: 48px;
+              height: 48px;
+              .logo {
+                width: 48px;
+                height: 48px;
+              }
+            }
+            .list-body {
+              margin: 0 40px 0 68px;
+              text-align: left;
+              font-size: 14px;
+              &__text {
+                line-height: 1.5;
+              }
+              &__time {
+                color: #888;
+                .clock {
+                  margin-right: 6px;
+                }
+              }
+            }
+            .chevron {
+              position: absolute;
+              top: 40%;
+              right: 16px;
+            }
+          }
+        }
+        .hide {
+          display : none;
+        }
+      }
+    }
+    &__bottom {
+      border: 0;
+      width: 700px;
+      height: 89px;
+      padding: 16px;
+      .list-view {
+        display: block;
+        height: 56px;
+        margin: 0 auto;
+        background: #eee;
+        color: #333;
+        line-height: 56px;
+        text-align: center;
+      }
+      .list-view:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  .bottom {
+    padding-top: 40px;
+    background-color: #f5f5f5;
+    &__head {
+      padding: 0 16px;
+      background: #fafafa;
+      color: black;
+      font-weight: bold;
+      line-height: 72px;
+    }
+    .tabs {
+      display: flex;
+      background: #eee;
+      font-weight: bold;
+      cursor: pointer;
+      li:hover {
+        opacity: 0.8;
+      }
+      li {
+        width: 50%;
+        color: #333;
+        font-size: 18px;
+        line-height: 72px;
+        text-align: center;
+      }
+      .current {
+        background-color: #fff;
+        border-top:2px solid #ea352d;
+      }
+    }
+    &__list {
+      background-color: blanchedalmond;
+      width: 700px;
+      height: 236px;
+      .content {
+        height: 236px;
+        background-color: #fff;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+      li {
+        height: 236px;
+        color: #cccccc;
+        text-align: center;
+        .test1 {
+          padding-top: 60px;
+        }
+      }
+    }
+    .hide {
+      display: none;
+    }
+  }
+}
