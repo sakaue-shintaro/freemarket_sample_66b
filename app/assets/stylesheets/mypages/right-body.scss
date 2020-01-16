@@ -65,18 +65,14 @@
   .mypage {      /*タブコンテント*/
     width: 700px;
     .tab {
-      // list-style:none;
       display: flex;
       background: #eee;
-      // overflow: hidden;
       font-weight: bold;
       cursor: pointer;
       li:hover {
         opacity: 0.8;
       }
       li {
-        // position: relative;
-        // display: block;
         width: 50%;
         color: #333;
         font-size: 18px;
@@ -90,7 +86,6 @@
     }
       &__tabs-list {
       .contents {
-        // height: 81px;
         text-align: center;
         li {
           height: 80px;
@@ -147,7 +142,6 @@
       .list-view {
         display: block;
         height: 56px;
-        // width: 700px;
         margin: 0 auto;
         background: #eee;
         color: #333;
@@ -170,18 +164,14 @@
       line-height: 72px;
     }
     .tabs {
-      // list-style:none;
       display: flex;
       background: #eee;
-      // overflow: hidden;
       font-weight: bold;
       cursor: pointer;
       li:hover {
         opacity: 0.8;
       }
       li {
-        // position: relative;
-        // display: block;
         width: 50%;
         color: #333;
         font-size: 18px;
@@ -219,10 +209,3 @@
     }
   }
 }
-
-// a {
-//   @include a-element;
-// }
-// a:hover {
-// @include a-hover-element;
-// }
