@@ -1,7 +1,7 @@
 .user-mypage-content__right__body
   .content  
     = image_tag "user-bg.jpg", alt: "img", class: "content"
-    = link_to ('/'), class: "user-exhibition"  do
+    = link_to root_path, class: "user-exhibition"  do
       .content__user
         = image_tag "user.jpg", alt: "user-img", class: "user"
       .content__name カト
@@ -19,7 +19,7 @@
     .mypage__tabs-list
       %ul.contents
         %li{style: "display: block;"}
-          = link_to ('/'), class: "list-link"  do
+          = link_to root_path, class: "list-link"  do
             .figure
               = image_tag "logo_red.svg", class: "logo"
             .list-body
@@ -30,7 +30,7 @@
                 %span 1 時間前
             = icon("fas", "chevron-right", class: "chevron")
         %li{style: "display: none;"}
-          = link_to ('/'), class: "list-link"  do
+          = link_to root_path, class: "list-link"  do
             .figure
               = image_tag "logo_red.svg", class: "logo"
             .list-body
