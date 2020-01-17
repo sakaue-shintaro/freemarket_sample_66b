@@ -77,19 +77,8 @@ ActiveRecord::Schema.define(version: 20200117062427) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "seller_id",                  null: false
-    t.integer  "buyer_id"
-    t.string   "name",                       null: false
-    t.text     "discription",  limit: 65535, null: false
-    t.integer  "category_id",                null: false
-    t.string   "brand"
-    t.string   "state",                      null: false
-    t.string   "delivery_fee",               null: false
-    t.string   "sending_area",               null: false
-    t.string   "sending_day",                null: false
-    t.integer  "price",                      null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sending_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

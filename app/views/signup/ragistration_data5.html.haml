@@ -1,0 +1,29 @@
+.content
+  .five_stage_header
+    .logo-box
+      .logo
+        =link_to root_path do
+          = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+      .first-phase
+        = image_tag "step-5.png", size: "590x130", alt: "第三段階"
+  .regist_main
+    .center_box
+      .done-title
+        会員登録完了
+      .done__message
+        .h1
+          %h1ありがとうございます。
+          %h1会員登録が完了しました。
+        .next_btn
+        = link_to 'http://localhost:3000/' do
+          %button.u-box.btn-red{type: "submit"} メルカリをはじめる
+        .image
+          = link_to 'http://localhost:3000/signup/index' do
+            = image_tag "startfmarket.png", size: "420x420", alt: "フリマスタート"
+  .footer      
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.
