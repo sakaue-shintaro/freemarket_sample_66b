@@ -60,13 +60,29 @@
     margin: 0 40px 0 0;
   }
   &__right {
+    position: relative;
     float: right;
     width: 700px;
     margin: 0;
     padding: 0;
     background: #fff;
+    height:174px;
+    &__center-btn{
+      position: absolute;
+      top:60px;
+      left:200px;
+      width:320px;
+      height:50px;
+      color:#ffffff;
+      background-color: #ea352b;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      line-height: 48px;
+    } 
   }
 }
+
 
 .user-mypage-content__left__menu__list__box {
   height: 48px;
