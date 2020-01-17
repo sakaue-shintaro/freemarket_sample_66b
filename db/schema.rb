@@ -38,10 +38,9 @@ ActiveRecord::Schema.define(version: 20200117062427) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "name",       limit: 65535, null: false
+    t.string   "ancestry"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
   create_table "conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
