@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :user
   root "products#index"
   resources :products, only:[:new]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
   
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
