@@ -1,7 +1,3 @@
-@import "./color";
-@import "./font";
-@import "./mixin/mypage";
-@import "./mixin/clearfix";
 
 .clearfix {
   @include clearfix;
