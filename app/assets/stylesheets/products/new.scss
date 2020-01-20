@@ -54,6 +54,7 @@
           }
           &__box {
             height: 48px;
+            width: 100%;
             border: 1px solid #ccc;
             border-radius: 4px;
             margin-top: 8px;
@@ -70,6 +71,8 @@
         &__form {
           margin-top: 40px;
           &__box {
+            min-width: 620px;
+            max-width: 620px;
             margin-top: 8px;
             padding: 10px;
             min-height: 104px;
@@ -78,6 +81,8 @@
         }
         &__btn {
           height: 50px;
+          width: 100%;
+          font-size: 14px;
           line-height: 50px;
           margin-top: 40px;
           background: #ea352d;
@@ -134,8 +139,10 @@
           }
           &__box {
             height: 48px;
+            width: 100%;
             border: 1px solid #ccc;
             border-radius: 4px;
+            background: #fff;
             margin-top: 5px;
             padding: 0 16px;
           }
@@ -158,6 +165,7 @@
                 margin-left: 5px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
+                text-align: right;
               }
             }
           }

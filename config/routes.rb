@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :user
   root "products#index"
-  resources :products, only:[:new]
+  resources :products
   
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
