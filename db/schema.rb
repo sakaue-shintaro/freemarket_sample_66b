@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20200117062427) do
     t.string   "city_ward",   null: false
     t.string   "address",     null: false
     t.string   "building"
-    t.string   "tel"
+    t.string   "tel",         null: false
     t.string   "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
