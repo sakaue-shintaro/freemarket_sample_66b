@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    # @image = Image.find(1)
+    @products = Product.includes(:images)
   end
 
   def show
@@ -9,4 +9,5 @@ class ProductsController < ApplicationController
 
   def new
   end
+  
 end
