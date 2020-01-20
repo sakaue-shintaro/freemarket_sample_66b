@@ -10,9 +10,10 @@
       %span{itemprop:"title"} マイページ
 .user-mypage-content
   .user-mypage-content__left
-    = render 'left-menu'
+    = render 'left-menu-logout'
   .user-mypage-content__right
-    = render 'right-body'
+    .user-mypage-content__right__center-btn
+      = link_to "ログアウト",root_path,class:'btn'
   .clearfix
 .products-toppage-footer-app
   = render 'products/footer-app'
