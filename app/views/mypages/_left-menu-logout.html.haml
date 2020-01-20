@@ -1,7 +1,7 @@
 %nav.user-mypage-content__left__menu
   %ul.user-mypage-content__left__menu__list
     %li.user-mypage-content__left__menu__list__box
-      = link_to mypages_index_path, class: "user-mypage-content__left__menu__list__box__item active" do
+      = link_to mypages_index_path, class: "user-mypage-content__left__menu__list__box__item" do
         = icon('fas', 'chevron-right', class:'icon')
         マイページ
     %li.user-mypage-content__left__menu__list__box
@@ -95,6 +95,6 @@
         = icon('fas', 'chevron-right', class:'icon')
         電話番号の確認
     %li.user-mypage-content__left__menu__list__box
-      = link_to mypages_logout_path, class: "user-mypage-content__left__menu__list__box__item" do
+      = link_to mypages_logout_path, class: "user-mypage-content__left__menu__list__box__item active" do
         = icon('fas', 'chevron-right', class:'icon')
         ログアウト

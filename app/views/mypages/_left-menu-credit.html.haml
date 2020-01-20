@@ -1,7 +1,7 @@
 %nav.user-mypage-content__left__menu
   %ul.user-mypage-content__left__menu__list
     %li.user-mypage-content__left__menu__list__box
-      = link_to mypages_index_path, class: "user-mypage-content__left__menu__list__box__item active" do
+      = link_to mypages_index_path, class: "user-mypage-content__left__menu__list__box__item" do
         = icon('fas', 'chevron-right', class:'icon')
         マイページ
     %li.user-mypage-content__left__menu__list__box
@@ -79,7 +79,7 @@
         = icon('fas', 'chevron-right', class:'icon')
         発送元・お届け先住所変更
     %li.user-mypage-content__left__menu__list__box
-      = link_to mypages_credit_path, class: "user-mypage-content__left__menu__list__box__item" do
+      = link_to mypages_credit_path, class: "user-mypage-content__left__menu__list__box__item active" do
         = icon('fas', 'chevron-right', class:'icon')
         支払い方法
     %li.user-mypage-content__left__menu__list__box
