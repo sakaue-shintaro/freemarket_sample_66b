@@ -12,7 +12,19 @@
   .user-mypage-content__left
     = render 'left-menu-credit'
   .user-mypage-content__right
-    右側にクレジットカードを書くよ
+    .user-mypage-content__right__top
+      支払い方法
+    .user-mypage-content__right__box
+      .user-mypage-content__right__box__in
+        .user-mypage-content__right__box__in__text
+          クレジットカード一覧
+        .user-mypage-content__right__box__in__btn
+          %i.far.fa-credit-card
+          = link_to "クレジットカードを追加する", class:'btn'
+      .user-mypage-content__right__box__in2
+        .user-mypage-content__right__box__in2__link
+          = link_to "支払い方法について"
+          %i.fas.fa-chevron-right
   .clearfix
 .products-toppage-footer-app
   = render 'products/footer-app'
