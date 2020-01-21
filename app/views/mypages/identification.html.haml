@@ -1,13 +1,7 @@
 %header.priducts-toppage-header
   = render 'products/header'
-%nav.user-mypage-header
-  %ul
-    %li.user-mypage-header__menu
-      = link_to root_path, class: "user-mypage-header__menu__item" do
-        メルカリ
-      = icon('fas', 'chevron-right', class:'icon')
-    %li.user-mypage-header__menu
-      %span{itemprop:"title"} マイページ
+.breadcrumb
+  = render 'shared/breadcrumbs_identification'
 .user-mypage-content
   .user-mypage-content__left
     = render 'left-menu-identification'
@@ -71,7 +65,7 @@
       .user-mypage-content__right__content__send-btn
         = link_to '登録する', root_path,class:'btn'
       .user-mypage-content__right__content__link2
-        = link_to '本人情報の登録について＞',root_path
+        = link_to '本人情報の登録について＞',root_path,class:'b'
   .clearfix
 .products-toppage-footer-app
   = render 'products/footer-app'
