@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   get 'mypages/logout'  => 'mypages#logout'
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
-  get 'signup/step1'  => 'signup#step_data1'
-  get 'signup/step2'  => 'signup#step_data2'
-  get 'signup/step3'  => 'signup#step_data3'
-  get 'signup/step4'  => 'signup#step_data4'
-  get 'signup/step5'  => 'signup#step_data5'
+  get 'signup/step1'  => 'signup#step1'
+  get 'signup/step2'  => 'signup#step2'
+  get 'signup/step3'  => 'signup#step3'
+  get 'signup/step4'  => 'signup#step4'
+  get 'signup/step5'  => 'signup#step5'
   get 'products/show'  => 'products#show'
   # -----------------------------------------------------------------------------
 end
