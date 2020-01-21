@@ -4,7 +4,7 @@
 
 .footer_app {
   height: 260px;
-  width: 1440px;
+  width: 100%;
   position: relative; /*親要素*/
   .flogo {
     height: 68px;
@@ -23,11 +23,11 @@
   &__contents {
     display: flex;
     justify-content: space-between;
-    margin: 0 345px;
     width: 750px;
     height: 260px;
     position: absolute; /*子要素*/
     top: 0;
+    left: 33%;
     &__left-content {
       max-width: 418px;
       height: 260px;
