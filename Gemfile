@@ -76,6 +76,7 @@ gem 'haml-rails' #haml用
 #ユーザーサイド
 gem 'devise' #ユーザ登録
 gem 'payjp' #クレジット
+gem 'recaptcha', require: "recaptcha/rails" #ロボットではありません
 
 #商品サイド
 gem 'carrierwave' #画像アップロード
