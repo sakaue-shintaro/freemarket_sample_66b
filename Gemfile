@@ -76,6 +76,7 @@ gem 'haml-rails' #haml用
 #ユーザーサイド
 gem 'devise' #ユーザ登録
 gem 'payjp' #クレジット
+gem 'recaptcha', require: "recaptcha/rails" #ロボットではありません
 
 #商品サイド
 gem 'carrierwave' #画像アップロード
@@ -86,3 +87,8 @@ gem 'font-awesome-sass' #アイコン
 gem 'mini_magick' #画像リサイズ
 gem 'pry-rails' #binding.pry
 gem 'ancestry' #階層構造のテーブル作成の便利ツール
+gem 'rspec-rails'# テスト用
+gem 'rails-controller-testing'#テスト用
+gem 'factory_bot_rails'#データ用のデータを自動作成
+gem 'faker'#ダーミーデータをデータベースに入れるやつ
+gem 'gretel'#パンくず機能実装用
