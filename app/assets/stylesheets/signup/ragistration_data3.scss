@@ -22,7 +22,7 @@
       &__logo2{
         width: 600px;
         &__text{
-          font-size: 13px;
+          font-size: 12px;
           display: flex;
           padding-top: 35px;
           padding-left: 50px;
@@ -62,7 +62,7 @@
             background-color: #EA352D;
             position: absolute;
             top:10px;
-            left: 180px;
+            left: 175px;
             border-radius: 50%;
           }
           &__point3{
@@ -77,7 +77,7 @@
           &__point4{
             height: 15px;
             width: 15px;
-            background-color: #EA352D;
+            background-color: #CCCCCC;
             position: absolute;
             top:10px;
             left: 445px;
@@ -86,7 +86,7 @@
           &__point5{
             height: 15px;
             width: 15px;
-            background-color: #EA352D;
+            background-color: #CCCCCC;
             position: absolute;
             top:10px;
             left: 530px;
@@ -102,36 +102,29 @@
           }
           &__bar2{
             height: 2px;
-            width: 96px;
+            width: 120px;
             background-color: #EA352D;
             position: absolute;
             top:16px;
-            left: 84px;
+            left: 190px;
           }
           &__bar3{
             height: 2px;
-            width: 96px;
-            background-color: #EA352D;
+            width: 130px;
+            background-color: #CCCCCC;
             position: absolute;
             top:16px;
-            left: 84px;
+            left: 325px;
           }
           &__bar4{
             height: 2px;
-            width: 96px;
-            background-color: #EA352D;
+            width: 95px;
+            background-color: #CCCCCC;
             position: absolute;
             top:16px;
-            left: 84px;
+            left: 450px;
           }
-          &__bar5{
-            height: 2px;
-            width: 96px;
-            background-color: #EA352D;
-            position: absolute;
-            top:16px;
-            left: 84px;
-          }
+          
         }
       }
     }
