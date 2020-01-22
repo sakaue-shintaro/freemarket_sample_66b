@@ -1,8 +1,8 @@
 class ShowCategories < ActiveRecord::Migration[5.0]
   def change
     create_table :categories do |t|
-      t.text :pass,  null:false
-      t.text :item,  null:false
+      t.string  :name,  null:false
+      t.string  :ancestry
       t.timestamps
   end
 end

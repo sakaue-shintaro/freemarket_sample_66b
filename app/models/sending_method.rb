@@ -1,0 +1,2 @@
+class SendingMethod < ApplicationRecord
+end

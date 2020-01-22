@@ -1,0 +1,125 @@
+
+.clearfix {
+  @include clearfix;
+  }
+
+.user-mypage-header {
+  width: 1440px;
+  border-top: 1px solid #eee;;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul {
+    width: 1020px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-size: 0;
+  }
+  &__menu {
+    display: inline-block;
+    height: 16px;
+    &__item {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #333;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .icon {
+      margin: 0 8px;
+      font-size: 9px;
+      color: #888;
+    }
+    span {
+      font-size: 14px;
+      line-height: 1.2;
+      color: #333;
+      font-weight: 600;
+    }
+  }
+}
+
+.user-mypage-content {
+  width: 1020px;
+  border-style: solid;
+  border-width: 0;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  &__left {
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+  }
+  &__right {
+    position: relative;
+    float: right;
+    width: 700px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    height:174px;
+    &__center-btn{
+      position: absolute;
+      top:60px;
+      left:200px;
+      width:320px;
+      height:50px;
+      color:#ffffff;
+      background-color: #ea352b;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      line-height: 48px;
+      .btn{
+      text-decoration: none;
+      color:#ffffff;
+      display: block;
+      }
+    } 
+  }
+}
+
+
+.user-mypage-content__left__menu__list__box {
+  height: 48px;
+  width: 280px;
+  margin: 1px;
+  a {
+    @include a-element;
+  }
+  a:hover {
+    @include a-hover-element;
+    .icon {
+      color: black;
+      transform: translate(50%, 0);
+    }
+  }
+  &__item {
+    position: relative;
+    display: block;
+    height: 48px;
+    padding: 16px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    .icon {
+      position: absolute;
+      right: 16px;
+      color: #ccc;
+      transition: all ease-out .2s;
+    }
+  }
+  &__item.active {
+    background: #eee;
+    font-weight: 600;
+    .icon {
+      color: black;
+    }
+  }
+}
+
+.user-mypage-content__left__menu__head {
+  margin: 40px 0 0;
+}

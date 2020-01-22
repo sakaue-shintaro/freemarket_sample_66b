@@ -54,21 +54,18 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#テスト環境
+group :test do
+  gem 'faker', "~> 2.8"
+end
+
 #デプロイ
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-#デプロイ
-group :production do
-  gem 'unicorn', '5.4.1'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #全体
 gem 'haml-rails' #haml用
@@ -76,6 +73,7 @@ gem 'haml-rails' #haml用
 #ユーザーサイド
 gem 'devise' #ユーザ登録
 gem 'payjp' #クレジット
+gem 'recaptcha', require: "recaptcha/rails" #ロボットではありません
 
 #商品サイド
 gem 'carrierwave' #画像アップロード
@@ -86,3 +84,8 @@ gem 'font-awesome-sass' #アイコン
 gem 'mini_magick' #画像リサイズ
 gem 'pry-rails' #binding.pry
 gem 'ancestry' #階層構造のテーブル作成の便利ツール
+gem 'rspec-rails'# テスト用
+gem 'rails-controller-testing'#テスト用
+gem 'factory_bot_rails'#データ用のデータを自動作成
+#gem 'faker'#ダーミーデータをデータベースに入れるやつ
+gem 'gretel'#パンくず機能実装用
