@@ -2,18 +2,29 @@ class SignupController < ApplicationController
   def index
   end
 
-  def ragistration_data1
+  def step1
   end
 
-  def ragistration_data2
+  def step2
   end
 
-  def ragistration_data3
+  def step3
   end
 
-  def ragistration_data4
+  def step4
   end
 
-  def ragistration_data5
+  def step5
+  end
+
+  def data1
+  end
+  def data2
+  end
+  def data3
+  end
+  def data4
+  end
+  def data5
   end
 end
