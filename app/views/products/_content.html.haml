@@ -29,42 +29,16 @@
         = link_to "もっとみる"
       .center__space-a__new-item1__image-space
         %ul.space
-          -console
           %li.space__box
-            = @products.each do |product|
+            - @ladies__products.each do |product|
               - product.images.each do |image|
                 = image_tag image.url, class:'space__box__size'
-                
-            -# - @products.each do |product|
-            -#   - product.images do |image|
-            -#     = image
-                @product.each do |product|
 
 
-
-            -# - @products.each do |product|
-            -#   = @products[0].images[0]
-            -# -@products[0].images[0]
-
-
-            -# - @producs.each |product|
-            -#   product.images |image|
-            -#     = image
-
-            
-              -# - @images.each do |image|
-              -#   = image_tag image.url, class:'space__box__size'
-
-
-
-
-
-
-
-
-
-                -# = image.url
-                  @products.url, class:'space__box__size'
+          %li.space__box
+            - @mens__products.each do |product|
+              - product.images.each do |image|
+                = image_tag image.url, class:'space__box__size'
           -# '%li.space__box
           -#   = image_tag @products.url, class:'space__box__size
           -# %li.space__box

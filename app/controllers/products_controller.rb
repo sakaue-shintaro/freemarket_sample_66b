@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.includes(:images)
+    @ladies__products = Product.includes(:images).where(category_id: 1)
+    @mens__products = Product.includes(:images).where(category_id: 2)
   end
 
   def show
