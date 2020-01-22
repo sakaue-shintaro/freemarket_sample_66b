@@ -1,11 +1,31 @@
 .content
   .second__stage__header
     .logo-box
-      .logo
+      .logo-box__logo
         =link_to root_path do
           = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
-      .first-phase
-        = image_tag "step-2.png", size: "590x130", alt: "第二段階"
+      .logo-box__logo2
+        .logo-box__logo2__text
+          .logo-box__logo2__text__text1
+            会員情報
+          .logo-box__logo2__text__text2
+            電話番号承認
+          .logo-box__logo2__text__text3
+            お届け先住所入力
+          .logo-box__logo2__text__text4
+            支払い方法
+          .logo-box__logo2__text__text5
+            完了
+        .logo-box__logo2__point
+          .logo-box__logo2__point__point1
+          .logo-box__logo2__point__point2
+          .logo-box__logo2__point__point3
+          .logo-box__logo2__point__point4
+          .logo-box__logo2__point__point5
+          .logo-box__logo2__point__bar1
+          .logo-box__logo2__point__bar2
+          .logo-box__logo2__point__bar3
+          .logo-box__logo2__point__bar4
   .center
     .center__content
       .top
@@ -16,7 +36,7 @@
             %h2携帯電話の番号
             .main__text__top__box
           %p本人確認のため、携帯電話のSMS(ショートメッセージービス)を利用して認証を行います。
-        = link_to 'http://localhost:3000/signup/registration_data3' do
+        = link_to "http://localhost:3000/signup/data3" do
           .main__text__btn
             %h3 SMSを送信する
           %p※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
