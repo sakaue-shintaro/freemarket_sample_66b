@@ -18,14 +18,11 @@
       margin-top: 1px;
       padding: 40px;
       background: white;
-      label {
-        font-size: 14px;
-        font-weight: bold;
-      }
       .lg {
         font-size: 16px;
+        font-weight: bold;
       }
-      .mg {
+      #profit {
         font-size: 24px;
       }
       span {
@@ -45,6 +42,46 @@
         }
         &__content {
           height: 100%;
+          #image-box {
+            display: flex;
+            justify-content: space-between;
+            // position: fixed;
+            #previews {
+              display: flex;
+              .kote {
+                margin-top: 16px;
+                padding: 10px 0;
+                background: #f5f5f5;
+                border: 1px solid #ccc;
+                margin-left: 5px;
+                .imgedit {
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 5px 10px;
+                }
+              }
+            }
+            .js-file_group {
+              width: 100%;
+              pre {
+                text-align: center;
+                margin: 0 auto;
+                line-height: 146px;
+              }
+              #product_images_attributes_0_src {   
+              }
+              label {
+                display: block;
+                margin-top: 16px;
+                margin-left: 5px;
+                // height: 162px;
+                width: 100%;
+                background: #f5f5f5;
+                border: 1px dashed #ccc;
+                padding: 20px;
+              }
+            }
+          }          
           p {
             font-size: 13px;
             margin-top: 8px;
@@ -115,7 +152,6 @@
             line-height: 14px;
           }
           .question {
-            // display: inline-block;
             height: 14px;
             width: 14px;
             color: #fff;
@@ -176,9 +212,6 @@
             border-bottom: 1px solid #ccc;
             display: flex;
             justify-content: space-between;
-            h6 {
-              font-size: 2px;
-            }
           }
           &__gain {
             height: 83px;
@@ -191,3 +224,6 @@
     }
   }
 }
+
+
+

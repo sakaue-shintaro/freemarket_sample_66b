@@ -10,14 +10,26 @@
             %span必須
             %p最大10枚までアップロードできます
             #image-box
+              #previews
+                - if @product.persisted?
+                  - @product.images.each_with_index do |image, i|
+                    = image_tag image.src.url, data: { index: i }, width: "150", height: '100'
               = f.fields_for :images do |image| 
                 .js-file_group{"data-index" => "#{image.index}"}
-                = image.file_field :src, {class: "exhibit__text__image"}
-                %br/
+                  = image.file_field :src, {class: "js-file", id: "product_images_attributes_0_src", style: "display :none"}
+                  %label{ for: "product_images_attributes_0_src"}
+                    %pre クリックしてファイルをアップロード
+                  -# %span.js-remove 削除
+                - if @product.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @product.persisted?
+                .js-file_group{"data-index" => "#{@product.images.count}"}
+                  = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+                  .js-remove 削除
       .exhibit
         .exhibit__text
           .exhibit__text__content
-            %label商品名
+            商品名
             %span必須
             = f.text_field :name, class:"exhibit__text__content__box", placeholder: "商品名（必須40字まで）"
           .exhibit__text__form
@@ -72,10 +84,10 @@
                 = f.text_field :price, class:"exhibit__detail__right__body__pay__box", placeholder: "例）300"
             .exhibit__detail__right__commission
               %p販売手数料(10%)
-              %h6 -
+              %h6#commission -
             .exhibit__detail__right__gain
               %label.lg販売利益
-              %label.mg -
+              %label#profit -
       .exhibit
         .exhibit__text
           %p禁止されている出品、行為を必ずご確認ください。
