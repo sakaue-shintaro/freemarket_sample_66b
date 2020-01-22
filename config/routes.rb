@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :user
   root "products#index"
-  resources :products, only:[:new]
+  resources :products
   resources :signup do
     collection do
       get 'step1'
