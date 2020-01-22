@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :user
   root "products#index"
-  resources :products, only:[:new]
+  resources :products
   resources :signup do
     collection do
       get 'step1'
@@ -33,6 +33,6 @@ Rails.application.routes.draw do
   # get 'signup/data3'  => 'signup#data3'
   # get 'signup/data4'  => 'signup#data4'
   # get 'signup/data5'  => 'signup#data5'
-  get 'products/show'  => 'products#show'
+  # get 'products/show'  => 'products#show'
   # -----------------------------------------------------------------------------
 end
