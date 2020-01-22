@@ -89,3 +89,4 @@ gem 'rails-controller-testing'#テスト用
 gem 'factory_bot_rails'#データ用のデータを自動作成
 #gem 'faker'#ダーミーデータをデータベースに入れるやつ
 gem 'gretel'#パンくず機能実装用
+gem 'payjp'#クレジット機能実装
