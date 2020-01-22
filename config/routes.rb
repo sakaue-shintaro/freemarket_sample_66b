@@ -28,4 +28,4 @@ Rails.application.routes.draw do
   get 'signup/ragistration_data5'  => 'signup#ragistration_data5'
   get 'products/show'  => 'products#show'
   # -----------------------------------------------------------------------------
-end
+
