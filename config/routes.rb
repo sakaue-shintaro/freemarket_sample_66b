@@ -2,7 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root "products#index"
   resources :products
-
+  resources :signup do
+    collection do
+      get 'registration_nickname'
+      get 'registration_sms'
+      get 'registration_address'
+      get 'registration_card'
+      get 'registration_done'
+    end
+  end
 
 
   
