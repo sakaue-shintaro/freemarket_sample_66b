@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # devise_for :user
   root "products#index"
+  resources :mypage do
   resources :products
   resources :signup do
     collection do
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
       get 'data5'
     end
   end
-
+end
 
   
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   get 'mypages/credit'  => 'mypages#credit'
   get 'mypages/identification'  => 'mypages#identification'
   get 'mypages/logout'  => 'mypages#logout'
+  get 'mypages/credit2'  =>  'mypages#credit2'
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
   # get 'signup/index'  => 'signup#index'
