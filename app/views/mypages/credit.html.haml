@@ -1,13 +1,7 @@
 %header.priducts-toppage-header
   = render 'products/header'
-%nav.user-mypage-header
-  %ul
-    %li.user-mypage-header__menu
-      = link_to root_path, class: "user-mypage-header__menu__item" do
-        メルカリ
-      = icon('fas', 'chevron-right', class:'icon')
-    %li.user-mypage-header__menu
-      %span{itemprop:"title"} マイページ
+.breadcrumb
+  = render 'shared/breadcrumbs_credit'
 .user-mypage-content
   .user-mypage-content__left
     = render 'left-menu-credit'
