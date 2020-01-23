@@ -16,7 +16,7 @@
                     = image_tag image.src.url, data: { index: i }, width: "150", height: '100'
               = f.fields_for :images do |image| 
                 .js-file_group{"data-index" => "#{image.index}"}
-                  = image.file_field :src, {class: "js-file", id: "product_images_attributes_0_src", style: "display :none"}
+                  = image.file_field :src, {required: "", class: "js-file", id: "product_images_attributes_0_src", style: "display :none"}
                   %label{ for: "product_images_attributes_0_src"}
                     %pre クリックしてファイルをアップロード
                   -# %span.js-remove 削除
@@ -29,13 +29,13 @@
       .exhibit
         .exhibit__text
           .exhibit__text__content
-            商品名
+            %label商品名
             %span必須
-            = f.text_field :name, class:"exhibit__text__content__box", placeholder: "商品名（必須40字まで）"
+            = f.text_field :name, class:"exhibit__text__content__box", placeholder: "商品名（必須40字まで）", required: ""
           .exhibit__text__form
             %label商品の説明
             %span必須
-            = f.text_area :discription, class: "exhibit__text__form__box", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。ああわせやすいのでおすすめです。"
+            = f.text_area :discription, class: "exhibit__text__form__box", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。ああわせやすいのでおすすめです。", required: ""
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -44,12 +44,11 @@
             %labelカテゴリー
             %span必須
             -# = f.select :category_id, ["レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他" ], {}, {class:"exhibit__detail__right__box"}
-            = f.collection_select :"category_id", Category.limit(13), :id, :name, {:prompt => "---"}, {class:"exhibit__detail__right__box"}
+            = f.collection_select :"category_id", Category.limit(13), :id, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label.top商品の状態
               %span必須
-              -# = f.select :state, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class:"exhibit__detail__right__box"}
-              = f.collection_select :state, Condition.all, :name, :name, {:prompt => "---"}, {class:"exhibit__detail__right__box"}
+              = f.collection_select :state, Condition.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -58,17 +57,19 @@
           .exhibit__detail__right
             %label配送料の負担
             %span必須
-            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {:prompt => "---"}, {class: "exhibit__detail__right__box"}
+            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+            .exhibit__detail__right__top
+              %label配送の方法
+              %span必須
+              = f.collection_select :sending_method, SendingMethod.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送元の地域
               %span必須
-              -# = f.select :sending_area, ["北海道", "青森県"], {}, {class: "exhibit__detail__right__box"}
-              = f.collection_select :sending_area, Area.all, :name, :name, {:prompt => "---"}, {class:"exhibit__detail__right__box"}
-              -# = f.select :delivery_fee, ["未定", "らくらくメルカリ便", "ゆうメール", "レターパック", "普通郵便(定形,定形外)", "クロネコヤマト", "ゆうパック", "クリップポスト", "ゆうパケット"], {}, {class: "exhibit__detail__right__box"}
+              = f.collection_select :sending_area, Area.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送までの日数
               %span必須
-              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {:prompt => "---"}, {class: "exhibit__detail__right__box"}
+              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -81,7 +82,7 @@
                 %span必須
               .exhibit__detail__right__body__pay
                 %h5￥
-                = f.text_field :price, class:"exhibit__detail__right__body__pay__box", placeholder: "例）300"
+                = f.text_field :price, class:"exhibit__detail__right__body__pay__box", placeholder: "例）300", required: ""
             .exhibit__detail__right__commission
               %p販売手数料(10%)
               %h6#commission -
