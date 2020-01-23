@@ -61,7 +61,7 @@ class SignupController < ApplicationController
     session[:password_confirmation] = user_params[:password_confirmation]
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_month] = user_params[:birthday_month]
-    session[:birthdayz_day] = user_params[:birthday_day]
+    session[:birthday_day] = user_params[:birthday_day]
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
