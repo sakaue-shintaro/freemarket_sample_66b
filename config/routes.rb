@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :user
+  devise_for :users
   root "products#index"
   resources :products
   resources :signup do
@@ -9,11 +9,6 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4'
       get 'step5'
-      get 'data1'
-      get 'data2'
-      get 'data3'
-      get 'data4'
-      get 'data5'
     end
   end
 
