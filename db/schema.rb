@@ -18,35 +18,35 @@ ActiveRecord::Schema.define(version: 20200117062427) do
     t.string   "city_ward",   null: false
     t.string   "address",     null: false
     t.string   "building"
-    t.string   "tel"
-    t.string   "user_id",     null: false
+    t.integer  "tel"
+    t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535, null: false
+    t.string   "name",       null: false
     t.string   "ancestry"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "evaluations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,9 +92,9 @@ ActiveRecord::Schema.define(version: 20200117062427) do
   end
 
   create_table "sending_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "signups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -103,9 +103,9 @@ ActiveRecord::Schema.define(version: 20200117062427) do
   end
 
   create_table "sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -116,10 +116,10 @@ ActiveRecord::Schema.define(version: 20200117062427) do
     t.string   "j_first_name",                        null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "phonennumber",                        null: false
-    t.string   "birthday_year",                       null: false
-    t.string   "birthday_month",                      null: false
-    t.string   "birthday_day",                        null: false
+    t.integer  "phonennumber",                        null: false
+    t.integer  "birthday_year",                       null: false
+    t.integer  "birthday_month",                      null: false
+    t.integer  "birthday_day",                        null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
