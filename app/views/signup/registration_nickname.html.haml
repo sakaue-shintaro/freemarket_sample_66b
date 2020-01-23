@@ -25,7 +25,7 @@
     .first-main__box__main
       .first-main__box__main__title
         会員情報入力
-      = form_for @user, url: step2_signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
+      = form_for @user, url: registration_sms_signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
         .first-main__box__main__form__top
           .first-main__box__main__form__top__group
             .first-main__box__main__form__top__group__title

@@ -1,37 +1,34 @@
 class SignupController < ApplicationController
-  before_action :validates_step1, only: :step2 # step1のバリデーション
-  before_action :validates_step2, only: :step3 # step2のバリデーション
-  before_action :validates_step3, only: :create # step3のバリデーション
+  before_action :validates_registration_nickname, only: :registration_sms # step1のバリデーション
+  before_action :validates_registration_sms, only: :registration_address # registration_addressのバリデーション
+  before_action :validates_registration_address, only: :create # step3のバリデーション
 
   def index
   end
 
-  def step1
+  def registration_nickname
     @user = User.new # 新規インスタンス作成
   end
 
-  def step2
+  def registration_sms
     @user = User.new # 新規インスタンス作成
   end
 
-  def step3
+  def registration_address
     @user = User.new # 新規インスタンス作成
     @user.build_address
-  end
-
-  def step4
-  end
-
-  def step5
   end
 
   def create
     @user.save!
     session[:id] = @user.id
-    redirect_to step4_signup_index_path
+    redirect_to registration_card_signup_index_path
   end
 
-  def step5
+  def registration_card
+  end
+
+  def registration_done
     sign_in User.find(session[:id]) unless user_signed_in?
   end
 
@@ -56,7 +53,7 @@ class SignupController < ApplicationController
   )
   end
 
-  def validates_step1
+  def validates_registration_nickname
     # step1で入力した値をsessionに保存
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
@@ -84,7 +81,7 @@ class SignupController < ApplicationController
   end
 
 
-  def validates_step2
+  def validates_registration_sms
     # step2で入力した値をsessionに保存
     session[:phonennumber] = user_params[:phonennumber]
     @user = User.new(
@@ -106,7 +103,7 @@ class SignupController < ApplicationController
   end
 
 
-  def validates_step3
+  def validates_registration_address
     @user = User.new(user_params)
     @user.nickname = session[:nickname]
     @user.email = session[:email]
@@ -119,5 +116,6 @@ class SignupController < ApplicationController
     #↓うまくいかないので、後ほど対応
     #render '/signup/step3' unless @user.valid?
     #render '/signup/step3' unless @user.address.valid?
+    binding.pry
   end
 end
