@@ -1,0 +1,67 @@
+.content
+  .fourth__stage__header
+    .logo-box
+      .logo-box__logo
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+      .logo-box__logo2
+        .logo-box__logo2__text
+          .logo-box__logo2__text__text1
+            会員情報
+          .logo-box__logo2__text__text2
+            電話番号承認
+          .logo-box__logo2__text__text3
+            お届け先住所入力
+          .logo-box__logo2__text__text4
+            支払い方法
+          .logo-box__logo2__text__text5
+            完了
+        .logo-box__logo2__point
+          .logo-box__logo2__point__point1
+          .logo-box__logo2__point__point2
+          .logo-box__logo2__point__point3
+          .logo-box__logo2__point__point4
+          .logo-box__logo2__point__point5
+          .logo-box__logo2__point__bar1
+          .logo-box__logo2__point__bar2
+          .logo-box__logo2__point__bar3
+          .logo-box__logo2__point__bar4
+  .payment_main
+    .center_box
+      .regist-title
+        支払い方法
+      .card_number
+        .box
+          .box_in
+            %label{for: "name"} カード番号
+            %span.form-require 必須
+            .form
+            .icons
+              = image_tag "cards.png", size: "343x49", alt: "カードのアイコン"
+      .expiration_date
+        %label{for: "name"} 有効期限
+        %span.form-require 必須
+        .expiration_day_year
+          .year
+          %h2年
+        .expiration_day_month
+          .month
+          %h2月
+        .security_code
+          .in_box
+            .in_block
+              %label{for: "name"} セキュリティーコード
+              %span.form-require 必須
+              .code_box
+              %h3カード裏面の番号とは
+              %h3.blue__question?
+      = link_to step5_signup_index_path do
+        .next_btn
+          %button.u-box.btn-red{type: "submit"} 次へ進む  
+  .footer      
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        = link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.
