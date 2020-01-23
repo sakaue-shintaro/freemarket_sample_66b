@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'faker', "~> 2.8"  #テスト用
 end
 
 group :development do
@@ -57,10 +58,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#テスト環境
-group :test do
-  gem 'faker', "~> 2.8"
-end
 
 #デプロイ
 group :production do
@@ -89,3 +86,4 @@ gem 'rails-controller-testing'#テスト用
 gem 'factory_bot_rails'#データ用のデータを自動作成
 #gem 'faker'#ダーミーデータをデータベースに入れるやつ
 gem 'gretel'#パンくず機能実装用
+gem 'payjp'#クレジット機能実装
