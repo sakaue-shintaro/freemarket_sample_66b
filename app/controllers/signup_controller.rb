@@ -27,10 +27,12 @@ class SignupController < ApplicationController
 
   def create
     @user.save!
+    session[:id] = @user.id
     redirect_to step4_signup_index_path
   end
 
   def step5
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 
