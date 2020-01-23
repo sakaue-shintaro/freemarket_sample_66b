@@ -116,6 +116,6 @@ class SignupController < ApplicationController
     #↓うまくいかないので、後ほど対応
     #render '/signup/step3' unless @user.valid?
     #render '/signup/step3' unless @user.address.valid?
-    binding.pry
+    #binding.pry
   end
 end
