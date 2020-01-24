@@ -75,6 +75,7 @@ gem 'omniauth' #SNS認証
 gem 'omniauth-google-oauth2' #SNS認証
 gem 'omniauth-facebook' #SNS認証
 gem 'dotenv-rails' #SNS認証
+gem "omniauth-rails_csrf_protection" #SNS認証
 
 #商品サイド
 gem 'carrierwave' #画像アップロード
@@ -88,6 +89,5 @@ gem 'ancestry' #階層構造のテーブル作成の便利ツール
 gem 'rspec-rails'# テスト用
 gem 'rails-controller-testing'#テスト用
 gem 'factory_bot_rails'#データ用のデータを自動作成
-#gem 'faker'#ダーミーデータをデータベースに入れるやつ
+#gem 'faker'#ダーミーデータをデータベースに入れるやつ(group :development, :test doへ移動)
 gem 'gretel'#パンくず機能実装用
-gem 'payjp'#クレジット機能実装
