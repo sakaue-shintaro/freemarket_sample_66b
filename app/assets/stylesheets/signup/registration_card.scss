@@ -4,11 +4,6 @@
     .logo-box {
     text-align: center;
     display: flex;
-      .logo {
-        line-height: 90px;
-        padding-top: 40px;
-        margin-left: 330px;
-      }
       &__logo {
         line-height: 90px;
         padding-top: 40px;
@@ -129,7 +124,6 @@
       }
     }
   }
-  
   .payment_main {
     .center_box {
       width: 700px;
@@ -293,7 +287,7 @@
     .footer_center {
       height: 220px;
       width: 456px;
-      background-color: #f5f5f5;;
+      background-color: #EEEEEE;
       color: #333;
       text-align: center;
       display: inline-block;
