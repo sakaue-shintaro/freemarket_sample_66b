@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
 
   def index
-    # @image = Image.find(1)
-    @products = Product.includes(:images).order('created_at DESC')
+    @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
+    @mens__products = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
   end
 
   def show
@@ -40,4 +40,5 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+  
 end
