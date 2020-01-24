@@ -1,7 +1,9 @@
 FactoryBot.define do
   factory :product do
-    seller                { FactoryBot.create(:user) }
-    buyer                 { FactoryBot.create(:user) }
+    # seller                { FactoryBot.create(:user) }
+    # seller                {"1"}
+    seller                {""}
+    buyer                 {""}
     name                  {"アクセサリー"}
     discription           {"人気商品です"}
     category              { FactoryBot.create(:category) }
