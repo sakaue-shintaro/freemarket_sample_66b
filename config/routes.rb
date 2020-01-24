@@ -29,5 +29,6 @@ Rails.application.routes.draw do
   # get 'signup/data4'  => 'signup#data4'
   # get 'signup/data5'  => 'signup#data5'
   # get 'products/show'  => 'products#show'
+  # get 'products/purchase'=> 'products#show'
   # -----------------------------------------------------------------------------
 end
