@@ -11,7 +11,13 @@ Rails.application.routes.draw do
       get 'registration_done'
     end
   end
-
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
   
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
@@ -24,7 +30,9 @@ Rails.application.routes.draw do
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
   get 'signup/index'  => 'signup#index'
-  get 'cards/new' => 'cards#new'
+  # get 'card/index'  =>   'card#index'
+  # get 'cards/new' => 'cards#new'
+  # get 'card/create'  => 'card#create'
   # get 'signup/data1'  => 'signup#data1'
   # get 'signup/data2'  => 'signup#data2'
   # get 'signup/data3'  => 'signup#data3'
