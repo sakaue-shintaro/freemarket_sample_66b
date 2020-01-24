@@ -3,5 +3,5 @@ FactoryBot.define do
     association :product
     name    {"アクセサリー"}
     ancestry          {""}
-    end
+  end
 end
