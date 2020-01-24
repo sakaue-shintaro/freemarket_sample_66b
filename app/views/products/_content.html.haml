@@ -33,16 +33,15 @@
                 .space__box__inner
                   = image_tag image.url, class:'space__box__size'
                   ¥300
-                  %brてすと
+                  %brレディース商品
         %ul.space
           %li.space__box
             - @ladies__products.each do |product|
               - product.images.each do |image|
                 .space__box__inner
                   = image_tag image.url, class:'space__box__size'
-                    = @ladies__products.
-                      ¥300
-                      %brてすと
+                  ¥300
+                  %brレディース商品
           
         %ul.space
           %li.space__box
@@ -51,33 +50,9 @@
                 .space__box__inner
                   = image_tag image.url, class:'space__box__size'
                   ¥300
-                  %brてすと
-        %ul.space
-          %li.space__box
-            - @mens__products.each do |product|
-              - product.images.each do |image|
-                .space__box__inner
-                  = image_tag image.url, class:'space__box__size'
-                  ¥300
-                  %brてすと
+                  %brメンズ商品
                 
-          -#   = image_tag @products.url, class:'space__box__size
-          -# %li.space__box
-          -# -#   = image_tag @image.url, class:'space__box__size'
-          -# %li.space__box
-          -# -#   = image_tag @image.url, class:'space__box__size'
-          -# %li.space__box
-          -# -#   5
-          -# %li.space__box
-          -# -#   6
-          -# %li.space__box
-          -# -#   7
-          -# %li.space__box
-          -# -#   8
-          -# %li.space__box
-          -# -#   9
-          -# %li.space__box
-          -#   10
+          
         
   .center__space-b
     .center__space-b__new-item2
