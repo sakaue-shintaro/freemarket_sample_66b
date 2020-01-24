@@ -68,10 +68,11 @@ ActiveRecord::Schema.define(version: 20200123065359) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "product_id",               null: false
-    t.text     "url",        limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "src"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id", using: :btree
   end
 
   create_table "pays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -139,5 +140,5 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "cards", "users"
+  add_foreign_key "images", "products"
 end
