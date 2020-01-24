@@ -8,6 +8,15 @@ class SignupController < ApplicationController
 
   def registration_nickname
     @user = User.new # 新規インスタンス作成
+    session[:id] = nil
+    session[:nickname] = nil
+    session[:email] = nil
+    session[:password] = nil
+    session[:password_confirmation] = nil
+    session[:birthday_year] = nil
+    session[:birthday_month] = nil
+    session[:birthday_day] = nil
+    session[:phonennumber] = nil
   end
 
   def registration_sms
@@ -22,6 +31,14 @@ class SignupController < ApplicationController
   def create
     @user.save!
     session[:id] = @user.id
+    session[:nickname] = nil
+    session[:email] = nil
+    session[:password] = nil
+    session[:password_confirmation] = nil
+    session[:birthday_year] = nil
+    session[:birthday_month] = nil
+    session[:birthday_day] = nil
+    session[:phonennumber] = nil
     redirect_to registration_card_signup_index_path
   end
 
@@ -31,14 +48,6 @@ class SignupController < ApplicationController
   def registration_done
     sign_in User.find(session[:id]) unless user_signed_in?
     session[:id] = nil
-    session[:nickname] = nil
-    session[:email] = nil
-    session[:password] = nil
-    session[:password_confirmation] = nil
-    session[:birthday_year] = nil
-    session[:birthday_month] = nil
-    session[:birthday_day] = nil
-    session[:phonennumber] = nil
     #binding.pry
   end
 
