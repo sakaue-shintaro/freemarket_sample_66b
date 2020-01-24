@@ -4,7 +4,7 @@ class CreateEvaluations < ActiveRecord::Migration[5.0]
       t.integer :good,      null: false, default: 0
       t.integer :normal,    null: false, default: 0
       t.integer :bad,       null: false, default: 0
-      t.integer :user_id,   null: false, foreign_key: true
+      t.references  :user, null: false, foreign_key: true
       t.timestamps
     end
   end

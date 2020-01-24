@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'mypages/credit'  => 'mypages#credit'
   get 'mypages/identification'  => 'mypages#identification'
   get 'mypages/logout'  => 'mypages#logout'
+  get 'products/purchase_confirmation'  => 'products#purchase_confirmation'
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
   # get 'signup/index'  => 'signup#index'
