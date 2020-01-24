@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-  # devise_for :user
+  devise_for :users
   root "products#index"
   resources :products
   resources :signup do
     collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4'
-      get 'step5'
-      get 'data1'
-      get 'data2'
-      get 'data3'
-      get 'data4'
-      get 'data5'
+      get 'registration_nickname'
+      get 'registration_sms'
+      get 'registration_address'
+      get 'registration_card'
+      get 'registration_done'
     end
   end
 

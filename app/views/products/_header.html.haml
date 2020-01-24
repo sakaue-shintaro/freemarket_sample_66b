@@ -19,11 +19,13 @@
             ブランドから探す
       .hd-bottom__right
         .hd-bottom__right__new
-          = link_to "/", class: "sign" do
+          = link_to signup_index_path, class: "sign" do
             新規会員登録
         .hd-bottom__right__signup
           = link_to "/", class: "login" do
             ログイン
+
+-# ーーーーーーーーーーログイン機能実装後に使用するため、一旦コメントアウトしますーーーーーー
 -# .hd-bottom__right__info
 -#   = link_to "/", class: "normal" do
 -#     = icon('far', 'heart', class: 'ificon')

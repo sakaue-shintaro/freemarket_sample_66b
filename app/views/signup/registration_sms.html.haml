@@ -1,5 +1,5 @@
 .content
-  .fourth__stage__header
+  .second__stage__header
     .logo-box
       .logo-box__logo
         =link_to root_path do
@@ -26,39 +26,25 @@
           .logo-box__logo2__point__bar2
           .logo-box__logo2__point__bar3
           .logo-box__logo2__point__bar4
-  .payment_main
-    .center_box
-      .regist-title
-        支払い方法
-      .card_number
-        .box
-          .box_in
-            %label{for: "name"} カード番号
-            %span.form-require 必須
-            .form
-            .icons
-              = image_tag "cards.png", size: "343x49", alt: "カードのアイコン"
-      .expiration_date
-        %label{for: "name"} 有効期限
-        %span.form-require 必須
-        .expiration_day_year
-          .year
-          %h2年
-        .expiration_day_month
-          .month
-          %h2月
-        .security_code
-          .in_box
-            .in_block
-              %label{for: "name"} セキュリティーコード
-              %span.form-require 必須
-              .code_box
-              %h3カード裏面の番号とは
-              %h3.blue__question?
-      = link_to "http://localhost:3000/signup/data5" do
-        .next_btn
-          %button.u-box.btn-red{type: "submit"} 次へ進む  
-  .footer      
+  .center
+    = form_for @user, url: registration_address_signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
+      .center__content
+        .top
+          %h2電話番号の確認
+        .main
+          .main__text
+            .main__text__top
+              %h2携帯電話の番号
+              = f.phone_field :phonennumber,placeholder: "携帯電話の番号を入力",class: "main__text__top__box"
+            %p本人確認のため、携帯電話のSMS(ショートメッセージービス)を利用して認証を行います。
+            = f.submit "SMSを送信する",class:"main__text__btn"
+            %p※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            .main__text__bottom
+              = link_to root_path, class: "info" do
+                電話番号の確認が必要な理由
+                = icon("fas", "chevron-right",class: "arrow")
+                %span<>  
+  .footer
     .footer_center
       プライバシーポリシー メルカリ利用規約 特定商取引
       .gray
