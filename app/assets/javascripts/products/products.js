@@ -4,7 +4,7 @@ $(function() {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][src]"
-                    id="product_images_attributes_${num}_src" style="display:none"><label for="product_images_attributes_${num}_src"><pre>クリックしてファイルをアップロード</pre></label>
+                    id="product_images_attributes_${num}_src" style="display:none"><label for="product_images_attributes_${num}_src"><pre>画像をアップロード</pre></label>
                   </div>`;
     return html;
   }

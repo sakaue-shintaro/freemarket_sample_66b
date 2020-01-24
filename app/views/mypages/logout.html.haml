@@ -7,7 +7,7 @@
     = render 'left-menu-logout'
   .user-mypage-content__right
     .user-mypage-content__right__center-btn
-      = link_to "ログアウト",root_path,class:'btn'
+      = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'btn'
   .clearfix
 .products-toppage-footer-app
   = render 'products/footer-app'
