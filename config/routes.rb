@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root "products#index"
-  resources :products
+  resources :products do
+    collection do
+      get 'purchase'
+    end
+  end
+    
   resources :signup do
     collection do
       get 'registration_nickname'
@@ -20,16 +25,7 @@ Rails.application.routes.draw do
   get 'mypages/credit'  => 'mypages#credit'
   get 'mypages/identification'  => 'mypages#identification'
   get 'mypages/logout'  => 'mypages#logout'
-  get 'products/purchase_confirmation'  => 'products#purchase_confirmation'
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
-  # get 'signup/index'  => 'signup#index'
-  # get 'signup/data1'  => 'signup#data1'
-  # get 'signup/data2'  => 'signup#data2'
-  # get 'signup/data3'  => 'signup#data3'
-  # get 'signup/data4'  => 'signup#data4'
-  # get 'signup/data5'  => 'signup#data5'
-  # get 'products/show'  => 'products#show'
-  # get 'products/purchase'=> 'products#show'
   # -----------------------------------------------------------------------------
 end
