@@ -71,6 +71,10 @@ gem 'haml-rails' #haml用
 gem 'devise' #ユーザ登録
 gem 'payjp' #クレジット
 gem 'recaptcha', require: "recaptcha/rails" #ロボットではありません
+gem 'omniauth' #SNS認証
+gem 'omniauth-google-oauth2' #SNS認証
+gem 'omniauth-facebook' #SNS認証
+gem 'dotenv-rails' #SNS認証
 
 #商品サイド
 gem 'carrierwave' #画像アップロード
