@@ -18,8 +18,7 @@
                 .js-file_group{"data-index" => "#{image.index}"}
                   = image.file_field :src, {required: "", class: "js-file", id: "product_images_attributes_0_src", style: "display :none"}
                   %label{ for: "product_images_attributes_0_src"}
-                    %pre クリックしてファイルをアップロード
-                  -# %span.js-remove 削除
+                    %pre 画像をアップロード
                 - if @product.persisted?
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
               - if @product.persisted?

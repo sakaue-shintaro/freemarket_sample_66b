@@ -7,6 +7,8 @@ class User < ApplicationRecord
   
   has_one :address
   accepts_nested_attributes_for :address
+  has_many :seller_products, class_name: 'Product', :foreign_key => 'seller_id'
+  has_many :buyer_products, class_name: 'Product', :foreign_key => 'buyer_id'
 
        # バリデーション　↓うまくいかないので後程
        # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -22,3 +24,4 @@ class User < ApplicationRecord
        # validates :birthday_day,           numericality: true
        # validates :phonennumber,            {presence: true, format: { with: VALID_PHONE_REGEX }}
 end
+

@@ -1,7 +1,7 @@
 FactoryBot.define do
-
   factory :category do
-    name                   {"レディース"}
-  end
-
+    association :product
+    name    {"アクセサリー"}
+    ancestry          {""}
+    end
 end

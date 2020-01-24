@@ -27,26 +27,32 @@
         = link_to "もっとみる"
       .center__space-a__new-item1__image-space
         %ul.space
-          -# %li.space__box
-          -#   = image_tag @image.url, class:'space__box__size'
-          -# %li.space__box
-          -#   = image_tag @image.url, class:'space__box__size'
-          -# %li.space__box
-          -#   = image_tag @image.url, class:'space__box__size'
-          -# %li.space__box
-          -#   = image_tag @image.url, class:'space__box__size'
           %li.space__box
-            5
+            - @ladies__products.each do |product|
+              - product.images.each do |image|
+                .space__box__inner
+                  = image_tag image.url, class:'space__box__size'
+                  ¥300
+                  %brレディース商品
+        %ul.space
           %li.space__box
-            6
+            - @ladies__products.each do |product|
+              - product.images.each do |image|
+                .space__box__inner
+                  = image_tag image.url, class:'space__box__size'
+                  ¥300
+                  %brレディース商品
+          
+        %ul.space
           %li.space__box
-            7
-          %li.space__box
-            8
-          %li.space__box
-            9
-          %li.space__box
-            10
+            - @mens__products.each do |product|
+              - product.images.each do |image|
+                .space__box__inner
+                  = image_tag image.url, class:'space__box__size'
+                  ¥300
+                  %brメンズ商品
+                
+          
         
   .center__space-b
     .center__space-b__new-item2
@@ -56,7 +62,7 @@
         = link_to "もっとみる" , class:'links'
       .center__space-b__new-item2__image-space
         .center__space-b__new-item2__image-space__image
-          ここは写真です
+          
         .center__space-b__new-item2__image-space__imagetest
           testimage
 

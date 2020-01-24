@@ -2,17 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
 
   def index
-    # @image = Image.find(1)
-    @products = Product.includes(:images).order('created_at DESC')
+    @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
+    @mens__products = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
   end
 
   def show
     # product_tableの1つの情報を渡す
     @product = Product.find(params[:id])
-    # @product = Product.find(1)
-    # def number_to_currency(price)
-    #   "#{price.to_s(:delimited, delimiter: ',')}円"
-    # end
     # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
     @images = Image.where(product_id: params[:id])
     # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
@@ -51,28 +47,4 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # private
-  # def product_params
-  #   params.require(:product).permit(:name,:seller_id)   #指定したキーを持つパラメーターのみを受け取るようにするもの
-  # end
 end
-
-# describe ProductsController do
-#   describe 'HTTPメソッド名 #アクション名' do
-#     it "インスタンス変数は期待した値になるか？" do
-# 　　"擬似的にリクエストを行ったことにするコードを書く"
-#       "エクスペクテーションを書く"
-#     end
-
-#     it "期待するビューに遷移するか？" do
-#       "擬似的にリクエストを行ったことにするコードを書く"
-#       "エクスペクテーションを書く"
-#     end
-#   end
-
-# describe ProductsController do
-    # describe 'products#show' do
-    # it "" do
-    #   expect(X).to eq Y
-    # end
-  # end
