@@ -195,13 +195,23 @@
           flex-wrap: wrap;
           &__box{
             margin: 10px;
-            border: solid 1px black;
             height: 252px;
             margin-bottom: 20px;
-            background-color:#ffffff;
-            &__size {
+            display: flex;
+            &__inner {
               width:188px;
-            }
+              margin:0 10px;
+              background-color: white;
+              .space__box__size {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 75%;
+                width: 100%;
+                margin: auto;
+              }
+            }     
         }
         }
         &__imagetest{
@@ -323,6 +333,7 @@
         height: 550px;
         width: 1000px;
         padding: 10px;
+        
         &__image{
           border: solid 1px black;
           height: 252px;
