@@ -1,12 +1,10 @@
 FactoryBot.define do
 
   factory :product do
-    
     seller_id              {"1"}
-    buyer_id               {"1"}
     name                   {"テスト商品"}
     discription            {"テスト用の商品です"}
-    category_id            {"1"}
+    category
     brand                  {"テストブランド"}
     state                  {"新品、未使用"}
     delivery_fee           {"送料込み(出品者負担)"}
