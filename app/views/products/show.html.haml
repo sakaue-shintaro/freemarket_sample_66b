@@ -2,12 +2,21 @@
   %header.products-toppage-header
     = render 'products/header'
   %section.product-box
-    %h1.product-name  商品名
+    %h1.product-name
+      = @product.name
     .product-box__main-content
       .product-box__main-content__photo
-        .product-box__main-content__photo__main-photo  画像
+        %ul.product-box__main-content__photo__main-photo
+          %li{style: "display: block;"}
+            .select= image_tag "landscape.jpg", class:"photo-main"
+          %li{style: "display: none;"}
+            = image_tag "river.jpg", class:"photo-main"
+          %li{style: "display: none;"}
+            = image_tag "tanbo.jpg", class:"photo-main"
         .product-box__main-content__photo__sub-photo 
-          .product-box__main-content__photo__sub-photo__list  画像
+          %ul.product-box__main-content__photo__sub-photo__list
+            - @images.each do |image|
+              %li= image_tag image.src, class: "photo-list"
       .table
         %table.product-table
           %tbody
@@ -15,7 +24,7 @@
               %th 出品者
               %td 
                 = link_to root_path, class: "link"  do
-                  かと
+                  = @user.nickname
                 .icon-box
                   .icon-box__face-icon
                     = icon( "fas", "grin", class: "icon-good")
@@ -30,7 +39,7 @@
               %th カテゴリー
               %td 
                 = link_to root_path, class: "link"  do
-                  %div メンズ
+                  メンズ
                 = link_to root_path, class: "link"  do
                   .details-first-category
                     = icon('fas', 'chevron-right', class:'icon')
@@ -43,38 +52,42 @@
               %th ブランド
               %td
                 = link_to root_path, class: "link"  do
-                  ブランド名
+                  = @product.brand
             %tr
               %th 商品のサイズ
-              %td サイズ
+              %td M
             %tr
               %th 商品の状態
-              %td 状態
+              %td 
+                = @product.state
             %tr
               %th 配送料の負担
-              %td 送料
+              %td 
+                = @product.delivery_fee
             %tr
               %th 配送の方法
-              %td 方法
+              %td
+                = @product.sending_method
             %tr
               %th 配送元地域
               %td
                 = link_to root_path, class: "link"  do
-                  地域
+                  = @product.sending_area
             %tr
               %th 発送日の目安
-              %td 目安
+              %td
+                = @product.sending_day
     .product-box__price-box
-      %span.price ¥1,000
+      %span.price
+        ¥
+        = @product.price
       %span.tax (税込)
       %span.fee 送料込み
-    = link_to root_path, class: "purchase-btn" do
-      購入画面に進む
+      = link_to root_path, class: "purchase-btn" do
+        購入画面に進む
     .product-box__description
       %p.description-text
-        あああああああああああああああああああああああああああああああああああああああああああ
-        %ber
-        いいいいいいいいいいいいいいいいいい
+        = simple_format @product.discription
     .product-box__description-buttom
       .product-box__description-buttom__like-report
         .product-box__description-buttom__like-report__like

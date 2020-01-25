@@ -1,18 +1,20 @@
 FactoryBot.define do
 
   factory :user do
+    id                        {"1"}
     password = Faker::Internet.password(min_length: 10, max_length: 15, mix_case: true)
-    email   {Faker::Internet.unique.email}
+    
     nickname                  {"あーべ"}
     family_name               {"abe"}
     first_name                {"takashi"}
     j_family_name             {"アベ"}
     j_first_name              {"タカシ"}
-    # email                     { email }
-    phonennumber              {"00000000"}
-    birthday_year             {"00000000"}
-    birthday_month            {"00000000"}
-    birthday_day              {"00000000"}
+    email                     {Faker::Internet.free_email}
+    email                     { "katoemail@gmail.com" }
+    phonennumber              {"080"}
+    birthday_year             {"2020"}
+    birthday_month            {"10"}
+    birthday_day              {"31"}
     password                  { password }
     password_confirmation     { password }
   end
