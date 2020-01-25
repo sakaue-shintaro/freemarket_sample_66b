@@ -1,0 +1,69 @@
+.loginform {
+  width: 456px;
+  margin: 0 auto;
+  &__top {
+    background: #fff;
+    margin-bottom: 2px;
+    padding: 40px 64px;
+    font-size: 14px;
+    h1 {
+      text-align: center;
+    }
+    &__new {
+      background-color: #0099e8;
+      margin-top: 8px;
+      line-height: 40px;
+      text-align: center;
+      .access {
+        color: white;
+        display: block;
+      }
+    }
+  }
+  &__inner {
+    background: #fff;
+    text-align: center;
+    padding: 32px 64px;
+    .blue_sns {
+      background-color: #4169e1;
+      height: 50px;
+      width: 343px;
+      border-radius: 4px;
+      font-size:14px;
+      text-decoration: none;
+      line-height: 50px;
+      margin: 16px 0 0;
+      .access {
+        color: white;
+      }
+    }
+    .white_sns {
+      background-color: #d3d3d3;
+      height: 50px;
+      width: 343px;
+      border-radius: 4px;
+      font-size:14px;
+      text-decoration: none;
+      line-height: 50px;
+      margin: 16px 0 0;
+    }
+    .field {
+      height: 48px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px 16px 8px;
+    }
+    .fileder {
+      margin-top: 24px;
+      #loginbtn {
+        width: 100%;
+        font-size:14px;
+        line-height: 50px;
+        color:white;
+        border: #ea352d;
+        background: #ea352d;
+      }
+    }
+  }
+}
