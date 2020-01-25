@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe ProductsController, type: :controller  do
-
+  # メンバーが検証中
   # let(:products){ FactoryBot.create(:product) }
   #   describe 'GET #index' do
   #   it "商品一覧ページに遷移するか" do
@@ -14,11 +14,11 @@ describe ProductsController, type: :controller  do
   #   end
   # end
     describe "GET #show" do
-    # it "インスタンス変数が期待したものになるか" do
-    #   product = create(:product)
-    #   get :show, params: { id: product }
-    #   expect(assigns(:product)).to eq product
-    # end
+    it "インスタンス変数が期待したものになるか" do
+      product = create(:product)
+      get :show, params: { id: product }
+      expect(assigns(:product)).to eq product
+    end
     it "商品詳細ページに遷移するか" do
         # product = create(:product)
         # get :show, params: {id: product}

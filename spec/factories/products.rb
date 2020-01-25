@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :product do
-    # seller                { FactoryBot.create(:user) }
-    # seller                {"1"}
+    seller                { FactoryBot.create(:user) }
+    seller                {"1"}
     seller                {""}
     buyer                 {""}
     name                  {"アクセサリー"}
