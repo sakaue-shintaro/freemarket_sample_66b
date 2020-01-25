@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-
-  get 'card/show'
-
   devise_for :users
   root "products#index"
   resources :products
@@ -22,7 +18,13 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-  
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
   get 'mypages/index'  => 'mypages#index'
@@ -34,6 +36,10 @@ Rails.application.routes.draw do
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
   get 'signup/index'  => 'signup#index'
+  # get 'purchase/index'
+  # get 'purchase/done'
+  get 'card/new'
+  get 'card/show'
   # get 'card/index'  =>   'card#index'
   # get 'cards/new' => 'cards#new'
   # get 'card/create'  => 'card#create'
