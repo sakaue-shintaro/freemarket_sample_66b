@@ -3,11 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   has_one :address
   accepts_nested_attributes_for :address
   has_many :products
+  has_many :sns_credentials
+  
 #   has_many :seller_products, class_name: 'Product', :foreign_key => 'seller_id'
 #   has_many :buyer_products, class_name: 'Product', :foreign_key => 'buyer_id'
 
