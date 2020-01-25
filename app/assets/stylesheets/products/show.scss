@@ -32,43 +32,27 @@
           }
         }
         &__sub-photo {    //画像リスト
-          // background-color: #a9a9a9;    //後で消す
           display: flex;
           width: 300px;   
           height: 60px;
           .photo-list {
-            // background-color: #778899;    //後で消す
             width: 60px;
             height: 60px;
           }
           .hide {
             display: none;
           }
-          // img{ width:100%; }
           ul {
             display: flex;
-            // width:100%;
-            // padding:0;
-            // margin:0;
           }
-          // ul + li {
-          //   display:inline-block;
-          //   // width:33.3%;
-          //   // float:left;
-          // }
-          // ul + li + img {
-          //   max-width:95%;
-          //   margin:0 auto;
-          //   display:block;
-          // }
         }
       }
       .table {    //表の箱(display-flexを使う為)
-        // background-color: #b0c4de;
+        background-color: #b0c4de;
         width: 300px;
         height: 420px;
         .product-table {    //表のメインコンテント
-          // background-color: #b0c4de;
+          background-color: #b0c4de;
           width: 100%;
           border: 1px solid #f5f5f5;
           max-width: 300px;
@@ -76,8 +60,6 @@
           th {    //列
             padding: 8px;
             width: 40%;
-            // text-align: left;
-            // font-weight: 400;
             background: #fafafa;
           }
           td {    //列
