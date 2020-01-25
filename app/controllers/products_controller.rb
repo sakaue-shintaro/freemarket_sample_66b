@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  # メンバーが検証中
+  # before_action :set_product, except: [:index, :new, :create]
 
   def index
     @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
@@ -7,6 +8,12 @@ class ProductsController < ApplicationController
   end
 
   def show
+    # product_tableの1つの情報を渡す
+    @product = Product.find(params[:id])
+    # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
+    @images = Image.where(product_id: params[:id])
+    # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
+    @user = User.find_by(id: @product.seller_id)
   end
 
   def new
@@ -37,8 +44,9 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:seler_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: User.find(1).id)
   end
   
-  def set_product
-    @product = Product.find(params[:id])
-  end
-  
+  # メンバーが検証中
+  # def set_product
+  #   @product = Product.find(params[:id])
+  # end
+
 end
