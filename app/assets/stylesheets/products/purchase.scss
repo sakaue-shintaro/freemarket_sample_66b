@@ -31,6 +31,7 @@
     &__content {
       width: 700px;
       margin: 0 auto;
+      background-color: #ffffff;
       &__text {
         width: 700px;
         height: 97px;
@@ -85,31 +86,65 @@
           
         }
       }
-      .buy__info__box {
-        width: 700px;
-        height: 595px;
-        padding: 32px,16px,48px,16px;
-      }    
+      .purchase__form__box {
+        max-width: 343px;
+        margin: 0 auto;
+        display: block;
+        padding: 32px 16px 48px 16px;
+        .box__in {
+        display: flex;
+        }
+          .payment {
+            font-size: 18px;
+            font-weight: bold;
+            
+          }
+          .price__tag {
+          text-align: left;
+          font-weight: bold;
+          font-size: 22px;
+          margin-left: auto;
+          }
+        }
+        .point {
+        .text-align: center;
+        font-size: 14px;
+        color: silver; 
+        }
+
+
+
+
 
         }
-        h2 {
-        text-align: center;
-        font-weight: bold;
-        }
-        h3 {
+        .user__payment {
+        margin-top: 32px;
+        .buy__card {
 
         }
-        .purchase__btn {
-          height: 50px;
-          width: 323px;
-          margin-top: 32px;
-          background-color: #808080;
-          margin: 0 auto;
-          margin-top: 32px;
         }
-        .text {
+        .user__address {
 
         }
+
+      h2 {
+      text-align: center;
+      font-weight: bold;
+      }
+      h3 {
+
+      }
+      .purchase__btn {
+        height: 50px;
+        width: 323px;
+        margin-top: 32px;
+        background-color: #808080;
+        margin: 0 auto;
+        margin-top: 32px;
+      }
+      .text {
+
+      }
       
     
   .footer { 
