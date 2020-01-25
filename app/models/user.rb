@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :address
-  has_one :card
+  has_many :card
   accepts_nested_attributes_for :address
 
        # バリデーション　↓うまくいかないので後程
