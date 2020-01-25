@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  #必ず最後にもどす！！！！
+  # before_action :set_product, except: [:index, :new, :create]
 
   def index
     @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
@@ -29,6 +30,9 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def purchase
   end
 
   private
