@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200123065359) do
+ActiveRecord::Schema.define(version: 20200125063349) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.integer  "user_id",                null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_evaluations_on_user_id", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -72,17 +74,6 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_images_on_product_id", using: :btree
-  end
-
-  create_table "pays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "number",     null: false
-    t.integer  "year",       null: false
-    t.integer  "month",      null: false
-    t.integer  "code",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pays_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -100,6 +91,9 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.integer  "price",                        null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.index ["buyer_id"], name: "index_products_on_buyer_id", using: :btree
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
+    t.index ["seller_id"], name: "index_products_on_seller_id", using: :btree
   end
 
   create_table "sending_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -117,6 +111,15 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -140,6 +143,11 @@ ActiveRecord::Schema.define(version: 20200123065359) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "evaluations", "users"
   add_foreign_key "images", "products"
-  add_foreign_key "pays", "users"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "users", column: "buyer_id"
+  add_foreign_key "products", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
 end

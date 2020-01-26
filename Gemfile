@@ -91,4 +91,4 @@ gem 'rails-controller-testing'#テスト用
 gem 'factory_bot_rails'#データ用のデータを自動作成
 #gem 'faker'#ダーミーデータをデータベースに入れるやつ(group :development, :test doへ移動)
 gem 'gretel'#パンくず機能実装用
-gem 'stripe'
+gem 'stripe'#APIメソッドを使用するため

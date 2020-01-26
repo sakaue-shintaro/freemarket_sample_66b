@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "products#index"
-  resources :products
+  resources :products do
+    collection do
+      get 'purchase'
+      get 'purchase_done'
+    end
+  end
+    
   resources :signup do
     collection do
       get 'registration_nickname'
@@ -35,19 +44,5 @@ Rails.application.routes.draw do
   post 'mypages/post'   => 'myoages#create'
   get 'test_okubo/index'  => 'test_okubo#index'
   get 'test_okubo/link'  => 'test_okubo#link'
-  get 'signup/index'  => 'signup#index'
-  # get 'purchase/index'
-  # get 'purchase/done'
-  get 'card/new'
-  get 'card/show'
-  # get 'card/index'  =>   'card#index'
-  # get 'cards/new' => 'cards#new'
-  # get 'card/create'  => 'card#create'
-  # get 'signup/data1'  => 'signup#data1'
-  # get 'signup/data2'  => 'signup#data2'
-  # get 'signup/data3'  => 'signup#data3'
-  # get 'signup/data4'  => 'signup#data4'
-  # get 'signup/data5'  => 'signup#data5'
-  # get 'products/show'  => 'products#show'
   # -----------------------------------------------------------------------------
 end
