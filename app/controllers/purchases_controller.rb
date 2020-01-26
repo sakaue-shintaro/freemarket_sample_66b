@@ -1,4 +1,4 @@
-class PurchaseController < ApplicationController
+class PurchasesController < ApplicationController
 
   require 'payjp'
 

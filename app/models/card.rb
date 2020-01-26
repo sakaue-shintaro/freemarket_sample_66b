@@ -1,4 +1,4 @@
 class Card < ApplicationRecord
   belongs_to :user
-  belongs_to :pay
+  has_many :pay
 end

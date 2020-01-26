@@ -27,11 +27,11 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-  resources :purchase, only: [:index] do
+  resources :purchases, only: [:index] do
     collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
+      get 'index', to: 'purchases#index'
+      post 'pay', to: 'purchases#pay'
+      get 'done', to: 'purchases#done'
     end
   end
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
