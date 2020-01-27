@@ -1,22 +1,28 @@
 FactoryBot.define do
-
-  factory :user do
-    id                        {"1"}
-    password = Faker::Internet.password(min_length: 10, max_length: 15, mix_case: true)
-    
-    nickname                  {"あーべ"}
+  factory :seller, class: User do
+    nickname                {"あーべ"}
     family_name               {"abe"}
     first_name                {"takashi"}
     j_family_name             {"アベ"}
     j_first_name              {"タカシ"}
-    email                     {Faker::Internet.free_email}
-    email                     { "katoemail@gmail.com" }
+    email           {|n|"#{n}123456@gmail.com"}
+    password                {"123456"}
     phonennumber              {"080"}
     birthday_year             {"2020"}
     birthday_month            {"10"}
     birthday_day              {"31"}
-    password                  { password }
-    password_confirmation     { password }
   end
-
+  factory :buyer, class: User do
+    nickname                {"あーべ"}
+    family_name               {"abe"}
+    first_name                {"takashi"}
+    j_family_name             {"アベ"}
+    j_first_name              {"タカシ"}
+    email           {|n|"#{n}123456@test.com"}
+    password                {"n123456"}
+    phonennumber              {"080"}
+    birthday_year             {"2020"}
+    birthday_month            {"10"}
+    birthday_day              {"31"}
+  end
 end
