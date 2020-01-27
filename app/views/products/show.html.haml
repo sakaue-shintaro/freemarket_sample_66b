@@ -8,11 +8,11 @@
       .product-box__main-content__photo
         %ul.product-box__main-content__photo__main-photo
           %li{style: "display: block;"}
-            .select= image_tag "landscape.jpg", class:"photo-main"
-          %li{style: "display: none;"}
-            = image_tag "river.jpg", class:"photo-main"
-          %li{style: "display: none;"}
-            = image_tag "tanbo.jpg", class:"photo-main"
+            .select= image_tag "#{@images.first.src}", class:"photo-main"
+          - @images.each do |image|
+            - if image.id != 1
+              %li{style: "display: none;"}
+                = image_tag "#{image.src}", class:"photo-main"
         .product-box__main-content__photo__sub-photo 
           %ul.product-box__main-content__photo__sub-photo__list
             - @images.each do |image|
