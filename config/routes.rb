@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations'
-  }
+  devise_for :users,
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: "users/registrations",
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
   root "products#index"
   resources :products do
     collection do
@@ -34,3 +36,14 @@ Rails.application.routes.draw do
   get 'test_okubo/link'  => 'test_okubo#link'
   # -----------------------------------------------------------------------------
 end
+Rails.application.routes.draw do
+  devise_for :users, 
+    # controllers: {
+    #   omniauth_callbacks: 'users/omniauth_callbacks',
+    #   registrations: 'users/registrations'
+    # }
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: "users/registrations",
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
