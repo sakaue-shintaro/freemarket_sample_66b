@@ -38,10 +38,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    if user_signed_in? && current_user.id == @product.seller_id && @product.destroy
+      redirect_to root_path
+      flash[:notice] = "商品を削除しました"
+    else
+      redirect_to root_path
+      flash[:notice] = "自分の商品しか削除できません"
+    end
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:seler_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: User.find(1).id)
+    params.require(:product).permit(:seler_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: current_user.id)
   end
   
   # メンバーが検証中
