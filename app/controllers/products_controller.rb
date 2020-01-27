@@ -46,6 +46,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "商品を削除しました"
     else
       redirect_to root_path
+      flash[:notice] = "自分の商品しか削除できません"
     end
   end
 
