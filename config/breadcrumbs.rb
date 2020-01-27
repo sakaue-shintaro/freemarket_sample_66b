@@ -22,6 +22,11 @@ crumb :credit do
   parent :mypages
 end
 
+crumb :profile do
+  link "プロフィール", mypages_profile_path
+  parent :mypages
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

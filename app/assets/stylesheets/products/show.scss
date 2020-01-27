@@ -5,9 +5,31 @@
   .product-box {    //選択した商品のコンテント
     background-color: #ffffff;
     width: 700px;
-    margin: 40px 370px 0;
-    padding: 24px 40px 40px;
+    margin: 20px 370px;
+    padding: 40px;
     font-size: 14px;
+    &__if {
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 auto;
+      background-color: #ea352d;
+      .ifedit{
+        color: white;
+        display: block;
+        font-size: 16px;
+      }
+      .ifdelete {
+        background: #efefef;
+        display: block;
+        font-size: 16px;
+      }
+    }
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin: 10px 0;
+    }
     .product-name {   //商品名
       font-size: 24px;
       text-align: center;
