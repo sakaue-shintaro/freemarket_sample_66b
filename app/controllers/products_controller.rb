@@ -39,6 +39,11 @@ class ProductsController < ApplicationController
   end
 
   def purchase
+    @product = Product.find(params[:id])
+    @images = Image.where(product_id: params[:id])
+    @address= Address.find_by(user_id: current_user.id)
+    # @address = Address.where(user_id: params[:id])
+
   end
 
   private

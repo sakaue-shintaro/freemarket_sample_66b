@@ -24,16 +24,16 @@
       }
     }
   }
-}
   .center {
     width: 1440px;
     color: rgb(51, 51, 51);
     &__content {
       width: 700px;
       margin: 0 auto;
+      // padding: 0px 16px;
+      padding: 0px 16px 32px 16px;
       background-color: #ffffff;
-      &__text {
-        width: 700px;
+      &__text {     
         height: 97px;
         padding: 32px;
         font-size: 22px;
@@ -41,10 +41,10 @@
       }
     }
       .product__photo__box {
-        width: 700px;
         height: 145px;
         padding: 32px 16px;
         border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
         background-color: #ffffff;
         &__inner {
           width: 343px;
@@ -54,7 +54,6 @@
           .img {
           width: 80px;
           height: 80px;
-          background-color: red;
           }
           .description {
             width: 247px;
@@ -91,6 +90,8 @@
         margin: 0 auto;
         display: block;
         padding: 32px 16px 48px 16px;
+        border-bottom: 1px solid #f5f5f5;
+        // font-size: 12px;
         .box__in {
         display: flex;
         }
@@ -107,27 +108,56 @@
           }
         }
         .point {
-        .text-align: center;
         font-size: 14px;
-        color: silver; 
+        color: silver;
+        border-bottom: 1px solid #f5f5f5;
+        padding-bottom: 30px;
         }
-
-
-
-
-
+        a {
+          color: #0099E8;
         }
-        .user__payment {
+        }
+        .user__card__payment {
         margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+          h4 {
+            font-size: 14px;
+          }
+          .method {
+            font-weight: bold;
+          }
+          
+        .buy__card h4{
+          text-align: left;
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+          padding: 32px 0;
+          
+          .card__brand {
 
-        .buy__card {
-
+          }
         }
         }
         .user__address {
-
+        padding-top: 30px;
+        justify-content: space-between;
+        font-size: 14px;
+        display: flex;
+        font-weight: bold;
+        border-top: 1px solid #f5f5f5;
+          .shipping {
+            font-weight: bold;
+          }
+          .change {
+            color: #0099E8;
+            font-weight: normal;
+          }
         }
-
+        .address__first
+        .address__second
       h2 {
       text-align: center;
       font-weight: bold;
@@ -141,9 +171,12 @@
         height: 50px;
         width: 323px;
         margin-top: 32px;
-        background-color: #808080;
+        background-color: #EA352D;
         margin: 0 auto;
         margin-top: 32px;
+        color: white;
+        text-align: center;
+        line-height: 50px;
       }
       .text {
 
@@ -173,3 +206,4 @@
       }
     }
   }
+}
