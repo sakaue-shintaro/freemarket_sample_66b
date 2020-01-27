@@ -38,6 +38,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase_done
+  end
+  
   private
 
   def product_params
