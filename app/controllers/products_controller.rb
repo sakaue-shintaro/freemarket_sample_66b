@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
     if user_signed_in? && current_user.id == @product.seller_id
       @product.destroy
       redirect_to root_path
+      flash[:notice] = "商品を削除しました"
     else
       redirect_to root_path
     end
