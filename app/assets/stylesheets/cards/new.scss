@@ -1,0 +1,36 @@
+.center-a{  
+  margin-left: 550px;
+  width:600px;
+  background-color: #fff;
+  position: relative;
+  padding-left: 150px;
+  &__title{
+    height: 97px;
+    text-align: center;
+    font-size: 22px;
+    padding: 32px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f5f5f5
+  }
+  &__name{
+    margin-top: 30px;;
+    font-size: 14px;
+    font-weight: bold;
+    }
+    &__ss{
+      position: absolute;
+      top:127px;
+      left:225px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+    }
+    #card_number{
+      width:300px;
+      height: 40px;
+      border-radius: 4px;
+    }
+    &__yu{
+      margin-top: 50px;
+    }
+  }
