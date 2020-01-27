@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :category do
-    association :product
     name    {"アクセサリー"}
-    ancestry          {""}
+    ancestry          {"1"}
   end
 end
