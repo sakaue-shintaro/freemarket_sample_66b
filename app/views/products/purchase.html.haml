@@ -11,8 +11,7 @@
       .product__photo__box
         .product__photo__box__inner
           .img
-          - @images.each do |image|
-            %li= image_tag image.src
+            = image_tag "#{@images[0].src}"
           .description
             .name
               = @product.name
@@ -30,26 +29,19 @@
           =check_box_tag :check1
           =label_tag :check1, "ポイントを使用 (所持ポイント: P0)"
 
-
-
-
-
         .user__card__payment
           .method支払い方法
           .change
             = link_to "変更する" , registration_card_signup_index_path
         .buy__card
-          %h4 クレジットカード
-          %h4 ************2171
+          %h4カードナンバー
+          %h4***********2171
           %h4 有効期限 10 / 23
           .card__brand
           = image_tag "visa.png", size: "34x20", alt: "カード"
         .user__address
           配送先
-          .shipping
-          
-          
-          
+          .shipping        
           .change
             = link_to "変更する" , registration_nickname_signup_index_path
             
@@ -61,10 +53,6 @@
         .address__second
           = @address.address  
         .buy__name
-
-
-
-
 
         .user__address
       .purchase__btn購入する

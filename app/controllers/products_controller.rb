@@ -40,9 +40,10 @@ class ProductsController < ApplicationController
 
   def purchase
     @product = Product.find(params[:id])
-    @images = Image.where(product_id: params[:id])
+    @images = Image.where(product_id: @product.id)
     @address= Address.find_by(user_id: current_user.id)
-    # @address = Address.where(user_id: params[:id])
+    @cards = Card.find_by(user_id: current_user.id)
+  end
 
   def destroy
     @product = Product.find(params[:id])
