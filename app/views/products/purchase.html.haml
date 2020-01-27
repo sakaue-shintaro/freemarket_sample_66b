@@ -11,7 +11,7 @@
       .product__photo__box
         .product__photo__box__inner
           .img
-            = image_tag "#{@images[0].src}"
+            = image_tag "#{@images.first.src}"
           .description
             .name
               = @product.name
