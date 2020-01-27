@@ -19,7 +19,7 @@
       /= link_to signup_index_path, class: "access_white" do
       = link_to user_google_oauth2_omniauth_authorize_path, class: "access_white" do
         %i.fab.fa-google.fa-fw
-        Google+でログインしない
+        Google+でログインしする
   .loginform__inner
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "field"

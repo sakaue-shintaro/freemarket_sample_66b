@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
   has_many :products
-  has_many :sns_credentials
   has_many :sns_credentials, dependent: :destroy
-  
+
+  #↓うまくいかないので後程
 #   has_many :seller_products, class_name: 'Product', :foreign_key => 'seller_id'
 #   has_many :buyer_products, class_name: 'Product', :foreign_key => 'buyer_id'
 
@@ -27,14 +27,7 @@ class User < ApplicationRecord
        # validates :birthday_month,         numericality: true
        # validates :birthday_day,           numericality: true
        # validates :phonennumber,            {presence: true, format: { with: VALID_PHONE_REGEX }}
-#   def self.from_omniauth(auth)
-#     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-#               user.name = auth.info.name
-#               user.email = auth.info.email
-#               user.password = Devise.friendly_token[0,20]
-#               user.avatar = auth.info.image
-#     end
-#   end
+
   def self.from_omniauth(auth)
        sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
        # sns認証したことがあればアソシエーションで取得
