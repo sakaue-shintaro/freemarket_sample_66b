@@ -4,10 +4,6 @@ class SignupController < ApplicationController
   before_action :validates_registration_address, only: :create # step3のバリデーション
 
   def index
-  end
-
-  def registration_nickname
-    @user = User.new # 新規インスタンス作成
     session[:id] = nil
     session[:nickname] = nil
     session[:email] = nil
@@ -17,6 +13,10 @@ class SignupController < ApplicationController
     session[:birthday_month] = nil
     session[:birthday_day] = nil
     session[:phonennumber] = nil
+  end
+
+  def registration_nickname
+    @user = User.new # 新規インスタンス作成
   end
 
   def registration_sms
