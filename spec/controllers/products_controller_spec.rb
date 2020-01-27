@@ -26,6 +26,21 @@ describe ProductsController, type: :controller  do
         get :show, params: {id: 1}
         expect(response).to render_template :show
     end
+      describe 'delete #destroy' do
+        before do
+          @product = create(:product)
+        end
+        context '存在するユーザーの場合' do
+          it 'リクエストは302 リダイレクトとなること' do
+            delete :destroy, id: @product.id
+            expect(response.status).to eq 302
+          end
+          it 'データベースから要求された商品が削除されること' do
+            expect{
+              delete :destroy,{ id: @product.id}
+            }.to change(Product,:count).by(-1)
+        end
+      end
+    end
   end
 end
-

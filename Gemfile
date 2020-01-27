@@ -43,7 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'faker', "~> 2.8"  #テスト用
+  # gem 'faker', "~> 2.8"  #テスト用
 end
 
 group :development do
@@ -82,13 +82,13 @@ gem 'carrierwave' #画像アップロード
 gem 'fog-aws' #AWSに画像をあげるよう
 gem 'jquery-rails' #スライドショー
 # gem "font-awesome-rails"
-gem 'font-awesome-sass' #アイコン
+gem 'font-awesome-sass' #アイコン 
 gem 'mini_magick' #画像リサイズ
 gem 'pry-rails' #binding.pry
 gem 'ancestry' #階層構造のテーブル作成の便利ツール
 gem 'rspec-rails'# テスト用
 gem 'rails-controller-testing'#テスト用
 gem 'factory_bot_rails'#データ用のデータを自動作成
-#gem 'faker'#ダーミーデータをデータベースに入れるやつ(group :development, :test doへ移動)
+gem 'faker'#ダーミーデータをデータベースに入れるやつ(group :development, :test doへ移動)
 gem 'gretel'#パンくず機能実装用
 gem 'stripe'#APIメソッドを使用するため

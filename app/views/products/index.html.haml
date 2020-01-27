@@ -16,6 +16,9 @@
 
 //メルカリトップは、この下からでお願いします
 %header.priducts-toppage-header
+  - if flash[:notice]
+    .flash
+      = flash[:notice]
   = render 'header' 
 .products-toppage-contents
   = render 'content'
