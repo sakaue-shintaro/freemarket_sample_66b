@@ -42,7 +42,6 @@ class ProductsController < ApplicationController
     params[:id] = 1
     @product = Product.find(params[:id])
     @images = Image.where(product_id: @product.id)
-    binding.pry
     @address= Address.find_by(user_id: current_user.id)
     @cards = Card.find_by(user_id: current_user.id)
   end
