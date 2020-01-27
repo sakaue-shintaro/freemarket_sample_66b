@@ -11,12 +11,10 @@
         新規会員登録
   .loginform__inner
     .blue_sns
-      /= link_to signup_index_path, class: "access" do
       = link_to user_facebook_omniauth_authorize_path, method: :post ,class: "access" do
         %i.fab.fa-facebook-square.fa-fw
         Facebookでログインする
     .white_sns
-      /= link_to signup_index_path, class: "access_white" do
       = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "access_white" do
         %i.fab.fa-google.fa-fw
         Google+でログインする
@@ -27,6 +25,7 @@
         = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "field"
       .fileder
         = f.submit "ログイン", id: "loginbtn"
+    -# ↓時間があれば、実装する。
     -# = render "devise/shared/links"  パスワードお忘れの方を作る場合に使える
   .user_new_footer
     .info_box
