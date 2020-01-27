@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
   get 'mypages/index'  => 'mypages#index'
+  get 'mypages/exhibition' => 'mypages#exhibition'
   get 'mypages/credit'  => 'mypages#credit'
   get 'mypages/identification'  => 'mypages#identification'
   get 'mypages/logout'  => 'mypages#logout'
