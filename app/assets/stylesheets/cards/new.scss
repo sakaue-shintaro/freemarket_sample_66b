@@ -4,7 +4,10 @@
   background-color: #fff;
   position: relative;
   padding-left: 150px;
+  padding-top: 50px;
+  height: 600px;
   &__title{
+    width: 290px;
     height: 97px;
     text-align: center;
     font-size: 22px;
@@ -19,7 +22,7 @@
     }
     &__ss{
       position: absolute;
-      top:127px;
+      top:177px;
       left:225px;
       background-color: red;
       color: white;
@@ -33,4 +36,39 @@
     &__yu{
       margin-top: 50px;
     }
+    &__sss{
+      position: absolute;
+      top:330px;
+      left:225px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+    }
+    #exp_month{
+      height: 30px;
+      border-radius: 4px;
+    }
+    #exp_year{
+      height: 30px;
+      border-radius: 4px;
+    }
+    &__ssss{
+      position: absolute;
+      top:410px;
+      left:300px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+    }
+    #cvc{
+      width:300px;
+      height: 40px;
+      border-radius: 4px;
+    }
+    #token_submit{
+      margin-top: 20px;
+    }
+  }
+  .content-b{
+    height: 750px;
   }

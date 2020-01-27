@@ -16,11 +16,14 @@
     必須
   .center-a__form1
     = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-      = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"do
+      = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
   .center-a__icons
-    = img_tag{:alt => "カードのアイコン", :height => "49", :src => "/assets/cards-4fba0baa855d0bfe61a7714bec1bb178a1fb65feb2fac5682d4ddf6dec404f12.png", :width => "343"}
+    = image_tag '/assets/cards-4fba0baa855d0bfe61a7714bec1bb178a1fb65feb2fac5682d4ddf6dec404f12.png'
   .center-a__yu
     有効期限
+  .center-a__sss
+    必須
+  .center-a__form2
     %select#exp_month{name: "exp_month", type: "text"}
       %option{value: ""} --
       %option{value: "1"}01
@@ -51,11 +54,16 @@
       %option{value: "2029"}29
     %span 年
   %br
-    %label セキュリティコード
+  .center-a__cade
+    セキュリティコード
+  .center-a__ssss
+    必須
+  .center-a__form3
     = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
     #card_token
     = submit_tag "追加する", id: "token_submit"
   .clearfix
+.content-b
 .products-toppage-footer-app
   = render 'products/footer-app'
 %footer.products-toppage-footer-company
