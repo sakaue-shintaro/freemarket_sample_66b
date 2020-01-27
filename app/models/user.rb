@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   has_one :address
+  has_many :card
   accepts_nested_attributes_for :address
   has_many :products
   has_many :sns_credentials, dependent: :destroy

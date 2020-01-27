@@ -22,9 +22,20 @@ Rails.application.routes.draw do
       get 'registration_done'
     end
   end
-
-
-  
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
+  resources :purchases, only: [:index] do
+    collection do
+      get 'index', to: 'purchases#index'
+      post 'pay', to: 'purchases#pay'
+      get 'done', to: 'purchases#done'
+    end
+  end
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
   # -----------------------------------------------------------------------------
   get 'mypages/index'  => 'mypages#index'
