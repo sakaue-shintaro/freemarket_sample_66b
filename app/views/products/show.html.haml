@@ -6,17 +6,12 @@
       = @product.name
     .product-box__main-content
       .product-box__main-content__photo
-        %ul.product-box__main-content__photo__main-photo
-          %li{style: "display: block;"}
-            .select= image_tag "#{@images.first.src}", class:"photo-main"
-          - @images.each do |image|
-            - if image.id != 1
-              %li{style: "display: none;"}
-                = image_tag "#{image.src}", class:"photo-main"
+        .product-box__main-content__photo__main-photo
+          = image_tag @images[0].src, class:"photo-main"
         .product-box__main-content__photo__sub-photo 
-          %ul.product-box__main-content__photo__sub-photo__list
-            - @images.each do |image|
-              %li= image_tag image.src, class: "photo-list"
+          .product-box__main-content__photo__sub-photo__list
+            - @images.each do |i|
+              = image_tag i.src, class:"photo-list"
       .table
         %table.product-table
           %tbody

@@ -9,16 +9,11 @@ class ProductsController < ApplicationController
 
   def show
     # product_tableの1つの情報を渡す
-    # params[:id] = 1
-    #binding.pry
     @product = Product.find(params[:id])
     # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
-    # @images = Image.where(product_id: params[:id])
     @images = Image.where(product_id: @product.id)
     # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
     @user = User.find_by(id: @product.seller_id)
-    # @product.image
-    # binding.pry
   end
 
   def new
@@ -28,7 +23,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    #binding.pry
     if @product.save!
       redirect_to root_path
     else
