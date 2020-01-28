@@ -54,12 +54,36 @@
   }
   &__right {
     float: right;
+    height: 100%;
     width: 700px;
     margin: 0;
     padding: 0;
     background: #fff;
     &__top{
       width:700px;
+    }
+    .profile {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      padding: 40px 16px;
+      &__text {
+        padding: 15px;
+        min-height: 104px;
+        height: 200px;
+        border: solid 1px #ccc
+      }
+      &__btn {
+        height: 50px;
+        margin-top: 15px;
+        background: #ea352D;
+        p {
+          text-align: center;
+          font-size: 15px;
+          color: #fff;
+          line-height: 50px;
+        }
+      }
     }
     &__content{
       padding: 65px;
@@ -289,6 +313,36 @@
         font-size: 13px;
         margin-top: 50px;
         margin-left: 400px;
+      }
+    }
+    .profileimg {
+      height: 200px;
+      position: relative;
+      &__body {
+        position: absolute;
+        width: 40%;
+        height: 60px;
+        bottom: 50px;
+        right: 33%;
+        display: flex;
+        &__image {
+          max-height: 60px;
+          .imageicon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+        &__name {
+          margin: 5px 0 5px 15px;
+          padding: 10px 16px 8px;
+          height: 50px;
+          line-height: 32px;
+          width: 100%;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+          background: #fff;
+        }
       }
     }
   }
