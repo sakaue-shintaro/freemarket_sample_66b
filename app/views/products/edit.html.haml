@@ -1,6 +1,6 @@
 .new-item
   .new-item__content
-    = form_for @product, url: {controller: 'products', action: 'update'} do |f|
+    = form_for [@product,@products], url: {controller: 'products', action: 'create'},id:'btn' do |f|
       .new-item__content__top
         %h2商品情報を入力
       .exhibit
@@ -93,7 +93,6 @@
           %p禁止されている出品、行為を必ずご確認ください。
           %pまたブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
           %pまた、出品を持ちまして加盟店規約に同意したことになります。
-      .link-form
-        = f.submit "編集する" 
+          = f.submit '編集する', class:'send-btn',id:'btn'
           .exhibit__text__back
             %h4もどる
