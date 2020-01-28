@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
     @product = Product.find(params[:id])
     Payjp.api_key = 'sk_test_88ede2748be3db6794ece94e'
     Payjp::Charge.create(
-    :amount => @product.price #支払金額を入力（itemテーブル等に紐づけても良い）
+    :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
