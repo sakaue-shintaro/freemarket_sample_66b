@@ -5,8 +5,8 @@
   .product-box {    //選択した商品のコンテント
     background-color: #ffffff;
     width: 700px;
-    margin: 40px 370px 0;
-    padding: 24px 40px 40px;
+    margin: 20px 370px;
+    padding: 40px;
     font-size: 14px;
     .product-name {   //商品名
       font-size: 24px;
@@ -39,20 +39,12 @@
             width: 60px;
             height: 60px;
           }
-          .hide {
-            display: none;
-          }
-          ul {
-            display: flex;
-          }
         }
       }
       .table {    //表の箱(display-flexを使う為)
-        background-color: #b0c4de;
         width: 300px;
         height: 420px;
         .product-table {    //表のメインコンテント
-          background-color: #b0c4de;
           width: 100%;
           border: 1px solid #f5f5f5;
           max-width: 300px;

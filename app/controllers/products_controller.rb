@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # メンバーが検証中
+  #必ず最後にもどす！！！！
   # before_action :set_product, except: [:index, :new, :create]
 
   def index
@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     # product_tableの1つの情報を渡す
     @product = Product.find(params[:id])
     # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
-    @images = Image.where(product_id: params[:id])
+    @images = Image.where(product_id: @product.id)
     # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
     @user = User.find_by(id: @product.seller_id)
   end
@@ -41,10 +41,29 @@ class ProductsController < ApplicationController
   def purchase_done
   end
   
+  def purchase
+    params[:id] = 1
+    @product = Product.find(params[:id])
+    @images = Image.where(product_id: @product.id)
+    @address= Address.find_by(user_id: current_user.id)
+    @cards = Card.find_by(user_id: current_user.id)
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    if user_signed_in? && current_user.id == @product.seller_id && @product.destroy
+      redirect_to root_path
+      flash[:notice] = "商品を削除しました"
+    else
+      redirect_to root_path
+      flash[:notice] = "自分の商品しか削除できません"
+    end
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:seler_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: User.find(1).id)
+    params.require(:product).permit(:seller_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: current_user.id)
   end
   
   # メンバーが検証中

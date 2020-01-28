@@ -1,0 +1,27 @@
+%header.priducts-toppage-header
+  = render 'products/header'
+.breadcrumb
+  = render 'shared/breadcrumbs_logout'
+
+.user-mypage-content
+  .user-mypage-content__left
+    = render 'mypages/left-menu-logout'
+.content-top
+  .content-top__a
+    %label 登録クレジットカード情報
+    %br
+    = "**** **** **** " + @default_card_information.last4
+    %br
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    = exp_month + " / " + exp_year
+    = form_tag( delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button 削除する
+
+.products-toppage-footer-app
+  = render 'products/footer-app'
+%footer.products-toppage-footer-company
+  = render 'products/footer-company'
+.exhibition-btn
+  = render 'products/exhibition-btn'

@@ -1,0 +1,29 @@
+%header.priducts-toppage-header
+  = render 'products/header'
+.breadcrumb
+  = render 'shared/breadcrumbs_profile'
+.user-mypage-content
+  .user-mypage-content__left
+    = render 'left-menu-profile'
+  .user-mypage-content__right
+    .user-mypage-content__right__top
+      プロフィール
+    .profileimg  
+      = image_tag "user-bg.jpg", alt: "img", class: "clearimg"
+      .profileimg__body
+        .profileimg__body__image
+          = image_tag "member_photo_noimage_thumb.png", alt: "img", class: "imageicon"
+        .profileimg__body__name
+          = current_user.nickname
+    .profile
+      .profile__text
+        %p 閲覧ありがとうございます
+      .profile__btn
+        %p 変更する
+  .clearfix
+.products-toppage-footer-app
+  = render 'products/footer-app'
+%footer.products-toppage-footer-company
+  = render 'products/footer-company'
+.exhibition-btn
+  = render 'products/exhibition-btn'

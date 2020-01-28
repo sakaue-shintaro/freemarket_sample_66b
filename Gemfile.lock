@@ -361,7 +361,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
-  faker (~> 2.8)
+  faker
   fog-aws
   font-awesome-sass
   gretel
