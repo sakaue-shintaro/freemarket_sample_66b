@@ -7,65 +7,19 @@
     = render 'left-menu-profile'
   .user-mypage-content__right
     .user-mypage-content__right__top
-      本人情報の登録
-    .user-mypage-content__right__content
-      .user-mypage-content__right__content__text
-        お客さまの本人情報をご登録ください。
-        %br
-        登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-      .user-mypage-content__right__content__link1
-        本人確認書類のアップロードについて＞
-      .user-mypage-content__right__content__name-label
-        お名前
-        .user-mypage-content__right__content__name-label__form1
-          坂上　真太朗
-      .user-mypage-content__right__content__j-name
-        お名前カナ
-        .user-mypage-content__right__content__j-name__form2
-          サカウエ　シンタロウ
-      .user-mypage-content__right__content__birthday
-        年月日
-        .user-mypage-content__right__content__birthday__form3
-          1985/9/15
-      .user-mypage-content__right__content__postal-code
-        .user-mypage-content__right__content__postal-code__title
-          郵便番号
-        .user-mypage-content__right__content__postal-code__option
-          任意
-        .user-mypage-content__right__content__postal-code__form4
-          例)12345678
-      .user-mypage-content__right__content__prefecture
-        .user-mypage-content__right__content__prefecture__title
-          都道府県
-        .user-mypage-content__right__content__prefecture__option
-          任意
-        .user-mypage-content__right__content__prefecture__form5
-          ^--^
-      .user-mypage-content__right__content__municipalities
-        .user-mypage-content__right__content__municipalities__title
-          市区町村
-        .user-mypage-content__right__content__municipalities__option
-          任意
-        .user-mypage-content__right__content__municipalities__form6
-          例)横浜〜🌟
-      .user-mypage-content__right__content__address
-        .user-mypage-content__right__content__address__title
-          番地
-        .user-mypage-content__right__content__address__option
-          任意
-        .user-mypage-content__right__content__address__form7
-          例)青山テルマ
-      .user-mypage-content__right__content__building
-        .user-mypage-content__right__content__building__title
-          建物名
-        .user-mypage-content__right__content__building__option
-          任意
-        .user-mypage-content__right__content__building__form8
-          例)柳〜↑Ikkoっぽく脳内再生
-      .user-mypage-content__right__content__send-btn
-        = link_to '登録する', root_path,class:'btn'
-      .user-mypage-content__right__content__link2
-        = link_to '本人情報の登録について＞',root_path,class:'b'
+      プロフィール
+    .profileimg  
+      = image_tag "user-bg.jpg", alt: "img", class: "clearimg"
+      .profileimg__body
+        .profileimg__body__image
+          = image_tag "member_photo_noimage_thumb.png", alt: "img", class: "imageicon"
+        .profileimg__body__name
+          = current_user.nickname
+    .profile
+      .profile__text
+        %p 閲覧ありがとうございます
+      .profile__btn
+        %p 変更する
   .clearfix
 .products-toppage-footer-app
   = render 'products/footer-app'
