@@ -37,8 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @products = Product.find(params[:id])
-    @product = @products.images.build
+    @product = Product.find(params[:id])
   end 
   def update
     if @product.update(product_params)
