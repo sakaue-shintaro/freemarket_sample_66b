@@ -38,6 +38,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase_done
+  end
+  
   def purchase
     params[:id] = 1
     @product = Product.find(params[:id])
