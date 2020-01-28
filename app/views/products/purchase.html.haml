@@ -1,0 +1,66 @@
+.content
+  .third__stage__header
+    .logo-box
+      .logo-box__in
+        =link_to root_path do
+          = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+  .center
+    .center__content
+      .center__content__text
+        %h2購入内容の確認
+      .product__photo__box
+        .product__photo__box__inner
+          .img
+            = image_tag "#{@images.first.src}"
+          .description
+            .name
+              = @product.name
+            .name__line
+              ¥
+              = @product.price
+              .tax__shipping（税込）送料込み
+      .purchase__form__box
+        .box__in
+          .payment支払い金額
+          .price__tag
+            ¥
+            = @product.price
+        .point
+          =check_box_tag :check1
+          =label_tag :check1, "ポイントを使用 (所持ポイント: P0)"
+
+        .user__card__payment
+          .method支払い方法
+          .change
+            = link_to "変更する" , registration_card_signup_index_path
+        .buy__card
+          %h4カードナンバー
+          %h4***********2171
+          %h4 有効期限 10 / 23
+          .card__brand
+          = image_tag "visa.png", size: "34x20", alt: "カード"
+        .user__address
+          配送先
+          .shipping        
+          .change
+            = link_to "変更する" , registration_nickname_signup_index_path
+            
+        .postnumber 
+        〒
+        = @address.postal_code
+        .address__first
+          = @address.city_ward
+        .address__second
+          = @address.address  
+        .buy__name
+
+        .user__address
+      .purchase__btn購入する
+      .text
+  .footer
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # メンバーが検証中
+  #必ず最後にもどす！！！！
   # before_action :set_product, except: [:index, :new, :create]
 
   def index
@@ -37,6 +37,14 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def purchase
+    params[:id] = 1
+    @product = Product.find(params[:id])
+    @images = Image.where(product_id: @product.id)
+    @address= Address.find_by(user_id: current_user.id)
+    @cards = Card.find_by(user_id: current_user.id)
   end
 
   def destroy
