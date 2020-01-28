@@ -1,0 +1,37 @@
+%header.priducts-toppage-header
+  = render 'products/header'
+.breadcrumb
+  = render 'shared/breadcrumbs_exhibition'
+.user-mypage-content
+  .user-mypage-content__left
+    = render 'left-menu-exhibition'
+  .user-mypage-content__right
+    .mypage-tab-head
+      購入した商品
+    %ul.tabs
+      %li 出品中
+      %li 取引中
+      %li 売却済み
+    .exhibition-list
+      %ul.content
+        %li{style: "display: block;"}
+          = link_to root_path, class: "list-link"  do
+            .figure
+              = image_tag "logo_red.svg", class: "logo"
+            .list-body
+              .list-body__text
+                商品名
+              .list-body__time
+                = icon( "far", "clock", class: "clock")
+            = icon("fas", "chevron-right", class: "chevron")
+        %li{style: "display: none;"}
+          a
+        %li{style: "display: none;"}
+          a
+  .clearfix
+.products-toppage-footer-app
+  = render 'products/footer-app'
+%footer.products-toppage-footer-company
+  = render 'products/footer-company'
+.exhibition-btn
+  = render 'products/exhibition-btn'
