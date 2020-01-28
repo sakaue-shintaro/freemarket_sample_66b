@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   # before_action :set_product, except: [:index, :new, :create]
 
   def index
-    @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
-    @mens__products = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
+      @ladies = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
+      @mens = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
   end
 
   def show
