@@ -121,13 +121,12 @@
               top:16px;
               left: 460px;
             }
-            
           }
         }
       }
     }
+}
   .regist_main {
-    height: 100vh;
     .center_box {
       width: 700px;
       height: 100%;
@@ -171,7 +170,8 @@
     .label {
     font-weight: bold;
     }
-  
+  }
+}
   .footer { 
     width: 456px;
     height: 220px;
@@ -179,7 +179,6 @@
     .footer_center {
       height: 220px;
       width: 456px;
-      background-color: #EEEEEE;
       color: #333;
       text-align: center;
       display: inline-block;
@@ -194,7 +193,4 @@
         color: black;
         }
       }
-      }
     }
-  }
-}
