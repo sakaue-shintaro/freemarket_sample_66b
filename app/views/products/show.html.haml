@@ -78,7 +78,7 @@
         = @product.price
       %span.tax (税込)
       %span.fee 送料込み
-      = link_to root_path, class: "purchase-btn" do
+      = link_to purchase_product_path, class: "purchase-btn" do
         購入画面に進む
     .product-box__description
       %p.description-text
@@ -225,3 +225,4 @@
     = render 'footer-app'
   %footer.products-toppage-footer-company
     = render 'footer-company'
+    
