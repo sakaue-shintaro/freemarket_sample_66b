@@ -45,7 +45,7 @@ namespace :deploy do
   desc '.env'
   task :upload do
     on roles(:app) do |host|
-      if test "[ ! -d #{shared_path} ]"
+      if test "[ ! -d #{shared_path}]"
         execute "mkdir -p #{shared_path}"
       end
       upload!('.env', "#{shared_path}/.env")
