@@ -1,22 +1,17 @@
 $(function() {
   // 画像用のinputを生成する関数
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
+  const buildFileField = (num)=> {
+    const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
-                    name="product[images_attributes][${index}][src]"
-                    id="product_images_attributes_${index}_src" style="display:none"><label for="product_images_attributes_${index}_src"><pre>画像をアップロード</pre></label>
+                    name="product[images_attributes][${num}][src]"
+                    id="product_images_attributes_${num}_src"><br>
+                    <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<div class="kote">
-                    <img data-index="${index}" src="${url}" width="100px" height="100px">
-                    <div class="imgedit${index}">
-                      <div class="js-remove">画像クリック<br>して削除</div>
-                    </div>
-                  </div>
-                  `;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
 
@@ -33,11 +28,7 @@ $(function() {
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
-    
+
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
@@ -51,37 +42,17 @@ $(function() {
     }
   });
 
-  $('#image-box').on('change', '.js-file', function() {
-    const obj = $(this).clone();
-    $(this).parent().remove();
-    for(let r = 0; r<10;r++) {
-      $(".imgedit"+r).before(obj);
-      r + 1
-    }
-  });
-
-  $('#image-box').on('click', 'img', function() {
+  $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
+
     $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
-})
-
-function update_field(){
-  let value = 0.9;
-  let comis = 0.1;
-  let result = $('#product_price').val() * value;
-  $('#profit').text("¥"+result);
-  let pami = $('#product_price').val() * comis;
-  $('#commission').text("¥"+pami);
-}
-$(function() {
-  $('input[type="text"]').on('keyup change', function() {
-    update_field();
   });
 });
