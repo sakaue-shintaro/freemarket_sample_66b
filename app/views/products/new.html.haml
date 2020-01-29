@@ -1,3 +1,8 @@
+.contena
+  .user_new_header
+    .logo
+      =link_to root_path do
+        = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
 .new-item
   .new-item__content
     = form_for @product, url: {controller: 'products', action: 'create'} do |f|
@@ -13,7 +18,7 @@
               #previews
                 - if @product.persisted?
                   - @product.images.each_with_index do |image, i|
-                    = image_tag image.src.url, data: { index: i }, width: "150", height: '100'
+                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
               = f.fields_for :images do |image| 
                 .js-file_group{"data-index" => "#{image.index}"}
                   = image.file_field :src, {required: "", class: "js-file", id: "product_images_attributes_0_src", style: "display :none"}
@@ -42,7 +47,6 @@
           .exhibit__detail__right
             %labelカテゴリー
             %span必須
-            -# = f.select :category_id, ["レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他" ], {}, {class:"exhibit__detail__right__box"}
             = f.collection_select :"category_id", Category.limit(13), :id, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label.top商品の状態
@@ -96,3 +100,10 @@
           %button{:form => "new_product", :type => "submit", class: "exhibit__text__btn"} 出品する
           .exhibit__text__back
             %h4もどる
+  .footer
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.
