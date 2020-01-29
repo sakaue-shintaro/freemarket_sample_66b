@@ -3,22 +3,17 @@ class ProductsController < ApplicationController
   # before_action :set_product, except: [:index, :new, :create]
 
   def index
-    @ladies__products = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
-    @mens__products = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
+      @ladies = Product.includes(:images).where(category_id: 1).order("created_at DESC").limit(10)
+      @mens = Product.includes(:images).where(category_id: 2).order("created_at DESC").limit(10)
   end
 
   def show
     # product_tableの1つの情報を渡す
-    # params[:id] = 1
-    #binding.pry
     @product = Product.find(params[:id])
     # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
-    # @images = Image.where(product_id: params[:id])
     @images = Image.where(product_id: @product.id)
     # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
     @user = User.find_by(id: @product.seller_id)
-    # @product.image
-    # binding.pry
   end
 
   def new
@@ -28,7 +23,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    #binding.pry
     if @product.save!
       redirect_to root_path
     else
@@ -48,6 +42,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase_done
+  end
+  
   def purchase
     params[:id] = 1
     @product = Product.find(params[:id])
