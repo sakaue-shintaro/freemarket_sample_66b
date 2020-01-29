@@ -20,9 +20,6 @@ describe ProductsController, type: :controller  do
       expect(assigns(:product)).to eq product
     end
     it "商品詳細ページに遷移するか" do
-        # product = create(:product)
-        # get :show, params: {id: product}
-        # expect(response).to render_template :show  
         get :show, params: {id: 1}
         expect(response).to render_template :show
     end

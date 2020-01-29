@@ -93,6 +93,9 @@
         .box__in {
         display: flex;
         }
+        a {
+          color: #0099E8;
+        }
           .payment {
             font-size: 18px;
             font-weight: bold; 
@@ -109,9 +112,6 @@
         color: silver;
         border-bottom: 1px solid #f5f5f5;
         padding-bottom: 30px;
-        }
-        a {
-          color: #0099E8;
         }
         }
         .user__card__payment {
