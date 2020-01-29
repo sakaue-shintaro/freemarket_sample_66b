@@ -18,8 +18,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-    @product.images.new
+    if user_signed_in?
+      @product = Product.new
+      @product.images.new
+    else
+      redirect_to user_session_path
+    end
   end
 
   def create
@@ -34,6 +38,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
   end 
+
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
@@ -42,19 +47,19 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
-  
-
-  def buy
-  end
 
   def purchase
-    Payjp.api_key = "sk_test_88ede2748be3db6794ece94e"
-    @images = Image.where(product_id: @product.id)
-    @address= Address.find_by(user_id: current_user.id)
-    card = Card.where(user_id: current_user.id).first
-    @cards = Card.find_by(user_id: current_user.id)
-    customer = Payjp::Customer.retrieve(card.customer_id)
-    @default_card_information = customer.cards.retrieve(card.card_id)
+    if user_signed_in?
+      Payjp.api_key = "sk_test_88ede2748be3db6794ece94e"
+      @images = Image.where(product_id: @product.id)
+      @address= Address.find_by(user_id: current_user.id)
+      card = Card.where(user_id: current_user.id).first
+      @cards = Card.find_by(user_id: current_user.id)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    else
+      redirect_to user_session_path
+    end
   end
 
   def destroy
@@ -76,7 +81,6 @@ class ProductsController < ApplicationController
     else
       render :purchase
     end
-
   end
   
   private
