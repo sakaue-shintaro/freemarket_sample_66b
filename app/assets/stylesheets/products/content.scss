@@ -1,17 +1,20 @@
 .slider{
   height:400px;
-  width: 20vw;
+  width: 1440px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
+  img {
+    height: 400px;
+    width: 1440px;
+  }
 }
 
 .slider__content{
-  min-width: 100%;
-  animation: sliderAnime 6s ease-in-out infinite;
+  animation: sliderAnime 8s ease-in-out infinite;
 }
 
 @keyframes sliderAnime{

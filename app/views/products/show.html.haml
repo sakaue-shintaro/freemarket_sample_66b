@@ -9,9 +9,8 @@
         .product-box__main-content__photo__main-photo
           = image_tag @images[0].src, class:"photo-main"
         .product-box__main-content__photo__sub-photo 
-          .product-box__main-content__photo__sub-photo__list
-            - @images.each do |i|
-              = image_tag i.src, class:"photo-list"
+          - @images.each do |i|
+            = image_tag i.src, class:"photo-list"
       .table
         %table.product-table
           %tbody
