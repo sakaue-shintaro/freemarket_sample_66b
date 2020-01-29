@@ -85,6 +85,7 @@
           - if @product.buyer_id != nil
             .soldout
               売り切れました
+          - else
             = link_to purchase_product_path, class: "purchase-btn" do
               購入画面に進む
       - else
