@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     member do
       get 'purchase'
       get 'purchase_done'
+      get 'buy', to: 'products#buy'
+      # post 'pay', to: 'products#pay'
+      get 'done', to: 'products#done' #変更点はここだよ(・ω・)
     end
   end
     
@@ -32,8 +35,10 @@ Rails.application.routes.draw do
   resources :purchases, only: [:index] do
     collection do
       get 'index', to: 'purchases#index'
+    end
+    #変更点はここだよ(・ω・)
+    member do
       post 'pay', to: 'purchases#pay'
-      get 'done', to: 'purchases#done'
     end
   end
   # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
