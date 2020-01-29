@@ -47,6 +47,7 @@
           background-color: #c0c0c0;    //後で消す
           width: 300px;
           height: 300px;
+          position: relative;
           // overflow: hidden;    はみ出した分を隠す(使うかも)
           .photo-main {
             width: 300px;
@@ -136,6 +137,16 @@
         font-size: 16px;
       }
     }
+    .soldout {
+      display: block;
+      margin-top: 16px;
+      background: #888;
+      font-size: 24px;
+      line-height: 60px;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
     .purchase-btn {   //購入ボタン
       display: block;
       margin-top: 16px;
@@ -154,6 +165,7 @@
       }
       p {
         font-size: 18px;
+        word-wrap: break-word;
       }
     }
     &__description-buttom {   //ボタンエリア
@@ -334,6 +346,7 @@
             white-space: normal;
             line-height: 1.5;
             height: 3em;
+            word-wrap: break-word;
           }
           .product-bottom {
             margin: 8px 0 0;
@@ -382,4 +395,10 @@
       }
     }
   }
+}
+
+.itembox__image__sold-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
