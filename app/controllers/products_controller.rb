@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
 
   def purchase
     if user_signed_in?
-      Payjp.api_key = "sk_test_88ede2748be3db6794ece94e"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       @images = Image.where(product_id: @product.id)
       @address= Address.find_by(user_id: current_user.id)
       card = Card.where(user_id: current_user.id).first
