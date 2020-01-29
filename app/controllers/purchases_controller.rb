@@ -27,8 +27,7 @@ class PurchasesController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
-    redirect_to done_product_path #変更点はここだよ(・ω・)
-  # redirect_to action: 'done' #完了画面に移動 
+    redirect_to done_product_path
   end
 
 end

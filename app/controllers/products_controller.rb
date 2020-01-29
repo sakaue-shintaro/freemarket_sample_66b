@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   #必ず最後にもどす！！！！
-  # before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create]
 
   require 'payjp'
 
@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 
   def show
     # product_tableの1つの情報を渡す
-    @product = Product.find(params[:id])
     # image_tableのproduct_idのカラムがproduct_tableのidと一致した情報
     @images = Image.where(product_id: @product.id)
     # user_tableの主キーとproduct_tableのseller_idが一致した情報を渡す
@@ -42,12 +41,10 @@ class ProductsController < ApplicationController
   
 
   def buy
-    @product = Product.find(params[:id])
   end
 
   def purchase
     Payjp.api_key = "sk_test_88ede2748be3db6794ece94e"
-    @product = Product.find(params[:id])
     @images = Image.where(product_id: @product.id)
     @address= Address.find_by(user_id: current_user.id)
     card = Card.where(user_id: current_user.id).first
@@ -57,7 +54,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     if user_signed_in? && current_user.id == @product.seller_id && @product.destroy
       redirect_to root_path
       flash[:notice] = "商品を削除しました"
@@ -68,9 +64,11 @@ class ProductsController < ApplicationController
   end
 
   def done
-    @product = Product.find(params[:id])
     @product.buyer_id = current_user.id
     if @product.save!
+      # 別コントローラー(purchases_controllerのdef pay)で、products内のdone.haml.htmlを読むように指示している。
+      # そのため、ここでは何も指示をしなくても、問題ないと思われる(正常動作する)
+      # 処理の流れ：別コントローラーでpayjpの処理を行う→このdefで、buyer_id = current_user.id後、@product.save!を行う → done.haml.htmlが表示される
     else
       render :purchase
     end
@@ -83,9 +81,8 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:seller_id, :name, :discription, :category_id, :brand, :state, :delivery_fee, :sending_method, :sending_area, :sending_day, :price, images_attributes:  [:src, :_destroy, :id]).merge(seller_id: current_user.id)
   end
   
-  # メンバーが検証中
-  # def set_product
-  #   @product = Product.find(params[:id])
-  # end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
 end
