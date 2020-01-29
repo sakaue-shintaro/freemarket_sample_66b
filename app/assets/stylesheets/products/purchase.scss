@@ -149,23 +149,24 @@
             font-weight: normal;
           }
         }
-        .address__first
-        .address__second
       h2 {
       text-align: center;
       font-weight: bold;
       }
     
-      .purchase__btn {
+      .purchase__box {
         height: 50px;
         width: 323px;
         margin-top: 32px;
         background-color: #EA352D;
         margin: 0 auto;
         margin-top: 32px;
-        color: white;
         text-align: center;
         line-height: 50px;
+        &__btn {
+          color: white;
+          display: block;
+        }
       }
       
     
