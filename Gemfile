@@ -78,7 +78,7 @@ gem 'dotenv-rails' #SNS認証
 gem "omniauth-rails_csrf_protection" #SNS認証
 
 #商品サイド
-gem 'carrierwave' #画像アップロード
+gem 'carrierwave' #画像アップロードp
 gem 'fog-aws' #AWSに画像をあげるよう
 gem 'jquery-rails' #スライドショー
 # gem "font-awesome-rails"

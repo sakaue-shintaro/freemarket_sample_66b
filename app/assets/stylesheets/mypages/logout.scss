@@ -51,7 +51,7 @@
     width: 280px;
     margin: 0 40px 0 0;
   }
-  &__right {
+  &__right2 {
     position: relative;
     float: right;
     width: 700px;
@@ -59,11 +59,10 @@
     padding: 0;
     background: #fff;
     height:174px;
-    &__center-btn{
-      position: absolute;
-      top:60px;
-      left:200px;
-      width:320px;
+    &__center-btn2{
+      margin-left: 200px;
+      margin-top: 50px;
+      width:400px;
       height:50px;
       color:#ffffff;
       background-color: #ea352b;
@@ -71,10 +70,11 @@
       font-size: 14px;
       text-align: center;
       line-height: 48px;
-      .btn{
+      .btn2{
       text-decoration: none;
       color:#ffffff;
       display: block;
+
       }
     } 
   }
