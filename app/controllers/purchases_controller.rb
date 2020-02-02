@@ -20,13 +20,18 @@ class PurchasesController < ApplicationController
   def pay
     card = Card.where(user_id: current_user.id).first
     @product = Product.find(params[:id])
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    Payjp::Charge.create(
-    :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
-    )
-    redirect_to done_product_path
+    if @product.buyer_id == nil && current_user.id != @product.seller_id
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp::Charge.create(
+      :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+      :customer => card.customer_id, #顧客ID
+      :currency => 'jpy', #日本円
+      )
+      redirect_to done_product_path
+    else
+      redirect_to root_path
+      flash[:notice] = "この商品は、既に売却済です"
+    end
   end
 
 end
