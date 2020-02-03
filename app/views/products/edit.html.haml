@@ -1,7 +1,12 @@
-.new-item
+.contena
   - if flash[:notice]
     .flash
       = flash[:notice]
+  .user_new_header
+    .logo
+      =link_to root_path do
+        = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "フリマのアイコン"
+.new-item
   .new-item__content
     = form_for @product, url: {controller: 'products', action: 'update'} do |f|
       .new-item__content__top
@@ -27,7 +32,8 @@
               - if @product.persisted?
                 .js-file_group{"data-index" => "#{@product.images.count}"}
                   = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
-                  .js-remove 削除
+                  %br/
+                  %span.js-remove 削除
       .exhibit
         .exhibit__text
           .exhibit__text__content
@@ -45,12 +51,11 @@
           .exhibit__detail__right
             %labelカテゴリー
             %span必須
-            -# = f.select :category_id, ["レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他" ], {}, {class:"exhibit__detail__right__box"}
-            = f.collection_select :"category_id", Category.limit(13), :id, :name, {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+            = f.collection_select :"category_id", Category.limit(13), :id, :name, {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label.top商品の状態
               %span必須
-              = f.collection_select :state, Condition.all, :name, :name, {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+              = f.collection_select :state, Condition.all, :name, :name, {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -59,19 +64,19 @@
           .exhibit__detail__right
             %label配送料の負担
             %span必須
-            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label配送の方法
               %span必須
-              = f.collection_select :sending_method, SendingMethod.all, :name, :name, {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+              = f.collection_select :sending_method, SendingMethod.all, :name, :name, {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送元の地域
               %span必須
-              = f.collection_select :sending_area, Area.all, :name, :name, {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+              = f.collection_select :sending_area, Area.all, :name, :name, {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送までの日数
               %span必須
-              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {:prompt => "---"},{:required => false, class:"exhibit__detail__right__box"}
+              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {prompt: "---"},{required: false, class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -98,4 +103,11 @@
           %pまた、出品を持ちまして加盟店規約に同意したことになります。
         = f.submit '編集する',class:'btn'
         .exhibit__back
-          =link_to '戻る',root_path,class:'back-text'
+          =link_to '戻る',class:'back-text'
+  .footer
+    .footer_center
+      プライバシーポリシー Fmarket利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Fmarket, Inc.
