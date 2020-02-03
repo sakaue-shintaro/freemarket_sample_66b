@@ -4,20 +4,14 @@ $(function() {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][src]"
-                    id="product_images_attributes_${num}_src" style="display:none"><label for="product_images_attributes_${num}_src"><pre>画像をアップロード</pre></label>
+                    id="product_images_attributes_${num}_src"><br>
+                    <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<div class="kote">
-                    <img data-index="${index}" src="${url}" width="100px" height="100px">
-                    <div class="imgedit">
-                      <div class="js-remove">編集</div>
-                      <div class="js-remove">削除</div>
-                    </div>
-                  </div>
-                  `;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
 
@@ -48,31 +42,17 @@ $(function() {
     }
   });
 
-  $('#image-box').on('change', '.js-file', function() {
+  $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    $(this).parent().after($(this).clone()).remove();
-    // $(`img[data-index="${targetIndex}"]`).remove();
+    $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
-})
-
-function update_field(){
-  let value = 0.9;
-  let comis = 0.1;
-  let result = $('#product_price').val() * value;
-  $('#profit').text("¥"+result);
-  let pami = $('#product_price').val() * comis;
-  $('#commission').text("¥"+pami);
-}
-$(function() {
-  $('input[type="text"]').on('keyup change', function() {
-    update_field();
   });
 });

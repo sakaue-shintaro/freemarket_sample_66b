@@ -8,10 +8,12 @@
       .product-box__main-content__photo
         .product-box__main-content__photo__main-photo
           = image_tag @images[0].src, class:"photo-main"
+          .itembox__image__sold-mark
+            - if @product.buyer_id != nil
+              = render 'sold'
         .product-box__main-content__photo__sub-photo 
-          .product-box__main-content__photo__sub-photo__list
-            - @images.each do |i|
-              = image_tag i.src, class:"photo-list"
+          - @images.each do |i|
+            = image_tag i.src, class:"photo-list"
       .table
         %table.product-table
           %tbody
@@ -78,8 +80,21 @@
         = @product.price
       %span.tax (税込)
       %span.fee 送料込み
-      = link_to root_path, class: "purchase-btn" do
-        購入画面に進む
+      - if user_signed_in?
+        - if current_user.id != @product.seller_id
+          - if @product.buyer_id != nil
+            .soldout
+              売り切れました
+          - else
+            = link_to purchase_product_path, class: "purchase-btn" do
+              購入画面に進む
+      - else
+        - if @product.buyer_id != nil
+          .soldout
+            売り切れました
+        - else
+          = link_to purchase_product_path, class: "purchase-btn" do
+            購入画面に進む
     .product-box__description
       %p.description-text
         = simple_format @product.discription
@@ -98,7 +113,7 @@
         = link_to root_path, class: "link-btn" do
           = icon('fas', 'lock', class:'icon')
           %span あんしん・あんぜんのへの取組
-  - if user_signed_in? && current_user.id == @product.seller_id
+  - if user_signed_in? && current_user.id == @product.seller_id && @product.buyer_id == nil
     %section.product-box
       .product-box__if
         = link_to "商品の編集", "/products/#{@product.id}/edit", method: :get, class: "ifedit"
@@ -225,3 +240,4 @@
     = render 'footer-app'
   %footer.products-toppage-footer-company
     = render 'footer-company'
+    

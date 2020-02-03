@@ -26,24 +26,24 @@
           .logo-box__logo2__point__bar2
           .logo-box__logo2__point__bar3
           .logo-box__logo2__point__bar4
-  .regist_main
-    .center_box
-      .done-title
-        会員登録完了
-      .done__message
-        .h1
-          %h1ありがとうございます。
-          %h1会員登録が完了しました。
-        .next_btn
+.regist_main
+  .center_box
+    .done-title
+      会員登録完了
+    .done__message
+      .h1
+        %h1ありがとうございます。
+        %h1会員登録が完了しました。
+      .next_btn
+      =link_to root_path do
+        %button.u-box.btn-red{type: "submit"} メルカリをはじめる
+      .image
         =link_to root_path do
-          %button.u-box.btn-red{type: "submit"} メルカリをはじめる
-        .image
-          =link_to root_path do
-            = image_tag "startfmarket.png", size: "420x420", alt: "フリマスタート"
-  .footer      
-    .footer_center
-      プライバシーポリシー メルカリ利用規約 特定商取引
-      .gray
-        = link_to root_path do
-          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
-      .inc © Mercari, Inc.
+          = image_tag "startfmarket.png", size: "420x420", alt: "フリマスタート"
+.footer      
+  .footer_center
+    プライバシーポリシー メルカリ利用規約 特定商取引
+    .gray
+      = link_to root_path do
+        = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+    .inc © Mercari, Inc.

@@ -1,0 +1,52 @@
+.purchase-done-content {
+  width: 100vwx;
+  .header-content {
+    line-height: 90px;
+    padding-top: 40px;
+    text-align: center;
+  }
+  .second-content {
+    background: #fff;
+    border-bottom: solid 1px #eee;
+    h2 {
+      line-height: 80px;
+      padding-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
+  .regist_main {
+    .center_box {
+      background-color: #ffffff;
+    }
+    .done__message {
+      text-align: center;
+      .btn {
+        width: 340px;
+        height: 50px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        margin: 30px 0 50px 0;
+        font-size: 20px;
+      }  
+    }
+  }
+  .footera { 
+    height: 220px;
+    background: #eee;
+    .footer-centera {
+      width: 456px;
+      color: #333;
+      text-align: center;
+      margin: auto;
+      font-size: 13px;
+      padding-top: 50px;
+      .inc {
+      font-size: 13px;
+      color: black;
+      }
+    }
+  }
+}

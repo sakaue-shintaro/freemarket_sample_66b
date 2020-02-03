@@ -1,4 +1,7 @@
 .contena
+  - if flash[:notice]
+    .flash
+      = flash[:notice]
   .user_new_header
     .logo
       =link_to root_path do
@@ -27,14 +30,10 @@
         = f.submit "ログイン", id: "loginbtn"
     -# ↓時間があれば、実装する。
     -# = render "devise/shared/links"  パスワードお忘れの方を作る場合に使える
-  .user_new_footer
-    .info_box
-      .privacy  プライバシーポリシー
-      .terns メルカリ利用規約
-      .specific 特定商取引
-      .footer_logo_box
-        .footer_center
-          .gray
-            =link_to root_path do
-              = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
-          .inc © Mercari, Inc.
+  .footer
+    .footer_center
+      プライバシーポリシー メルカリ利用規約 特定商取引
+      .gray
+        =link_to root_path do
+          = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
+      .inc © Mercari, Inc.
