@@ -103,7 +103,7 @@
           %pまた、出品を持ちまして加盟店規約に同意したことになります。
           %button{form: "new_product", type: "submit", class: "exhibit__text__btn"} 出品する
           .exhibit__text__back
-            %h4もどる
+            = link_to 'もどる' ,root_path,class:'new_back'
   .footer
     .footer_center
       プライバシーポリシー Fmarket利用規約 特定商取引
