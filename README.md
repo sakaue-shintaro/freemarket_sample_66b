@@ -78,6 +78,7 @@ belongs_to  :user
 |brand|string||
 |state|string|null: false|
 |delivery_fee|string|null: false|
+|sending_method|string|null: false|
 |sending_area|string|null: false|
 |sending_day|string|null: false|
 |price|integer|null: false|
@@ -129,6 +130,7 @@ belongs_to  :user
 ## images
 |Column|Type|Options|
 |------|----|-------|
+|src|string||
 |product_id|integer|null: false, foreign_key: true|
 |url|text|null: false|
 ### Association
@@ -141,10 +143,22 @@ belongs_to  :user
 ## categories
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
 |pass|text|null: false|
 |item|text|null: false|
 
 ### Association
 
 - has_many  :products
+
+## coditions
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+
+## sizes
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
