@@ -184,11 +184,11 @@
             background-color: #ea352d;
             margin: 0 auto;
             margin-top: 32px;
-            h3 {
-              text-align: center;
-              line-height: 50px;
-              color: white;
-            }
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            display: block;
+            cursor: pointer;
           }
           &__bottom {
             text-align: right;

@@ -2,54 +2,61 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: {
       sessions: 'users/sessions',
-      registrations: "users/registrations",
+      registrations: "signup",
       omniauth_callbacks: 'users/omniauth_callbacks'
     }
+  devise_scope :user do
+    get 'registration_index', to: 'signup#index'
+    get 'registration_nickname', to: 'signup#registration_nickname'
+    get 'registration_sms', to: 'signup#registration_sms'
+    get 'registration_address', to: 'signup#registration_address'
+    get 'registration_card', to: 'signup#registration_card'
+    get 'registration_done', to: 'signup#registration_done'
+  end
+
+
   root "products#index"
   resources :products do
     member do
       get 'purchase'
       get 'purchase_done'
       get 'buy', to: 'products#buy'
-      # post 'pay', to: 'products#pay'
-      get 'done', to: 'products#done' #変更点はここだよ(・ω・)
+      get 'done', to: 'products#done'
     end
   end
     
-  resources :signup do
+  # resources :signup do
+  #   collection do
+  #     get 'registration_nickname'
+  #     get 'registration_sms'
+  #     get 'registration_address'
+  #     get 'registration_card'
+  #     get 'registration_done'
+  #   end
+  # end
+
+  resources :mypages do
     collection do
-      get 'registration_nickname'
-      get 'registration_sms'
-      get 'registration_address'
-      get 'registration_card'
-      get 'registration_done'
+      get 'credit'
+      get 'exhibition'
+      get 'identification'
+      get 'logout'
+      get 'profile'
     end
   end
-  resources :cards, only: [:new, :show] do
+
+  resources :cards do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
   end
-  resources :purchases, only: [:index] do
-    collection do
-      get 'index', to: 'purchases#index'
-    end
-    #変更点はここだよ(・ω・)
+
+  resources :purchases do
     member do
       post 'pay', to: 'purchases#pay'
     end
   end
-  # 下記の囲いは、作業用仮設定。あとで、必ず削除する（かも）
-  # -----------------------------------------------------------------------------
-  get 'mypages/index'  => 'mypages#index'
-  get 'mypages/exhibition' => 'mypages#exhibition'
-  get 'mypages/credit'  => 'mypages#credit'
-  get 'mypages/identification'  => 'mypages#identification'
-  get 'mypages/logout'  => 'mypages#logout'
-  get 'mypages/profile'  => 'mypages#profile'
-  get 'test_okubo/index'  => 'test_okubo#index'
-  get 'test_okubo/link'  => 'test_okubo#link'
-  # -----------------------------------------------------------------------------
+
 end

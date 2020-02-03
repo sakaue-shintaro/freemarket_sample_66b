@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
           customer = Payjp::Customer.retrieve(card.customer_id)
           @default_card_information = customer.cards.retrieve(card.card_id)
         else
-          redirect_to mypages_credit_path
+          redirect_to credit_mypages_path
           flash[:notice] = "クレジットカード登録をして下さい"
         end
       else
