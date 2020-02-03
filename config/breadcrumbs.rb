@@ -27,6 +27,12 @@ crumb :profile do
   parent :mypages
 end
 
+crumb :exhibition do
+  link "出品した商品 - 出品中", mypages_exhibition_path
+  parent :mypages
+end
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
