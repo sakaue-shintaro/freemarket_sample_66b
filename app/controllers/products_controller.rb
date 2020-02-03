@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
-  #必ず最後にもどす！！！！
+  before_action :require_login, except: [:index, :show]
   before_action :set_product, except: [:index, :new, :create]
+  before_action :seller_id_is_current_user_id, only: [:edit, :update, :destroy]
 
   require 'payjp'
 
@@ -18,58 +19,66 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
       @product = Product.new
       @product.images.new
-    else
-      redirect_to user_session_path
-    end
   end
 
   def create
     @product = Product.new(product_params)
-    if @product.save!
-      redirect_to root_path
+    if @product.images == [] || @product.images.ids == [nil]
+      redirect_to :back
+      flash[:notice] = "必ず画像を1枚以上選択して下さい。"
     else
-      render :new
+      if @product.save!
+        redirect_to root_path
+      else
+        redirect_to :back
+      end
     end
   end
 
   def edit
-    # @product = Product.find(params[:id])
   end 
 
   def update
-    # @product = Product.find(params[:id])
-    if @product.update(product_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+      if @product.images == [] || @product.images.ids == [nil]
+        redirect_to :back
+        flash[:notice] = "必ず画像を1枚以上選択して下さい。"
+      else
+        @product.update(product_params)
+        redirect_to root_path
+      end
   end
 
   def purchase
-    if user_signed_in?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      @images = Image.where(product_id: @product.id)
-      @address= Address.find_by(user_id: current_user.id)
-      card = Card.where(user_id: current_user.id).first
-      @cards = Card.find_by(user_id: current_user.id)
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+    if @product.buyer_id == nil
+      if current_user.id != @product.seller_id
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        @images = Image.where(product_id: @product.id)
+        @address= Address.find_by(user_id: current_user.id)
+        card = Card.where(user_id: current_user.id).first
+        @cards = Card.find_by(user_id: current_user.id)
+        if card
+          customer = Payjp::Customer.retrieve(card.customer_id)
+          @default_card_information = customer.cards.retrieve(card.card_id)
+        else
+          redirect_to mypages_credit_path
+          flash[:notice] = "クレジットカード登録をして下さい"
+        end
+      else
+        redirect_to root_path
+        flash[:notice] = "自分の商品は購入できません"
+      end
     else
-      redirect_to user_session_path
+      redirect_to root_path
+      flash[:notice] = "この商品は、既に売却済です"
     end
   end
 
   def destroy
-    if user_signed_in? && current_user.id == @product.seller_id && @product.destroy
-      redirect_to root_path
-      flash[:notice] = "商品を削除しました"
-    else
-      redirect_to root_path
-      flash[:notice] = "自分の商品しか削除できません"
-    end
+    @product.destroy
+    redirect_to root_path
+    flash[:notice] = "商品を削除しました"
   end
 
   def done
@@ -91,6 +100,22 @@ class ProductsController < ApplicationController
   
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def require_login
+    unless user_signed_in?
+      redirect_to user_session_path
+      flash[:notice] = "ログインをして下さい"
+    end
+  end
+
+  def seller_id_is_current_user_id
+    if current_user.id == @product.seller_id
+      # 編集画面に遷移する
+    else
+      redirect_to root_path
+      flash[:notice] = "自分の商品しか、編集・削除は行えません"
+    end
   end
 
 end

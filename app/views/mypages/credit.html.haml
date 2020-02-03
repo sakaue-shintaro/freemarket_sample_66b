@@ -1,4 +1,7 @@
 %header.priducts-toppage-header
+  - if flash[:notice]
+    .flash
+      = flash[:notice]
   = render 'products/header'
 .breadcrumb
   = render 'shared/breadcrumbs_credit'

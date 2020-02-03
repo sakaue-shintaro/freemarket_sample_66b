@@ -1,4 +1,7 @@
 .new-item
+  - if flash[:notice]
+    .flash
+      = flash[:notice]
   .new-item__content
     = form_for @product, url: {controller: 'products', action: 'update'} do |f|
       .new-item__content__top

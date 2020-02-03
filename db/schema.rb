@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200126101054) do
+ActiveRecord::Schema.define(version: 20200130084804) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code", null: false
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20200126101054) do
     t.string   "city_ward",   null: false
     t.string   "address",     null: false
     t.string   "building"
-    t.integer  "tel"
+    t.string   "tel"
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -76,17 +76,6 @@ ActiveRecord::Schema.define(version: 20200126101054) do
     t.index ["product_id"], name: "index_images_on_product_id", using: :btree
   end
 
-  create_table "pays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "number",     null: false
-    t.integer  "year",       null: false
-    t.integer  "month",      null: false
-    t.integer  "code",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pays_on_user_id", using: :btree
-  end
-
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "seller_id",                    null: false
     t.integer  "buyer_id"
@@ -99,7 +88,7 @@ ActiveRecord::Schema.define(version: 20200126101054) do
     t.string   "sending_method",               null: false
     t.string   "sending_area",                 null: false
     t.string   "sending_day",                  null: false
-    t.integer  "price",                        null: false
+    t.bigint   "price",                        null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["buyer_id"], name: "index_products_on_buyer_id", using: :btree
@@ -141,7 +130,7 @@ ActiveRecord::Schema.define(version: 20200126101054) do
     t.string   "j_first_name",                        null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.integer  "phonennumber",                        null: false
+    t.string   "phonennumber",                        null: false
     t.integer  "birthday_year",                       null: false
     t.integer  "birthday_month",                      null: false
     t.integer  "birthday_day",                        null: false
@@ -157,7 +146,6 @@ ActiveRecord::Schema.define(version: 20200126101054) do
   add_foreign_key "addresses", "users"
   add_foreign_key "evaluations", "users"
   add_foreign_key "images", "products"
-  add_foreign_key "pays", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users", column: "buyer_id"
   add_foreign_key "products", "users", column: "seller_id"

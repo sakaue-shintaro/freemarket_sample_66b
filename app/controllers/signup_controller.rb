@@ -95,8 +95,7 @@ class SignupController < ApplicationController
       j_family_name: "ア",
       j_first_name: "イ",
     )
-    #↓うまくいかないので、後ほど対応
-    #render '/signup/step1' unless @user.valid?
+    render :registration_nickname unless @user.valid?
   end
 
 
@@ -117,8 +116,7 @@ class SignupController < ApplicationController
       j_family_name: "ア",
       j_first_name: "イ",
     )
-    #↓うまくいかないので、後ほど対応
-    #render '/signup/step2' unless @user.valid?
+    render :registration_sms unless @user.valid?
   end
 
 
@@ -132,9 +130,6 @@ class SignupController < ApplicationController
     @user.birthday_month = session[:birthday_month]
     @user.birthday_day = session[:birthday_day]
     @user.phonennumber = session[:phonennumber]
-    #↓うまくいかないので、後ほど対応
-    #render '/signup/step3' unless @user.valid?
-    #render '/signup/step3' unless @user.address.valid?
-    #binding.pry
+    render :registration_address unless @user.valid?
   end
 end
