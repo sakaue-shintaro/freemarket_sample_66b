@@ -97,6 +97,8 @@
           line-height: 50px;
           font-size: 14px;
           cursor: pointer;
+          display: flex;
+          padding-left: 80px;
           .card-link{
             text-decoration: none;
             color:#ffffff;
@@ -104,26 +106,30 @@
           }
         }
       }
+    
+    &__int{ 
+      display: flex;
+      .pay-text{
+        text-decoration: none;
+        color:#0099E8;
+        border-style: solid;
+        border-width: 0;
+        font-size: 13px;
+        margin-left: 440px;
+        margin-right: 2px;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+      &__arrow{
+        color:#0099E8;
+        margin-top: 28px;
+      a:hover{
+        color:rgb(70, 172, 223);
+      }
     }
-      &__in2{
-        display: block;
-        display: flex;
-        &__link{
-          color:#0099E8;
-          border-style: solid;
-          border-width: 0;
-          font-size: 13px;
-          margin-left: 440px;
-          margin-right: 2px;
-          margin-top: 30px;
-          cursor: pointer;
-          a:hover{
-            color:rgb(70, 172, 223);
-          }
-        }
+    }
     }
   }
-
   &__user-mypage-content__left__menu__list__box {
     height: 48px;
     width: 280px;
@@ -165,7 +171,7 @@
   &__user-mypage-content__left__menu__head {
       margin: 40px 0 0;
     }
-  }
-  .current{
-    font-weight: 600;
-  }
+}
+.current{
+  font-weight: 600;
+}
