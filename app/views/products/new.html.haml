@@ -32,7 +32,8 @@
               - if @product.persisted?
                 .js-file_group{"data-index" => "#{@product.images.count}"}
                   = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
-                  .js-remove 削除
+                  %br/
+                  %span.js-remove 削除
       .exhibit
         .exhibit__text
           .exhibit__text__content
@@ -50,11 +51,11 @@
           .exhibit__detail__right
             %labelカテゴリー
             %span必須
-            = f.collection_select :"category_id", Category.limit(13), :id, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+            = f.collection_select :"category_id", Category.limit(13), :id, :name, {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label.top商品の状態
               %span必須
-              = f.collection_select :state, Condition.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+              = f.collection_select :state, Condition.all, :name, :name, {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -63,19 +64,19 @@
           .exhibit__detail__right
             %label配送料の負担
             %span必須
-            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+            = f.select :delivery_fee, ["送料込み(出品者負担)", "着払い(購入者負担)"], {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label配送の方法
               %span必須
-              = f.collection_select :sending_method, SendingMethod.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+              = f.collection_select :sending_method, SendingMethod.all, :name, :name, {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送元の地域
               %span必須
-              = f.collection_select :sending_area, Area.all, :name, :name, {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+              = f.collection_select :sending_area, Area.all, :name, :name, {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
             .exhibit__detail__right__top
               %label発送までの日数
               %span必須
-              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {:prompt => "---"},{:required => "", class:"exhibit__detail__right__box"}
+              = f.select :sending_day, ["1~2日で発送", "2~3で発送", "4~7日で発送"],  {prompt: "---"},{required: "", class:"exhibit__detail__right__box"}
       .exhibit
         .exhibit__detail
           .exhibit__detail__left
@@ -100,13 +101,13 @@
           %p禁止されている出品、行為を必ずご確認ください。
           %pまたブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
           %pまた、出品を持ちまして加盟店規約に同意したことになります。
-          %button{:form => "new_product", :type => "submit", class: "exhibit__text__btn"} 出品する
+          %button{form: "new_product", type: "submit", class: "exhibit__text__btn"} 出品する
           .exhibit__text__back
-            %h4もどる
+            = link_to 'もどる' ,root_path,class:'new_back'
   .footer
     .footer_center
-      プライバシーポリシー メルカリ利用規約 特定商取引
+      プライバシーポリシー Fmarket利用規約 特定商取引
       .gray
         =link_to root_path do
           = image_tag "logo_gray.svg", size: "80x65", alt: "フリマのアイコン"
-      .inc © Mercari, Inc.
+      .inc © Fmarket, Inc.

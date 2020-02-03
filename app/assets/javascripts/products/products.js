@@ -5,13 +5,13 @@ $(function() {
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][src]"
                     id="product_images_attributes_${num}_src"><br>
-                    <div class="js-remove">削除</div>
+                    <span class="js-remove">削除</span>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="120px" height="100px">`;
     return html;
   }
 
@@ -55,4 +55,18 @@ $(function() {
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+  function update_field(){
+    let value = 0.9;
+    let comis = 0.1;
+    let result = $('#product_price').val() * value;
+    $('#profit').text("¥"+result);
+    let pami = $('#product_price').val() * comis;
+    $('#commission').text("¥"+pami);
+  }
+  $(function() {
+    $('input[type="text"]').on('keyup change', function() {
+      update_field();
+    });
+  });  
 });
