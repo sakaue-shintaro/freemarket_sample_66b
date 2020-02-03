@@ -4,7 +4,8 @@
     = link_to root_path, class: "user-exhibition"  do
       .content__user
         = image_tag "user.jpg", alt: "user-img", class: "user"
-      .content__name カト
+      .content__name 
+        = @user.nickname
       .content__number
         %div
           評価

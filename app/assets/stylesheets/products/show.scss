@@ -1,11 +1,11 @@
 .details-page {   //商品詳細ページ全体
   color: #333333;
-  width: 1440px;
+  margin: auto;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   .product-box {    //選択した商品のコンテント
     background-color: #ffffff;
     width: 700px;
-    margin: 20px 370px;
+    margin: 20px auto;
     padding: 40px;
     font-size: 14px;
     &__if {
