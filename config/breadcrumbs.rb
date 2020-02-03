@@ -3,34 +3,34 @@ crumb :root do
 end
 
 crumb :mypages do
-  link "マイページ",  mypages_index_path
+  link "マイページ",  mypages_path
   parent :root
 end
 
 crumb :logout do
-  link "ログアウト", root_path
+  link "ログアウト", logout_mypages_path
   parent :mypages
 end
 
 crumb :identification do
-  link "本人確認", mypages_identification_path
+  link "本人確認", identification_mypages_path
   parent :mypages
 end
 
 crumb :credit do
-  link "支払い方法" , mypages_credit_path
+  link "支払い方法" , credit_mypages_path
   parent :mypages
 end
 
 crumb :profile do
-  link "プロフィール", mypages_profile_path
+  link "プロフィール", profile_mypages_path
   parent :mypages
 end
 
-crumb :exhibition do
-  link "出品した商品 - 出品中", mypages_exhibition_path
-  parent :mypages
-end
+# crumb :exhibition do
+#   link "出品した商品 - 出品中", mypages_exhibition_path
+#   parent :mypages
+# end
 
 
 # crumb :projects do

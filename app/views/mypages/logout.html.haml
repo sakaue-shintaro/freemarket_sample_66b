@@ -4,7 +4,7 @@
   = render 'shared/breadcrumbs_logout'
 .user-mypage-content
   .user-mypage-content__left
-    = render 'left-menu-logout'
+    = render 'left-menu'
   .user-mypage-content__right2
     .user-mypage-content__right2__center-btn2
       = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'btn2'
