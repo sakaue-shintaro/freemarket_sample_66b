@@ -1,4 +1,7 @@
 .contena
+  - if flash[:notice]
+    .flash
+      = flash[:notice]
   .user_new_header
     .logo
       =link_to root_path do
