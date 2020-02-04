@@ -7,6 +7,7 @@
   width: 100vw;
   height: 387px;
   padding: 0px 20px 10px;
+  display: grid;
   h2 {
     color: white;
     font-weight: 600;
@@ -41,7 +42,6 @@
     opacity: 0.6;   /*疑似クラスhoverマウスカーソル表示を設定できます*/
   } 
   &__top-contents {
-    width: 1020px;
     height: 313px;
     margin: 0 auto;
     &__about {
@@ -110,7 +110,7 @@
   &__last-content {
     width: 1020px;
     height: 31px;
-    margin: 30px 190px 10px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     &__lnc {
