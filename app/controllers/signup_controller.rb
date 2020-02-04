@@ -1,4 +1,5 @@
-class SignupController < ApplicationController
+# class SignupController < ApplicationController
+class SignupController < Devise::RegistrationsController
   before_action :validates_registration_nickname, only: :registration_sms # step1のバリデーション
   before_action :validates_registration_sms, only: :registration_address # registration_addressのバリデーション
   before_action :validates_registration_address, only: :create # step3のバリデーション
@@ -39,7 +40,7 @@ class SignupController < ApplicationController
     session[:birthday_month] = nil
     session[:birthday_day] = nil
     session[:phonennumber] = nil
-    redirect_to registration_card_signup_index_path
+    redirect_to registration_card_path
   end
 
   def registration_card
@@ -48,7 +49,6 @@ class SignupController < ApplicationController
   def registration_done
     sign_in User.find(session[:id]) unless user_signed_in?
     session[:id] = nil
-    #binding.pry
   end
 
 

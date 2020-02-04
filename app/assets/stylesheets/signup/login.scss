@@ -38,7 +38,7 @@
       }
     }
     .white_sns {
-      background-color: #d3d3d3;
+      border:solid 1px #979797;
       height: 50px;
       width: 343px;
       border-radius: 4px;
@@ -46,6 +46,9 @@
       text-decoration: none;
       line-height: 50px;
       margin: 16px 0 0;
+      .access_white{
+        color:black;
+      }
     }
     .field {
       height: 48px;
