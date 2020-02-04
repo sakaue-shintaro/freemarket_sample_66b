@@ -1,5 +1,5 @@
 SendingMethod.create(name: "未定")
-SendingMethod.create(name: "らくらくメルカリ便")
+SendingMethod.create(name: "らくらくフリマ便")
 SendingMethod.create(name: "ゆうメール")
 SendingMethod.create(name: "レターパック")
 SendingMethod.create(name: "普通郵便(定形、定形外)")

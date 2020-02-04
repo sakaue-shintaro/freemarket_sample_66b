@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20200130084804) do
     t.string   "j_family_name",                       null: false
     t.string   "j_first_name",                        null: false
     t.string   "email",                  default: "", null: false
-    t.string   "password",               default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "phonennumber",                        null: false
     t.integer  "birthday_year",                       null: false
     t.integer  "birthday_month",                      null: false
