@@ -193,6 +193,10 @@
           &__bottom {
             text-align: right;
             margin-top: 32px;
+            .info {
+              color: #0099e8;
+              text-decoration: none;
+            }
             .info:hover {
               text-decoration: underline;
             }
